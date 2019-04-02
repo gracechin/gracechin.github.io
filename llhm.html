@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>GC</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Mixtape template project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="styles/single_llhm.css">
+<link rel="stylesheet" type="text/css" href="styles/single_responsive.css">
+</head>
+<body>
+
+<div class="super_container">
+	
+
+	<!-- Header -->
+	<header class="header">
+		<div class="header_content d-flex flex-row align-items-center justify-content-center">
+			<div class="logo"><a href="#"><img style="width:10%; min-width: 70px" src="images/GClogo.png"></a></div>
+			<nav class="main_nav">
+				<ul class="d-flex flex-row align-items-start justify-content-start">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="index.html#artist">About</a></li>
+					<!--<li><a href="blog.html">News</a></li>-->
+					<li><a href="index.html#contact">Contact</a></li>
+				</ul>
+			</nav>
+			<div class="hamburger ml-auto">
+				<div class="d-flex flex-column align-items-end justify-content-between">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Menu -->
+
+	<div class="menu">
+		<div>
+			<div class="menu_overlay"></div>
+			<div class="menu_container d-flex flex-column align-items-start justify-content-center">
+				<nav class="menu_nav">
+					<ul class="d-flex flex-column align-items-start justify-content-start">
+						<li><a href="#home">Home</a></li>
+						<li><a href="#artist">About</a></li>
+						<!--<li><a href="blog.html">News</a></li>-->
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+
+	<!-- Home -->
+
+	<div class="home">
+		<div class="home_inner">
+			<div class="home_container">
+				<div class="home_content text-center">
+					<div class="home_title">Half Marathon</div>
+					<div class="home_subtitle">running for Mind</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Single -->
+
+	<div class="single">
+		<div class="container">
+			<div class="row">
+			
+				<!-- Single Content -->
+				<div class="col-lg-7">
+					<div class="single_content">
+						<div class="videoWrapper">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/blrC4DlUG58" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Single Info -->
+				<div class="col-lg-5">
+					<div class="single_info">
+						<div class="single_info_list">
+							<ul>
+								<li>
+									<span>2019</span><br>
+									Approx. 6 months<br>
+									Personal Project<br>
+									Credits to Peter Bartley for taking these lovely photos and making the video<br>
+									<a href="https://uk.virginmoneygiving.com/HoYunGraceChin">Virgin Money Giving Fundraising site</a> <i>raised above £600</i><br>
+									<a href="https://www.facebook.com/gracerunningformind/">Running Facebook blog page - "Grace's running & crying" </a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row" style="margin-top: 20px">
+				<!-- Single Content -->
+				<div class="col-lg-7">
+					<div class="single_content">
+						<div class="single_image"><img src="images/draw1.jpg" alt=""></div>
+					</div>
+					
+				</div>
+				
+				<!-- Single Info -->
+				<div class="col-lg-5">
+					<div class="single_info">
+					<div>
+						<p>Progress of the running was recorded with drawings, photos, and posts in the <a href="https://www.facebook.com/gracerunningformind/">Facebook blog page - Grace's running & crying</a>. I hoped to capture moments, thoughts, and emotions of the training and running with my friends and family to entertain them and make them feel a part of the entire process. </p>
+					</div>
+					</div>
+				</div>
+
+			</div>
+			
+			<div class="row" style="margin-top: 20px">
+				<!-- Single Content -->
+				<div class="col-lg-4">
+					<!-- Trigger the Modal -->
+					<img id="I01" onClick="enlarge_img(this.id)" class="Img" src="images/draw2.jpg">
+					<div id="modI01" class="modal"><!-- The Modal -->
+						<span id="closeI01" class="close">&times;</span><!-- The Close Button -->
+						<img class="modal-content" id="imgI01"><!-- Modal Content (The Image) -->
+						<div id="caption"></div><!-- Modal Caption (Image Text) -->
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<!-- Trigger the Modal -->
+					<img id="I02" onClick="enlarge_img(this.id)" class="Img" src="images/draw3.jpg">
+					<div id="modI02" class="modal"><!-- The Modal -->
+						<span id="closeI02" class="close">&times;</span><!-- The Close Button -->
+						<img class="modal-content" id="imgI02"><!-- Modal Content (The Image) -->
+						<div id="caption"></div><!-- Modal Caption (Image Text) -->
+					</div>
+				</div>
+				
+				<div class="col-lg-4">
+					<!-- Trigger the Modal -->
+					<img id="I03" onClick="enlarge_img(this.id)" class="Img" src="images/draw7.jpg">
+					<div id="modI03" class="modal"><!-- The Modal -->
+						<span id="closeI03" class="close">&times;</span><!-- The Close Button -->
+						<img class="modal-content" id="imgI03"><!-- Modal Content (The Image) -->
+						<div id="caption"></div><!-- Modal Caption (Image Text) -->
+					</div>
+				</div>
+			</div>
+			
+			<div class="row" style="margin-top: 20px">
+				<!-- Single Content -->
+				<div class="col-lg-4">
+					<!-- Trigger the Modal -->
+					<img id="I04" onClick="enlarge_img(this.id)" class="Img" src="images/draw5.png">
+					<div id="modI04" class="modal"><!-- The Modal -->
+						<span id="closeI04" class="close">&times;</span><!-- The Close Button -->
+						<img class="modal-content" id="imgI04"><!-- Modal Content (The Image) -->
+						<div id="caption"></div><!-- Modal Caption (Image Text) -->
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<!-- Trigger the Modal -->
+					<img id="I05" onClick="enlarge_img(this.id)" class="Img" src="images/draw6.png">
+					<div id="modI05" class="modal"><!-- The Modal -->
+						<span id="closeI05" class="close">&times;</span><!-- The Close Button -->
+						<img class="modal-content" id="imgI05"><!-- Modal Content (The Image) -->
+						<div id="caption"></div><!-- Modal Caption (Image Text) -->
+					</div>
+				</div>
+				
+				<div class="col-lg-4">
+					<!-- Trigger the Modal -->
+					<img id="I06" onClick="enlarge_img(this.id)" class="Img" src="images/draw4.png">
+					<div id="modI06" class="modal"><!-- The Modal -->
+						<span id="closeI06" class="close">&times;</span><!-- The Close Button -->
+						<img class="modal-content" id="imgI06"><!-- Modal Content (The Image) -->
+						<div id="caption"></div><!-- Modal Caption (Image Text) -->
+					</div>
+				</div>
+			</div>
+			
+			<div class="row" style="margin-top: 20px">
+				
+				<div class="col-lg-4">
+					<!-- Trigger the Modal -->
+					<img id="I08" onClick="enlarge_img(this.id)" class="Img" src="images/draw8.png">
+					<div id="modI08" class="modal"><!-- The Modal -->
+						<span id="closeI08" class="close">&times;</span><!-- The Close Button -->
+						<img class="modal-content" id="imgI08"><!-- Modal Content (The Image) -->
+						<div id="caption"></div><!-- Modal Caption (Image Text) -->
+					</div>
+				</div>
+				
+				<div class="col-lg-4">
+					<!-- Trigger the Modal -->
+					<img id="I09" onClick="enlarge_img(this.id)" class="Img" src="images/draw10.png">
+					<div id="modI09" class="modal"><!-- The Modal -->
+						<span id="closeI09" class="close">&times;</span><!-- The Close Button -->
+						<img class="modal-content" id="imgI09"><!-- Modal Content (The Image) -->
+						<div id="caption"></div><!-- Modal Caption (Image Text) -->
+					</div>
+				</div>
+				
+				<div class="col-lg-4">
+					<!-- Trigger the Modal -->
+					<img id="I10" onClick="enlarge_img(this.id)" class="Img" src="images/draw11.png">
+					<div id="modI10" class="modal"><!-- The Modal -->
+						<span id="closeI10" class="close">&times;</span><!-- The Close Button -->
+						<img class="modal-content" id="imgI10"><!-- Modal Content (The Image) -->
+						<div id="caption"></div><!-- Modal Caption (Image Text) -->
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+<!-- Footer -->
+
+	<div class="footer"> <a name="contact"></a>
+		<div class="copyright_bar">
+			<span><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Grace <i class="fa fa-heart-o" aria-hidden="true"></i> 2019 This website is customised from a template  by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</span>
+		</div>
+	</footer>
+</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap-4.1.2/popper.js"></script>
+<script src="styles/bootstrap-4.1.2/bootstrap.min.js"></script>
+<script src="plugins/greensock/TweenMax.min.js"></script>
+<script src="plugins/greensock/TimelineMax.min.js"></script>
+<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+<script src="plugins/greensock/animation.gsap.min.js"></script>
+<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="plugins/progressbar/progressbar.min.js"></script>
+<script src="plugins/parallax-js-master/parallax.min.js"></script>
+<script src="plugins/jPlayer/jquery.jplayer.min.js"></script>
+<script src="plugins/jPlayer/jplayer.playlist.min.js"></script>
+<script src="plugins/fit-vids/jquery.fitvids.js"></script>
+<script src="js/single.js"></script>
+<script>
+
+	//var modal = document.getElementById('myModal');
+
+	// Get the image and insert it inside the modal - use its "alt" text as a caption
+	
+	var all_img = document.getElementsByClassName('Img');
+	//var captionText = document.getElementById("caption");
+	function enlarge_img(id){
+	  var img = document.getElementById(id);
+	  var modalImg = document.getElementById("img"+id);
+	  var modal = document.getElementById('mod'+id);
+	  modal.style.display = "block";
+	  modalImg.src = img.src;
+	  //captionText.innerHTML = this.alt;  
+	  // Get the <span> element that closes the modal
+		var span = document.getElementById("close"+id);
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() { 
+		  modal.style.display = "none";
+		}
+	}
+
+
+	
+</script>
+
+</body>
+</html>
