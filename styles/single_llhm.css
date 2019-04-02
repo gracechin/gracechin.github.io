@@ -396,7 +396,7 @@ section
 	bottom: -20px;
 	width: 100%;
 	height: 17px;
-	background: #525252;
+	background: yellow/*#525252*/;
 	content: '';
 	z-index: -1;
 	visibility: hidden;
@@ -525,7 +525,7 @@ section
 	padding-top: 8px;
 	padding-bottom: 8px;
 	margin-bottom: 5px;
-	border-bottom: solid 2px #de4f32;
+	border-bottom: solid 2px yellow/*#de4f32*/;
 }
 .menu_log_reg a
 {
