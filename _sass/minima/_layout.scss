@@ -185,7 +185,22 @@
 }
 
 .post-list-heading {
+  margin-top: 70px;
   @include relative-font-size(1.75);
+}
+
+.post-item {
+  margin: 0px;
+  padding-bottom: 15px;
+}
+.post-icon {
+  // padding: 0px;
+  width: 10%;
+  min-width: 45px;
+}
+.post-icon > img {
+  border-radius: 5%;
+  // padding: 5px;
 }
 
 .post-list {
