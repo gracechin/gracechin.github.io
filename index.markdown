@@ -5,7 +5,7 @@
 layout: home
 title: Grace Chin
 list_title: Projects
-description: On this website, I share my projects and hobbies.
+description: On this website, I share my projects and other things about me.
 ---
 
-To learn more about me, you can visit [my LinkedIn](www.linkedin.com/in/gracehychin/).
+Thanks for checking out my website! It’s still a work in progress – I’ll be adding more content gradually. But hope you enjoy your day in the meantime!
