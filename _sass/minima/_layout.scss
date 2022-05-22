@@ -188,10 +188,16 @@
   margin-top: 70px;
   @include relative-font-size(1.75);
 }
-
 .post-item {
   margin: 0px;
-  padding-bottom: 15px;
+  padding: 5px;
+  border-radius: 5px;
+  // border: solid lightgray;
+}
+.post-item:hover {
+  // border: solid grey;
+  background-color: $brand-color-light;
+  // filter: drop-shadow(8px 8px 10px grey);
 }
 .post-icon {
   // padding: 0px;
@@ -211,10 +217,13 @@
     margin-bottom: $spacing-unit;
   }
 }
-
-.post-meta {
+.post-meta-light {
   font-size: $small-font-size;
   color: $grey-color;
+}
+.post-meta {
+  font-size: $small-font-size;
+  color: $text-color;
 }
 
 .post-link {

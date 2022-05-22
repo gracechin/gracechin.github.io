@@ -19,29 +19,33 @@ layout: default
   {%- if site.projects.size > 0 -%}
     <h2 class="post-list-heading">Projects</h2>
     <div>
-      {%- for project in site.projects -%}
-      <div class="post-item row">
-        <div class="post-icon">
-          <img src="{{ site.url }}/assets/icons/{{ project.icon }}">
-        </div>
-        <div class="col">
-          {%- if project.external_link -%}
-          <a class="post-link" href="{{ project.external_link }}">
-          {%- else -%}
-          <a class="post-link" href="{{ project.url | relative_url }}">
-          {%- endif -%}
-            {{ project.title | escape }}
-            <span class="post-meta">
-              | {{project.dates}}
-            </span> 
-          </a>
-          {%- if project.description -%} 
-            <span class="post-meta">
-            {{ project.description }} 
+      {% assign ordered_projects = site.projects | sort: 'dates' | reverse %}
+      {%- for project in ordered_projects -%}
+        {% if project.external_link %}
+          {% assign link = project.external_link %}
+        {% else %}
+          {% assign link = project.url %}
+        {% endif %}
+        <a href="{{ link | relative_url }}" class="post-a" style="text-decoration:none;">
+        <div class="post-item row">
+          <div class="post-icon">
+            <img src="{{ site.url }}/assets/icons/{{ project.icon }}">
+          </div>
+          <div class="col">
+            <span class="post-link">
+              {{ project.title | escape }}
+              <span class="post-meta-light">
+                | {{project.dates}}
+              </span> 
             </span>
-          {%- endif -%}
+            {%- if project.description -%} 
+              <span class="post-meta">
+              {{ project.description }} 
+              </span>
+            {%- endif -%}
+          </div>
         </div>
-      </div>
+        </a>
       {%- endfor -%}
     </div>
   {%- endif -%}
