@@ -4,9 +4,6 @@
 
 layout: home
 title: Grace Chin
-description: |-
-    I like creating things. 
-    
-    Here, I share my projects.
+description: I like creating things. <br> Here, I share my projects.
 ---
 
