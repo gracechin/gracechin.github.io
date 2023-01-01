@@ -189,26 +189,25 @@
   @include relative-font-size(1.75);
 }
 .post-item {
-  margin: 0px;
-  padding: 5px;
-  border-radius: 5px;
-  // border: solid lightgray;
+  position: relative; 
+  margin-bottom: $spacing-unit;
 }
-.post-item:hover {
-  // border: solid grey;
-  background-color: $brand-color-light;
-  // filter: drop-shadow(8px 8px 10px grey);
+.post-text-box {
+  position: absolute;
+  background-color: white;
+  color: black;
+  font-family: $card-font-family;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 5px;
+  padding-right: 5px;
+  bottom: auto;
+  right: 20%;
+  left: 20%;
 }
-.post-icon {
-  // padding: 0px;
-  width: 10%;
-  min-width: 45px;
+.post-item:hover > .post-text-box {
+  display: none;
 }
-.post-icon > img {
-  border-radius: 5%;
-  // padding: 5px;
-}
-
 .post-list {
   margin-left: 0;
   list-style: none;
@@ -225,13 +224,6 @@
   font-size: $small-font-size;
   color: $text-color;
 }
-
-.post-link {
-  display: block;
-  font-weight: 500;
-}
-
-
 
 /**
  * Posts

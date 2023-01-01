@@ -17,8 +17,7 @@ layout: default
   </p>
 
   {%- if site.projects.size > 0 -%}
-    <h2 class="post-list-heading">Projects</h2>
-    <div>
+    <div class="row">
       {% assign ordered_projects = site.projects | sort: 'dates' | reverse %}
       {%- for project in ordered_projects -%}
         {% if project.external_link %}
@@ -26,25 +25,11 @@ layout: default
         {% else %}
           {% assign link = project.url %}
         {% endif %}
-        <a href="{{ link | relative_url }}" class="post-a" style="text-decoration:none;">
-        <div class="post-item row">
-          <div class="post-icon">
-            <img src="{{ site.url }}/assets/icons/{{ project.icon }}">
+        <a href="{{ link | relative_url }}" class="post-item col-md-3 col-6" style="text-decoration:none;">
+          <img src="{{ site.url }}/assets/icons/{{ project.icon }}">
+          <div class="post-text-box carousel-caption">
+            {{ project.title | escape }}
           </div>
-          <div class="col">
-            <span class="post-link">
-              {{ project.title | escape }}
-              <span class="post-meta-light">
-                | {{project.dates}}
-              </span> 
-            </span>
-            {%- if project.description -%} 
-              <span class="post-meta">
-              {{ project.description }} 
-              </span>
-            {%- endif -%}
-          </div>
-        </div>
         </a>
       {%- endfor -%}
     </div>

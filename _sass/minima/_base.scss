@@ -103,12 +103,13 @@ h1, h2, h3, h4, h5, h6 {
 .title {
   @include relative-font-size(2.5);
   font-family: $title-font-family;
-  margin-bottom: $spacing-unit;
+  margin-bottom: $spacing-unit*1.5;
 }
 
 .subtitle {
   @include relative-font-size(1.2);
   font-family: $subtitle-font-family;
+  margin-bottom: $spacing-unit*2;
 }
 
 
@@ -184,12 +185,10 @@ pre {
  * Wrapper
  */
 .wrapper {
-  max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-  max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+  max-width: -webkit-calc(#{$content-width} - #{$spacing-unit});
+  max-width:         calc(#{$content-width} - #{$spacing-unit});
   margin-right: auto;
   margin-left: auto;
-  padding-right: $spacing-unit;
-  padding-left: $spacing-unit;
   @extend %clearfix;
 
   @include media-query($on-laptop) {
