@@ -48,6 +48,9 @@ ul, ol, dl, figure,
 main {
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
 }
+.home {
+  text-align: center;
+}
 
 
 
@@ -97,6 +100,16 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: $base-font-weight;
 }
 
+.title {
+  @include relative-font-size(2.5);
+  font-family: $title-font-family;
+  margin-bottom: $spacing-unit;
+}
+
+.subtitle {
+  @include relative-font-size(1.2);
+  font-family: $subtitle-font-family;
+}
 
 
 /**

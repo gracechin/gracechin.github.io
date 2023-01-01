@@ -21,7 +21,7 @@
 title: Grace Chin
 email: gracechinhy@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  On this website, I share my projects, achivements and hobbies.
+  I like creating things. Here, I share my projects.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: https://gracechin.github.io
 # twitter_username: jekyllrb
