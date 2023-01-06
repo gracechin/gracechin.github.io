@@ -2,8 +2,6 @@
  * Site header
  */
 .site-header {
-  border-top: 5px solid $grey-color-dark;
-  border-bottom: 1px solid $grey-color-light;
   min-height: $spacing-unit * 1.865;
 
   // Positioning context for the mobile navigation icon
@@ -26,7 +24,10 @@
 
 .site-nav {
   float: right;
-  line-height: $base-line-height * $base-font-size * 2.25;
+
+  .trigger {
+    display: flex;
+  }
 
   .nav-trigger {
       display: none;
@@ -38,7 +39,8 @@
 
   .page-link {
     color: $text-color;
-    line-height: $base-line-height;
+    border: none;
+    font-family: $nav-font-family;
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
