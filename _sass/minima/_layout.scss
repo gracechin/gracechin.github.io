@@ -194,8 +194,8 @@
 }
 .post-text-box {
   position: absolute;
-  background-color: white;
-  color: black;
+  background-color: $background-color;
+  color: $text-color;
   font-family: $card-font-family;
   top: 50%;
   transform: translateY(-50%);
