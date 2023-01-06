@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div class="about">
+  {%- if page.title -%}
+    <h1 class="title">Grace Chin</h1>
+    <h2 class="subtitle">{{page.description}}</h2>
+  {%- endif -%}
+
+  <div class="sections">
+  {%- if site.about_sections.size > 0 -%}
+      {% assign ordered_sections = site.about_sections | sort: 'order' | %}
+      {%- for section in ordered_sections -%}
+        <div class="section">
+          <h3>{{section.title}}</h3>
+          {{section.content}}
+        </div>
+      {%- endfor -%}
+  {%- endif -%}
+  </div>
+
+  <p>
+    {%- if page.nav_items -%}
+    • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+    {%- endif -%}
+  </p>
+</div>

@@ -48,7 +48,7 @@ ul, ol, dl, figure,
 main {
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
 }
-.home {
+.home, .about {
   text-align: center;
 }
 
@@ -110,6 +110,38 @@ h1, h2, h3, h4, h5, h6 {
   @include relative-font-size(1.2);
   font-family: $subtitle-font-family;
   margin-bottom: $spacing-unit*2;
+}
+
+.about {
+  h3 {
+    @include relative-font-size(1.2);
+    font-weight: bold;
+    font-family: $title-font-family;
+  }
+  p {
+    text-align: left;
+  }
+  .section {
+    break-inside: avoid-column;
+    margin-bottom: $spacing-unit;
+    padding: 0 $spacing-unit/2;
+  }
+}
+
+@media (min-width: 500px){  
+  .about > .sections {
+    -webkit-columns: 1;
+    -moz-columns: 1;
+    columns: 1;
+  }
+}
+@media (min-width: 700px){  
+  .about > .sections {
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    columns: 2;
+    column-gap: 0;
+  }
 }
 
 
