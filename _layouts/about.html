@@ -10,7 +10,7 @@ layout: default
 
   <div class="sections">
   {%- if site.about_sections.size > 0 -%}
-      {% assign ordered_sections = site.about_sections | sort: 'order' | %}
+      {% assign ordered_sections = site.about_sections | sort: 'order' %}
       {%- for section in ordered_sections -%}
         <div class="section">
           <h3>{{section.title}}</h3>
