@@ -3,6 +3,8 @@ title: Activities
 order: 3
 
 ---
+**Participated in the 14th PhD Colloquium on Design Research** / 2022 - *The 14th Doctoral Forum On Design Research "Knowledge Innovation by Design Research"*
+
 **London Landmark Half Marathon (Net time: 2:10:04)** / 2019 - Over 600 GBP fundraised for *Mind*, a mental health charity.
 
 **Imperial College Soup Run - Treasurer** / 2017-18 - Helped manage weekly runs and publicity, as well as finances.
