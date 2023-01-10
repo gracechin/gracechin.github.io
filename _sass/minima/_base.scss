@@ -229,7 +229,12 @@ pre {
   }
 }
 
-
+.footer-col-wrapper {
+  a {
+    font-family: $footer-font-family;
+    color: $text-color;
+  }
+}
 
 /**
  * Clearfix
