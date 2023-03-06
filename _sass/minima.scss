@@ -1,42 +1,42 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css?family=JetBrains+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=League+Spartan&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Inter&display=swap');
 
 // Define defaults for each variable.
 
 $base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
-$base-font-size:   16px !default;
+$base-font-size: 16px !default;
 $base-font-weight: 400 !default;
-$small-font-size:  $base-font-size * 0.875 !default;
+$small-font-size: $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
 
-$title-font-family: "JetBrains Mono";
-$subtitle-font-family: "Nanum Myeongjo";
-$column-title-font-family: "JetBrains Mono";
-$nav-font-family: "Inter";
-$column-paragraph-font-family: "Inter";
-$card-font-family: "Inter";
-$footer-font-family: "JetBrains Mono";
+$title-font-family: "League Spartan";
+$subtitle-font-family: "League Spartan";
+$column-title-font-family: "League Spartan";
+$nav-font-family: "League Spartan";
+$column-paragraph-font-family: "League Spartan";
+$card-font-family: "League Spartan";
+$footer-font-family: "League Spartan";
 
-$spacing-unit:     30px !default;
+$spacing-unit: 30px !default;
 
-$text-color:       #111 !default;
+$text-color: #111 !default;
 $background-color: #FFFEFC !default;
-$brand-color:      #2a7ae2 !default;
+$brand-color: #2a7ae2 !default;
 $brand-color-light: lighten($brand-color, 42%) !default;
 
-$grey-color:       #828282 !default;
+$grey-color: #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
-$grey-color-dark:  darken($grey-color, 25%) !default;
+$grey-color-dark: darken($grey-color, 25%) !default;
 
 $table-text-align: left !default;
 
 // Width of the content area
-$content-width:    900px !default;
+$content-width: 900px !default;
 
-$on-palm:          600px !default;
-$on-laptop:        900  px !default;
+$on-palm: 600px !default;
+$on-laptop: 900 px !default;
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -56,8 +56,7 @@ $on-laptop:        900  px !default;
 }
 
 // Import partials.
-@import
-  "minima/base",
-  "minima/layout",
-  "minima/syntax-highlighting"
+@import "minima/base",
+"minima/layout",
+"minima/syntax-highlighting"
 ;
