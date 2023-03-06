@@ -5,6 +5,6 @@
 layout: home
 title: Projects
 permalink: /
-description: I like creating things. <br> Here, I share my projects.
+# description: I like creating things. <br> Here, I share my projects.
 ---
 
