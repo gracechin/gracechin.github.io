@@ -3,60 +3,58 @@ layout: default
 ---
 
 <div class="home">
-  {%- if page.title -%}
-    <h1 class="title">Grace Chin</h1>
-    <h2 class="subtitle">{{page.description}}</h2>
-  {%- endif -%}
+  <div class="cover-banner">
 
-  {{ content }}
-
+  </div>
   <p>
     {%- if page.nav_items -%}
-    • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+    • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+        itemprop="name">{{ page.author }}</span></span>
     {%- endif -%}
   </p>
 
   {%- if site.projects.size > 0 -%}
-    <div class="row">
-      {% assign ordered_projects = site.projects | sort: 'dates' | reverse %}
-      {%- for project in ordered_projects -%}
-        {% if project.external_link %}
-          {% assign link = project.external_link %}
-        {% else %}
-          {% assign link = project.url %}
-        {% endif %}
-        <a href="{{ link | relative_url }}" class="post-item col-md-3 col-6" style="text-decoration:none;">
-          <img src="{{ site.url }}/assets/icons/{{ project.icon }}">
-          <div class="post-text-box carousel-caption">
-            {{ project.title | escape }}
-          </div>
-        </a>
-      {%- endfor -%}
-    </div>
+  <div class="row">
+    {% assign ordered_projects = site.projects | sort: 'dates' | reverse %}
+    {%- for project in ordered_projects -%}
+    {% if project.external_link %}
+    {% assign link = project.external_link %}
+    {% else %}
+    {% assign link = project.url %}
+    {% endif %}
+    <a href="{{ link | relative_url }}" class="post-item col-md-4 col-6" style="text-decoration:none;">
+      <img src="{{ site.url }}/assets/icons/{{ project.icon }}">
+      <div class="post-text-box">
+        <div class="post-title">{{ project.title | escape }}</div>
+        <div class="description">{{ project.description | escape }}</div>
+      </div>
+    </a>
+    {%- endfor -%}
+  </div>
   {%- endif -%}
 
 
   {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">Posts</h2>
-    <div>
-      {%- for post in site.posts -%}
-      <div class="post-item row">
-        <div class="">
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-            <span class="post-meta">
-              | {{post.dates}}
-            </span> 
-          </a>
-          {%- if post.description -%} 
-            <span class="post-meta">
-            {{ post.description }} 
-            </span>
-          {%- endif -%}
-        </div>
+  <h2 class="post-list-heading">Posts</h2>
+  <div>
+    {%- for post in site.posts -%}
+    <div class="post-item row">
+      <div class="">
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
+          <span class="post-meta">
+            | {{post.dates}}
+          </span>
+        </a>
+        {%- if post.description -%}
+        <span class="post-meta">
+          {{ post.description }}
+        </span>
+        {%- endif -%}
       </div>
-      {%- endfor -%}
     </div>
+    {%- endfor -%}
+  </div>
   {%- endif -%}
 
 </div>

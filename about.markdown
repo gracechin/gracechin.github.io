@@ -1,6 +1,6 @@
 ---
 layout: about
-title: About
+title: ABOUT
 permalink: /about/
 # description: A bit about myself.
 

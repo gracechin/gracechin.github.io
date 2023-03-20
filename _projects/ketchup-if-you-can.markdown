@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Ketchup If You Can"
-dates:   "2018"
-description: "I worked with four other talented engineers to design a toy to rehabilitate children with hemiplegic cerebral palsy as part of the university's elective module."
+title: "Ketchup If You Can"
+dates: "2018"
+description: "A toy to help     rehabilitate children with hemiplegic cerebral palsy"
 icon: ketchup.JPG
 video: https://www.youtube.com/embed/tEUqCEllvD0
 ---
 
-*Ketchup If You Can* is a toy designed to rehabilitate children aged 5-12 with hemiplegic cerebral palsy. The game is inspired from an existing game, *Bop It!*. The ketchup-themed toy instructs the player to do a certain move. If the player does the move correctly within a time limit a rewarding audio and haptic feedback would be given to the player. The game increases in difficulty by reducing the time limit as the player levels up.
+_Ketchup If You Can_ is a toy designed to rehabilitate children aged 5-12 with hemiplegic cerebral palsy. The game is inspired from an existing game, _Bop It!_. The ketchup-themed toy instructs the player to do a certain move. If the player does the move correctly within a time limit a rewarding audio and haptic feedback would be given to the player. The game increases in difficulty by reducing the time limit as the player levels up.
 
 ![diagram]({{site.url}}/assets/pages/ketchup-diagrams.png)
 

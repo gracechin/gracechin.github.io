@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
-title: Projects
+title: GRACE CHIN
 permalink: /
 # description: I like creating things. <br> Here, I share my projects.
 ---
