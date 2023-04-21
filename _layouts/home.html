@@ -1,60 +1,84 @@
----
-layout: default
----
-
-<div class="home">
-  <div class="cover-banner">
-
-  </div>
-  <p>
-    {%- if page.nav_items -%}
-    • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
-        itemprop="name">{{ page.author }}</span></span>
-    {%- endif -%}
-  </p>
-
-  {%- if site.projects.size > 0 -%}
-  <div class="row">
-    {% assign ordered_projects = site.projects | sort: 'dates' | reverse %}
-    {%- for project in ordered_projects -%}
-    {% if project.external_link %}
-    {% assign link = project.external_link %}
-    {% else %}
-    {% assign link = project.url %}
-    {% endif %}
-    <a href="{{ link | relative_url }}" class="post-item col-md-4 col-6" style="text-decoration:none;">
-      <img src="{{ site.url }}/assets/icons/{{ project.icon }}">
-      <div class="post-text-box">
-        <div class="post-title">{{ project.title | escape }}</div>
-        <div class="description">{{ project.description | escape }}</div>
-      </div>
-    </a>
-    {%- endfor -%}
-  </div>
-  {%- endif -%}
-
-
-  {%- if site.posts.size > 0 -%}
-  <h2 class="post-list-heading">Posts</h2>
-  <div>
-    {%- for post in site.posts -%}
-    <div class="post-item row">
-      <div class="">
-        <a class="post-link" href="{{ post.url | relative_url }}">
-          {{ post.title | escape }}
-          <span class="post-meta">
-            | {{post.dates}}
-          </span>
-        </a>
-        {%- if post.description -%}
-        <span class="post-meta">
-          {{ post.description }}
-        </span>
-        {%- endif -%}
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+{%- include head.html -%}
+<body>
+  <div class="home scroll-container">
+    <div class="section">
+      {%- include header.html -%}  
+      <div class="wrapper cover-banner">
+        <img src="../assets/home/home.svg" alt="Grace sitting on a sofa at home using her laptop">
       </div>
     </div>
-    {%- endfor -%}
-  </div>
-  {%- endif -%}
 
-</div>
+    <div class="section about">
+      <div class="wrapper">
+        <h2 class="">
+          Hi there! I am Grace.
+        </h2>
+        <div class="content">
+          <p>
+            As a designer and developer, I've had the opportunity to work with tech startups, bringing creative concepts to life through my design and coding skills. Outside of work, I have an assortment of personal projects that keeps me exploring, learning, and creating.
+          </p>
+          <p>
+            My all-time favourite projects are the ones where I have the privilege to help people and charities, such as the UK mental health charity, Mind.
+          </p>
+          <p>
+            Currently, I'm seeking a designer/developer position in the UK that I can start in July/August 2023.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {%- if site.projects.size > 0 -%}
+    <div class="section projects">
+      <div class="wrapper">
+        <h2 class="post-list-heading">PROJECTS</h2> 
+        <div class="row">
+          {% assign ordered_projects = site.projects | sort: 'dates' | reverse %}
+          {%- for project in ordered_projects -%}
+          {% if project.external_link %}
+          {% assign link = project.external_link %}
+          {% else %}
+          {% assign link = project.url %}
+          {% endif %}
+          <a href="{{ link | relative_url }}" class="post-item col-md-4 col-6" style="text-decoration:none;">
+            <img src="{{ site.url }}/assets/icons/{{ project.icon }}">
+            <div class="post-text-box">
+              <div class="post-title">{{ project.title | escape }}</div>
+              <div class="description">{{ project.description | escape }}</div>
+            </div>
+          </a>
+          {%- endfor -%}
+        </div>
+      </div>
+      {%- include footer.html -%}
+    </div>
+    {%- endif -%}
+
+
+    {%- if site.posts.size > 0 -%}
+    <h2 class="post-list-heading">Posts</h2>
+    <div>
+      {%- for post in site.posts -%}
+      <div class="post-item row">
+        <div class="">
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+            <span class="post-meta">
+              | {{post.dates}}
+            </span>
+          </a>
+          {%- if post.description -%}
+          <span class="post-meta">
+            {{ post.description }}
+          </span>
+          {%- endif -%}
+        </div>
+      </div>
+      {%- endfor -%}
+    </div>
+    {%- endif -%}
+
+  </div>
+</body>
+</html>
