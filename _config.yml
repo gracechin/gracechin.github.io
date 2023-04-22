@@ -8,7 +8,7 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 #
-# If you need help with YAML syntax, here are some quick references for you: 
+# If you need help with YAML syntax, here are some quick references for you:
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 #
@@ -24,7 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   I like creating things. Here, I share my projects.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: https://gracechin.github.io
-# twitter_username: jekyllrb
+github_username: gracechin
 linkedin_username: gracehychin
 
 # Build settings
@@ -37,7 +37,6 @@ collections:
     output: true
   about_sections:
     output: true
-
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

@@ -118,8 +118,8 @@
  * Site footer
  */
 .site-footer {
-  // border-top: 1px solid $grey-color-light;
-  padding: $spacing-unit 0;
+  border-top: 1px solid $grey-color-light;
+  bottom: 0;
 }
 
 .footer-heading {
@@ -212,7 +212,6 @@
 
 .post-list-heading {
   color: $primary-color;
-  text-transform: uppercase;
 }
 
 .post-item {

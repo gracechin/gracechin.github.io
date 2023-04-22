@@ -10,7 +10,7 @@
       </div>
     </div>
 
-    <div class="section dark">
+    <div class="section dark about">
       <div class="wrapper">
         <h2>{{ page.about_section_title }}</h2>
         <div class="content">{{ content }}</div>
@@ -20,7 +20,7 @@
     {%- if site.projects.size > 0 -%}
     <div class="section projects">
       <div class="wrapper">
-        <h2 class="post-list-heading">{{ page.project_section_title }}</h2> 
+        <h2 class="post-list-heading">Projects</h2> 
         <div class="row">
           {% assign ordered_projects = site.projects | sort: 'dates' | reverse %}
           {%- for project in ordered_projects -%}
@@ -39,7 +39,6 @@
           {%- endfor -%}
         </div>
       </div>
-      {%- include footer.html -%}
     </div>
     {%- endif -%}
 
@@ -65,6 +64,18 @@
       {%- endfor -%}
     </div>
     {%- endif -%}
-  </div>
+
+    <div class="section dark about">
+      <div class="wrapper">
+        <h2>Contact</h2>
+        <div class="content">
+          <h3>Have a project or position for me? Just want to say “Hi”?</h3>
+          <p>Drop an email at <a href="mailto:{{ site.email }}">{{ site.email }}</a>!</p>
+          <h3>Didn't get enough of me yet?</h3>
+          <p>Checkout my socials!</p>
+          {%- include social.html -%}
+        </div>
+      </div>
+    </div>
 </body>
 </html>

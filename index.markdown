@@ -6,7 +6,6 @@ layout: home
 title: Grace
 permalink: /
 about_section_title: Hi there! I am Grace.
-project_section_title: Projects
 ---
 
 <p>

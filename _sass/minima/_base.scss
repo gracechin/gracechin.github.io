@@ -19,6 +19,7 @@ body {
 
 h2 {
   display:inline-block;
+  text-transform: uppercase;
   @include relative-font-size(1.75);
 }
 
@@ -106,6 +107,12 @@ h1, h2, h3, h4, h5, h6 {
 /**
  * About
  */
+
+ .about {
+    h2 {
+      text-transform: none;
+    }
+ }
 
 @media (min-width: 500px){  
   .about > .sections {
@@ -228,9 +235,12 @@ pre {
 
 .section.dark {  
   background-color: $primary-color;
-  h2, p {
+  h2, h3, p, li, ul, span, a {
     color: $white;
     text-align: left;
+  }
+  .svg-icon {
+    fill: #{$white};
   }
 }
 
