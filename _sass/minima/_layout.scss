@@ -42,6 +42,7 @@
     color: $primary-color;
     border: none;
     text-decoration: none;
+    text-transform: uppercase;
     font-family: $nav-font-family;
     @include relative-font-size(1.2);
 
@@ -199,21 +200,6 @@
 }
 
 /**
- * About
- */
-
-.about {
-  background-color: $primary-color;
-  h2, p {
-    color: $white;
-    text-align: left;
-  }
-  .content {
-    margin-bottom: $section-spacing-unit;
-  }
-}
-
-/**
  * Page content
  */
 .page-content {
@@ -226,6 +212,7 @@
 
 .post-list-heading {
   color: $primary-color;
+  text-transform: uppercase;
 }
 
 .post-item {

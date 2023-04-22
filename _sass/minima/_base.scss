@@ -103,6 +103,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: $spacing-unit*2;
 }
 
+/**
+ * About
+ */
+
 @media (min-width: 500px){  
   .about > .sections {
     -webkit-columns: 1;
@@ -220,6 +224,14 @@ pre {
   height: 100vh;
   background-size:  cover;
   scroll-snap-align: start;
+}
+
+.section.dark {  
+  background-color: $primary-color;
+  h2, p {
+    color: $white;
+    text-align: left;
+  }
 }
 
 /**
