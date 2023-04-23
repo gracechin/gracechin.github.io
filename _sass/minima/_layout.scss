@@ -277,6 +277,7 @@ a.page-link:focus {
 
 .post-title {
   @include relative-font-size(2.625);
+  margin-top: $spacing-unit;
   letter-spacing: -1px;
   line-height: 1;
 
