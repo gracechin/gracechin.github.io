@@ -105,10 +105,40 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /**
+ * Section
+ */
+
+ .section {
+  width: 100%;
+  height: 100vh;
+  background-size:  cover;
+  scroll-snap-align: start;
+}
+
+.section.dark {  
+  background-color: $primary-color;
+  h2, h3, p, li, ul, span, a {
+    color: $white;
+    text-align: left;
+  }
+  .svg-icon {
+    fill: #{$white};
+  }
+}
+
+/**
  * About
  */
 
+.section.dark.about {  
+  p {
+    text-align: center;
+  }
+}
+
  .about {
+    text-align: center;
+    
     h2 {
       margin-top: 0;
       text-transform: none;
@@ -246,28 +276,6 @@ pre {
   a {
     font-family: $footer-font-family;
     color: $text-color;
-  }
-}
-
-/**
- * Section
- */
-
- .section {
-  width: 100%;
-  height: 100vh;
-  background-size:  cover;
-  scroll-snap-align: start;
-}
-
-.section.dark {  
-  background-color: $primary-color;
-  h2, h3, p, li, ul, span, a {
-    color: $white;
-    text-align: left;
-  }
-  .svg-icon {
-    fill: #{$white};
   }
 }
 
