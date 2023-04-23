@@ -28,7 +28,7 @@
           {% else %}
           {% assign link = project.url %}
           {% endif %}
-          <a href="{{ link | relative_url }}" class="post-item col-md-4 col-6" style="text-decoration:none;">
+          <a href="{{ link | relative_url }}" class="post-item col-md-4 col-12" style="text-decoration:none;">
             <img src="{{ site.url }}/assets/icons/{{ project.icon }}">
             <div class="post-text-box">
               <div class="post-title">{{ project.title | escape }}</div>
@@ -64,13 +64,14 @@
     </div>
     {%- endif -%}
 
-    <div class="section dark">
+    <div class="contact section dark">
       <div class="wrapper">
-        <h2>Contact</h2>
+        <h2>Want to say “Hi”?</h2>
         <div class="content">
-          <h3>Have a project or position for me? Just want to say “Hi”?</h3>
           <p>Drop an email at <a href="mailto:{{ site.email }}">{{ site.email }}</a>!</p>
-          <h3>Didn't get enough of me yet?</h3>
+        </div>
+        <h2>More?</h2>
+        <div class="content">
           <p>Checkout my socials!</p>
           {%- include social.html -%}
         </div>

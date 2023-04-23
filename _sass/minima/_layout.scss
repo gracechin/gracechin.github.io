@@ -59,12 +59,8 @@
 
   @include media-query($on-palm) {
     position: absolute;
-    top: 9px;
-    right: $spacing-unit / 2;
     background-color: $background-color;
-    border: 1px solid $grey-color-light;
     border-radius: 5px;
-    text-align: right;
 
     label[for="nav-trigger"] {
       display: block;
@@ -118,6 +114,7 @@
  * Site footer
  */
 .site-footer {
+  margin-top: $spacing-unit;
   border-top: 1px solid $grey-color-light;
   bottom: 0;
 }
@@ -152,8 +149,8 @@
 }
 
 .footer-col-2 {
-  width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-  width: calc(20% - (#{$spacing-unit} / 2));
+  width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+  width: calc(50% - (#{$spacing-unit} / 2));
 }
 
 .footer-col-3 {
@@ -230,7 +227,7 @@
       color: $primary-color;
       font-weight: 600;
       @include relative-font-size(1.2);
-      font-family: $subheading-font-family;
+      font-family: $base-font-family;
       font-style: normal;
       margin-top: 10px;
       margin-bottom: 5px;
@@ -238,7 +235,7 @@
 
     .description {
       color: $text-color;
-      @include relative-font-size(0.9);
+      @include relative-font-size(1);
       font-family: $paragraph;
     }
   }
