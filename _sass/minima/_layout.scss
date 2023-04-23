@@ -52,7 +52,7 @@
     }
   }
 
-  .page-link.current {
+  .page-link.current, .page-link:hover {
     text-decoration: underline;
     text-decoration-thickness: 5px;
   }
@@ -108,7 +108,15 @@
   }
 }
 
+a.page-link:hover {
+  background-color: transparent !important;
+  border: none !important;
+}
 
+a.page-link:focus {
+  outline: 0;
+  box-shadow: none!important;
+}
 
 /**
  * Site footer
