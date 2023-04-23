@@ -226,6 +226,9 @@ a.page-link:focus {
 
 .post-item {
   position: relative;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
   margin-bottom: $spacing-unit;
 
   .post-text-box {
@@ -233,9 +236,10 @@ a.page-link:focus {
 
     .post-title {
       color: $primary-color;
+      letter-spacing: 0.5px;
       font-weight: 600;
       @include relative-font-size(1.2);
-      font-family: $base-font-family;
+      font-family: $subheading-font-family;
       font-style: normal;
       margin-top: 10px;
       margin-bottom: 5px;
@@ -247,6 +251,10 @@ a.page-link:focus {
       font-family: $paragraph;
     }
   }
+}
+
+.post-item:hover {
+  background-color: $secondary-color-light;
 }
 
 .post-list {
