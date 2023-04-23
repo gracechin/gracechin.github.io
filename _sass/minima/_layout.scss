@@ -44,7 +44,7 @@
     text-decoration: none;
     text-transform: uppercase;
     font-family: $nav-font-family;
-    @include relative-font-size(1.2);
+    @include relative-font-size(1.7);
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
