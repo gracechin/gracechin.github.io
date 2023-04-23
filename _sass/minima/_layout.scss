@@ -249,6 +249,7 @@ a.page-link:focus {
       color: $text-color;
       @include relative-font-size(1);
       font-family: $paragraph;
+      font-weight: normal;
     }
   }
 }

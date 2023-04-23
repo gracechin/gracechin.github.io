@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Running for Mind"
+title: "Running & Drawing for Mind"
 dates: "2019"
-description: "Half-marathon to fundraise for the mental health charity, Mind"
+description: "Half-marathon to fundraise for a mental health charity"
 icon: "half-marathon.jpg"
 video: https://www.youtube.com/embed/blrC4DlUG58
 ---
