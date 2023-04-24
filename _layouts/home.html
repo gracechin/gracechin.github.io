@@ -3,13 +3,14 @@
 {%- include head.html -%}
 <body>
   <div class="home scroll-container">
-    <div class="section">
+    <!-- <div class="section">
       {%- include header.html -%}  
       <div class="cover-banner">
       </div>
-    </div>
+    </div> -->
 
     <div class="section dark about">
+      {%- include header.html -%}  
       <div class="wrapper">
         <h2>{{ page.about_section_title }}</h2>
         <div class="content">{{ content }}</div>
@@ -38,6 +39,9 @@
           {%- endfor -%}
         </div>
       </div>
+      <div class="footer-container">
+        {%- include footer.html -%}
+      </div>
     </div>
     {%- endif -%}
 
@@ -63,19 +67,5 @@
       {%- endfor -%}
     </div>
     {%- endif -%}
-
-    <div class="contact section dark">
-      <div class="wrapper">
-        <h2>Want to say “Hi”?</h2>
-        <div class="content">
-          <p>Drop an email at <a href="mailto:{{ site.email }}">{{ site.email }}</a>!</p>
-        </div>
-        <h2>More?</h2>
-        <div class="content">
-          <p>Checkout my socials!</p>
-          {%- include social.html -%}
-        </div>
-      </div>
-    </div>
 </body>
 </html>
