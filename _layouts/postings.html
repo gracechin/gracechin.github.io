@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<div class="postings">
+  {%- if page.title -%}
+    <h1 class="title">Posts</h1>
+    <h2 class="subtitle">{{page.description}}</h2>
+  {%- endif -%}
+
+  <div class="section posts">
+    {%- for post in site.posties -%}
+    <div class="post-item row">
+      <a href="{{ post.url | relative_url }}">
+        <span class="post-meta">
+          {{ post.date | date: "%Y" }} |
+        </span>
+        {{ post.title }}
+      </a>
+    </div>
+    {%- endfor -%}
+  </div>
+</div>

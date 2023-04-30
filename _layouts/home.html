@@ -29,10 +29,10 @@
           {% else %}
           {% assign link = project.url %}
           {% endif %}
-          <a href="{{ link | relative_url }}" class="post-item col-md-4 col-12" style="text-decoration:none;">
+          <a href="{{ link | relative_url }}" class="project-item col-md-4 col-12" style="text-decoration:none;">
             <img src="{{ site.url }}/assets/icons/{{ project.icon }}">
-            <div class="post-text-box">
-              <div class="post-title">{{ project.title | escape }}</div>
+            <div class="project-text-box">
+              <div class="project-title">{{ project.title | escape }}</div>
               <div class="description">{{ project.description | escape }}</div>
             </div>
           </a>
@@ -42,29 +42,6 @@
       <div class="footer-container">
         {%- include footer.html -%}
       </div>
-    </div>
-    {%- endif -%}
-
-    {%- if site.posts.size > 0 -%}
-    <div class="section posts">
-    <h2 class="post-list-heading">Posts</h2>
-      {%- for post in site.posts -%}
-      <div class="post-item row">
-        <div class="">
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-            <span class="post-meta">
-              | {{post.dates}}
-            </span>
-          </a>
-          {%- if post.description -%}
-          <span class="post-meta">
-            {{ post.description }}
-          </span>
-          {%- endif -%}
-        </div>
-      </div>
-      {%- endfor -%}
     </div>
     {%- endif -%}
 </body>
