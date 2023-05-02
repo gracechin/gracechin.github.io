@@ -175,6 +175,10 @@ a.page-link:focus {
   background-color: $secondary-color-light;
 }
 
+.post {
+ img { border: 1px solid $secondary-color-dark;}
+}
+
 .post-item {
   position: relative;
   padding: 10px;
