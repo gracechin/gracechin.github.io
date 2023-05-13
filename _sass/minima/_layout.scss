@@ -184,10 +184,6 @@ a.page-link:focus {
   background-color: $secondary-color-light;
 }
 
-.post {
- img { border: 1px solid $secondary-color-dark;}
-}
-
 .post-item {
   position: relative;
   padding: 10px;
@@ -262,7 +258,7 @@ a.page-link:focus {
   }
 }
 
-.project-content, .post-content {
+.projects-content, .posties-content {
   margin-bottom: $spacing-unit;
 
   h2 {
@@ -290,6 +286,8 @@ a.page-link:focus {
   }
 }
 
-.post-content {
+.posties-content {
   font-family: $blog-paragraph;
+  
+  img { border: 1px solid $secondary-color-dark;}
 }

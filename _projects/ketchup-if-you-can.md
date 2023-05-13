@@ -1,18 +1,18 @@
 ---
-layout: post
+layout: page
 title: "Ketchup If You Can"
 dates: "2018"
-description: "A toy to help     rehabilitate children with hemiplegic cerebral palsy"
+description: "A toy to help rehabilitate children with hemiplegic cerebral palsy"
 icon: ketchup.JPG
 video: https://www.youtube.com/embed/tEUqCEllvD0
 ---
 
-_Ketchup If You Can_ is a toy designed to rehabilitate children aged 5-12 with hemiplegic cerebral palsy. The game is inspired from an existing game, _Bop It!_. The ketchup-themed toy instructs the player to do a certain move. If the player does the move correctly within a time limit a rewarding audio and haptic feedback would be given to the player. The game increases in difficulty by reducing the time limit as the player levels up.
+As part of a university project, I worked in a team of 5 to develop, _Ketchup If You Can_, a toy designed to rehabilitate children aged 5-12 with hemiplegic cerebral palsy. The toy is inspired by an existing toy called _Bop It!_. The ketchup-themed toy instructs the player to perform a certain move, and if the player completes the move correctly within a time limit, they receive rewarding audio and haptic feedback. The game becomes more challenging as the player levels up, with the time limit decreasing.
 
 ![diagram]({{site.url}}/assets/pages/ketchup-diagrams.png)
 
-The moves (squeeze, twist, shake, and flip) chosen incorporated in the game based on common movements in bimanual activities. The bottle is designed to encourage the use of two hands, which is important for children with cerebral palsy that may be relutant to use their weaker hands.
+The moves (squeeze, twist, shake, and flip) chosen for the game are based on common movements in bimanual activities. The bottle is designed to encourage the use of two hands, which is important for children with cerebral palsy who may be reluctant to use their weaker hand.
 
-Interest among experts on the device has been expressed during the presentation. Further work and testing were suggested by the experts because of its potential.
+We presented our toy to experts, who suggested further work and testing due to its potential.
 
 ![team photo :D]({{site.url}}/assets/pages/ketchup-team.JPG)

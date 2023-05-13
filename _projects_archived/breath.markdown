@@ -1,7 +1,7 @@
 ---
-layout: post
-title:  "Breath"
-dates:   "2016"
+layout: page
+title: "Breath"
+dates: "2016"
 description: "My three team members and I designed a portable spirometer for low-income countries as part of our university module"
 icon: breath.png
 ---

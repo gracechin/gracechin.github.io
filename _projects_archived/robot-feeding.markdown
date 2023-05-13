@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: "Robot feeding"
 dates: "2018"
 tags: charity running

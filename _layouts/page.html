@@ -5,9 +5,10 @@ layout: default
 
   <header class="post-header">
     <h1 class="post-title">{{ page.title | escape }}</h1>
+    <!-- {%- if page.dates -%}<p>{{page.dates}}</p>{%- endif -%} -->
   </header>
-
-  <div class="post-content">
+  
+  <div class="{{ page.collection }}-content">
     {{ content }}
   </div>
 

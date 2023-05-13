@@ -1,7 +1,7 @@
 ---
-layout: post
-title:  "Sustainable razor"
-dates:   "2017"
+layout: page
+title: "Sustainable razor"
+dates: "2017"
 description: "I redesigned a disposable razor handle to use recycled plastic and to minimise the materials used."
 icon: "razor.png"
 ---
