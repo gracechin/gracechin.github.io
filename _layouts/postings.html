@@ -9,11 +9,12 @@ layout: default
   {%- endif -%}
 
   <div class="section posts">
-    {%- for post in site.posties -%}
+    {%- assign posts = site.posties | reverse %}
+    {%- for post in posts -%}
     <div class="post-item row">
       <a href="{{ post.url | relative_url }}">
         <span class="post-meta">
-          {{ post.date | date: "%Y" }} |
+          {{ post.date | date: "%b %Y" }} |
         </span>
         {{ post.title }}
       </a>
