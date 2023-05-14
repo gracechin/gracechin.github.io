@@ -2,8 +2,6 @@
  * Site header
  */
 .site-header {
-  min-height: $spacing-unit * 1.865;
-
   // Positioning context for the mobile navigation icon
   position: relative;
 }
@@ -110,7 +108,8 @@ a.page-link:focus {
   width: 100%;
   height: 100vh;
   scroll-behavior: smooth;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   scroll-snap-type: y mandatory;
 }
 /**
@@ -119,21 +118,119 @@ a.page-link:focus {
 
 .cover-banner {
   background-image: url(/assets/home/home-hk.svg);
-  height: 90vh;
+  height: 95vh;
+  position: relative;
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: auto 100%;
+  background-size: auto 90%;
   width: auto;
 }
 
 .me {
-  background-image: url(/assets/home/ME.svg);
+  background-image: url(/assets/home/me-0.svg);
+  height: 90vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-repeat: no-repeat;
+  background-position: 50% 75%;
+  background-size: auto 60%;
+  width: 100vw;
+  animation-fill-mode: forwards;
+  animation-name: me-sayin-hello;
+  animation-duration: 1s;
+  animation-delay: 1s;
+}
+
+@keyframes me-sayin-hello {
+  0%   {background-image: url(/assets/home/me-1.svg)}
+  23%  {background-image: url(/assets/home/me-1.svg)}
+  25%  {background-image: url(/assets/home/me-2.svg)}
+  47%  {background-image: url(/assets/home/me-2.svg)}
+  50%  {background-image: url(/assets/home/me-3.svg)}
+  73%  {background-image: url(/assets/home/me-3.svg)}
+  75%  {background-image: url(/assets/home/me-4.svg)}
+  98%  {background-image: url(/assets/home/me-4.svg)}
+  100% {background-image: url(/assets/home/me-5.svg)}
+}
+
+.face {
+  background-image: url(/assets/home/whole-face.svg);
   height: 90vh;
   background-repeat: no-repeat;
-  background-position: 45% 75%;
-  background-size: auto 60%;
+  background-position: 45% 50%;
+  background-size: auto 20%;
   width: auto;
 }
+
+// Light switch 
+// https://codepen.io/gracechin/pen/abaamgJ
+
+.switch-input {
+  display: none;
+}
+
+#light-switch {
+  &:checked ~ #light-switch-label {
+    .switch {
+       margin-top: 4%;
+      .light {
+        background: red;
+      }
+    }
+  }
+}
+
+.box {
+  position: absolute;
+  top: 30%;
+  margin-left: 250px;
+  left: 50%;
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+
+.platform {
+  margin: auto;
+  margin-top: 10%;
+  width: 90%;
+  height: 80%;
+  background: $background-color;
+  border: solid 1px $primary-color;
+  border-radius: 3%;
+}
+
+.button {
+  margin: auto;
+  margin-top: 20%;
+  width: 60%;
+  height: 60%;
+  background: $primary-color;
+  border: solid 1px $primary-color;
+  border-radius: 5%;
+}
+
+.switch {
+  margin: auto;
+  position: relative;
+  width: 100%;
+  height: 95%;
+  background: $background-color;
+  border-radius: 5%;
+}
+
+.light {
+  position: absolute;
+  margin: auto;
+  margin-left: 45%;
+  margin-top: 70%;
+  background: $primary-color;
+  width: 10%;
+  height: 5%;
+  border-radius: 25%;
+}
+
 
 /**
  * Page content
