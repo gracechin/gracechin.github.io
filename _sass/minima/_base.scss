@@ -116,13 +116,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section.dark {  
-  background-color: $primary-color;
+  // background-color: $primary-color;
   h2, h3, p, li, ul, span, a {
     color: $white;
     text-align: left;
   }
   .svg-icon {
     fill: #{$white};
+  }
+  @include themify($themes) {
+    color: themed('textColor');  
+    background-color: themed('backgroundColor');  
   }
 }
 
