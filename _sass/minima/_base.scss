@@ -39,7 +39,9 @@ ul, ol, dl, figure,
  * `main` element
  */
 main {
-  display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+  display: flex; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+  flex: 1;
+  flex-direction: column;
 }
 
 
@@ -113,20 +115,8 @@ h1, h2, h3, h4, h5, h6 {
   height: 100vh;
   background-size:  cover;
   scroll-snap-align: start;
-}
-
-.section.dark {  
-  // background-color: $primary-color;
-  h2, h3, p, li, ul, span, a {
-    color: $white;
-    text-align: left;
-  }
-  .svg-icon {
-    fill: #{$white};
-  }
   @include themify($themes) {
-    color: themed('textColor');  
-    background-color: themed('backgroundColor');  
+    background-color: themed('bgColor');  
   }
 }
 
@@ -134,33 +124,27 @@ h1, h2, h3, h4, h5, h6 {
  * About
  */
 
-.section.dark.about {  
-  p {
-    text-align: center;
-  }
-}
-
  .about, .postings {
-    text-align: center;
+    text-align: left;
     
     h2 {
-      margin-top: 0;
-      text-transform: none;
+      margin-top: $spacing-unit;
+      text-transform: uppercase;
+      @include themify($themes) {
+        color: themed('textHeadingColor');  
+      }
+      @include relative-font-size(1.2);
     }
     .content {
       @include relative-font-size(1);
-    }
-    .wrapper {
-      position: relative;
-      top: 40%;
-      transform: translate(0, -50%);
+      margin-bottom: $spacing-unit * 2;
     }
  }
 
-@media (min-width: 700px){  
+@media (min-width: 500px){  
   .about {
     .content {
-      @include relative-font-size(1.3);
+      @include relative-font-size(1.1);
     }
   }
 }

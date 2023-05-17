@@ -33,7 +33,8 @@ $grey-color: #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
 $grey-color-dark: darken($grey-color, 25%) !default;
 
-$text-color: #2E2F26 !default;
+$text-color: #2E2F26;
+$black: #2E2F26 !default;
 $background-color: #FFFFFF !default;
 $primary-color: #B73C55 !default;
 $secondary-color-light: #E7F0F5 !default;
@@ -45,12 +46,20 @@ $white: #FFFFFF !default;
 
 $themes: (
   light: (
-    bgColor: white,
-    textColor: #2E2F26,
+    bgColor: $white,
+    bgDarkColor: $primary-color,
+    textColor: $black,
+    textHeadingColor: $primary-color,
+    imgOutlineColor: $primary-color,
+    itemHoverColor: $secondary-color-light,
   ),
   dark: (
     bgColor: #222,
+    bgDarkColor: $black,
     textColor: #ddd,
+    textHeadingColor: $white,
+    imgOutlineColor: #ddd,
+    itemHoverColor: black,
   ),
 );
 

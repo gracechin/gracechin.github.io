@@ -13,17 +13,18 @@
   letter-spacing: -1px;
   margin-bottom: 0;
   float: left;
-
-  &,
-  &:visited {
-    color: $grey-color-dark;
-  }
 }
 
 .site-nav {
-  .trigger {
+  @include themify($themes) {
+    background-color: themed('bgColor');  
+  }
+  display: flex;
+  justify-content: space-between;
+  
+  .nav-pages-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 
   .nav-trigger {
@@ -36,17 +37,23 @@
 
   .page-link {
     background-color: transparent;
-    color: $primary-color;
+    @include themify($themes) {
+      color: themed('textHeadingColor');  
+    }
     border: none;
     text-decoration: none;
     text-transform: uppercase;
     font-family: $nav-font-family;
-    @include relative-font-size(1.7);
+    @include relative-font-size(1.2);
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
       margin-right: 20px;
     }
+  }
+
+  .home-link {
+
   }
 
   .page-link.current, .page-link:hover {
@@ -116,14 +123,31 @@ a.page-link:focus {
  * Banner
  */
 
+.cover-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  @include themify($themes) {
+    background-color: themed('bgColor');  
+  }
+}
+
 .cover-banner {
-  background-image: url(/assets/home/home-hk.svg);
-  height: 95vh;
+  position: relative;
+}
+
+.home {
+  -webkit-mask: url(/assets/home/home-hk.svg) no-repeat center/auto 85vh;
+  mask: url(/assets/home/home-hk.svg) no-repeat center/auto 85vh;
+  height: 90vh;
+  width: auto;
   position: relative;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: auto 90%;
-  width: auto;
+  @include themify($themes) {
+    background-color: themed('imgOutlineColor');  
+  }
 }
 
 .me {
@@ -174,9 +198,6 @@ a.page-link:focus {
   &:checked ~ #light-switch-label {
     .switch {
        margin-top: 4%;
-      .light {
-        background: red;
-      }
     }
   }
 }
@@ -196,8 +217,10 @@ a.page-link:focus {
   margin-top: 10%;
   width: 90%;
   height: 80%;
-  background: $background-color;
-  border: solid 1px $primary-color;
+  @include themify($themes) {
+    background: themed('bgColor');  
+    border: solid 1px themed('imgOutlineColor');  
+  }
   border-radius: 3%;
 }
 
@@ -206,8 +229,10 @@ a.page-link:focus {
   margin-top: 20%;
   width: 60%;
   height: 60%;
-  background: $primary-color;
-  border: solid 1px $primary-color;
+  @include themify($themes) {
+    background: themed('imgOutlineColor');  
+    border: solid 1px themed('imgOutlineColor');  
+  }
   border-radius: 5%;
 }
 
@@ -216,8 +241,10 @@ a.page-link:focus {
   position: relative;
   width: 100%;
   height: 95%;
-  background: $background-color;
   border-radius: 5%;
+  @include themify($themes) {
+    background-color: themed('bgColor');  
+  }
 }
 
 .light {
@@ -225,10 +252,12 @@ a.page-link:focus {
   margin: auto;
   margin-left: 45%;
   margin-top: 70%;
-  background: $primary-color;
   width: 10%;
   height: 5%;
   border-radius: 25%;
+  @include themify($themes) {
+    background: themed('imgOutlineColor');  
+  }
 }
 
 
@@ -258,7 +287,9 @@ a.page-link:focus {
     text-align: left;
 
     .project-title {
-      color: $primary-color;
+      @include themify($themes) {
+        color: themed('textHeadingColor');  
+      }
       letter-spacing: 0.5px;
       font-weight: 600;
       @include relative-font-size(1.2);
@@ -269,7 +300,9 @@ a.page-link:focus {
     }
 
     .description {
-      color: $text-color;
+      @include themify($themes) {
+        color: themed('textColor');  
+      }
       @include relative-font-size(1);
       font-family: $paragraph;
       font-weight: normal;
@@ -278,7 +311,9 @@ a.page-link:focus {
 }
 
 .project-item:hover {
-  background-color: $secondary-color-light;
+  @include themify($themes) {
+    background-color: themed('itemHoverColor');  
+  }
 }
 
 .post-item {
@@ -295,7 +330,9 @@ a.page-link:focus {
     text-align: left;
 
     .post-title {
-      color: $primary-color;
+      @include themify($themes) {
+        color: themed('textColor');  
+      }
       letter-spacing: 0.5px;
       font-weight: 600;
       @include relative-font-size(1.2);
