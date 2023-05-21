@@ -4,17 +4,18 @@
   {%- include head.html -%}
 
   <body>
-    <!-- navigation bar -->
-    {%- include header.html -%}  
+    <main id="app-root" class="theme-light">
+      <!-- navigation bar -->
+      {%- include header.html -%}  
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-      {{ content }}
-      </div>
+      <main class="page-content" aria-label="Content">
+        <div class="wrapper">
+        {{ content }}
+        </div>
+      </main>
+
+      {%- include footer.html -%}
     </main>
-
-    {%- include footer.html -%}
-
+    {%- include theme_change.html -%}
   </body>
-
 </html>

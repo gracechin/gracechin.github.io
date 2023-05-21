@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Working for start-ups
+title: What I learnt from working for start-ups
 date: 2023-04-24
 ---
 
@@ -14,3 +14,5 @@ To help myself remember what I have learned and my experiences from working with
 - **...how to use an Apple laptop.** Being cheap, I never owned a personal Mac laptop prior to working in these start-ups. Using an Apple laptop for work has successfully convinced me to purchase my own Apple laptop.
 - **...how to strive for a CI/CD or Agile work flow.** This involves automating tests as much as possible to shorten the systems development work cycle. I remember, at one point, I had to implement end-to-end tests by simulating what a user would do for various use cases to make the development cycle more efficient.
 - **...what project management looks like.** The different start-ups used different project management systems like Trello, Jira, and Notion. In appreciation of the satisfaction of moving the tasks to done, I have also incorporated these systems into my personal life as well via Notion.
+
+That's it for now! No doubt, there is still lots to learn...

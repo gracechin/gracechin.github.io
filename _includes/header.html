@@ -1,18 +1,23 @@
 <header class="site-header" role="banner">
-    {%- assign default_paths = site.pages | map: "path" -% | %}
-    {%- assign page_paths = site.header_pages | default: default_paths -%}
-    {%- if page_paths -%}
-      <nav class="site-nav">
-        <div class="trigger">
-          {%- for path in page_paths -%}
+  <nav class="site-nav">
+    <div class="nav-home">
+      <a href="{{ site.url }}" class="page-link home-link">Grace</a>
+    </div>
+    <div class="nav-pages-container">
+      {%- assign default_paths = site.pages | sort:"order" | map: "path" -% | %}
+      {%- assign page_paths = site.header_pages | default: default_paths -%}
+      {%- if page_paths -%}
+        {%- for path in page_paths -%}
           {% assign current = page.url | downcase | split: '.' %}
           {%- assign my_page = site.pages | where: "path", path | first -%}
-          {%- if my_page.title -%}
-          <a href="{{ my_page.url | relative_url }}" {% if my_page.permalink==current[0] %} class="page-link current" {%
-            else %} class="page-link" {% endif %}>{{ my_page.title | escape }}</a>
+          {%- if my_page.title and my_page.title != "Grace" -%}
+            <a href="{{ my_page.url | relative_url }}" {% if my_page.permalink==current[0] %} class="page-link current" {%
+              else %} class="page-link" {% endif %}>
+              {{ my_page.title | escape }}
+            </a>
           {%- endif -%}
-          {%- endfor -%}
-        </div>
-      </nav>
-    {%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+  </nav>
 </header>

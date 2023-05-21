@@ -2,47 +2,24 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 {%- include head.html -%}
 <body>
-  <div class="home scroll-container">
-    <div class="section">
-      {%- include header.html -%}
+  <main id="app-root" class="theme-light">
+    {%- include header.html -%}
+    <div class="cover-container">
       <div class="cover-banner">
+        <div class="home"></div>
         <div class="me"></div>
-      </div>
-    </div>
-
-    <div class="section dark about">
-      <div class="wrapper">
-        <h2>{{ page.about_section_title }}</h2>
-        <div class="content">{{ content }}</div>
-      </div>
-    </div>
-
-    {%- if site.projects.size > 0 -%}
-    <div class="section projects">
-      <div class="wrapper">
-        <h2 class="post-list-heading">Projects</h2> 
-        <div class="row">
-          {% assign ordered_projects = site.projects | sort: 'dates' | reverse %}
-          {%- for project in ordered_projects -%}
-          {% if project.external_link %}
-          {% assign link = project.external_link %}
-          {% else %}
-          {% assign link = project.url %}
-          {% endif %}
-          <a href="{{ link | relative_url }}" class="project-item col-md-4 col-12" style="text-decoration:none;">
-            <img src="{{ site.url }}/assets/icons/{{ project.icon }}">
-            <div class="project-text-box">
-              <div class="project-title">{{ project.title | escape }}</div>
-              <div class="description">{{ project.description | escape }}</div>
+        <input type="checkbox" id="light-switch" class="switch-input" checked/>
+        <label for="light-switch" class="box" id="light-switch-label">
+            <div class="platform">
+              <div class="button">
+                <div class="switch">
+                  <div class="light"></div>
+                </div>
             </div>
-          </a>
-          {%- endfor -%}
-        </div>
-      </div>
-      <div class="footer-container">
-        {%- include footer.html -%}
+        </label>
       </div>
     </div>
-    {%- endif -%}
+  </main>
+  {%- include theme_change.html -%}
 </body>
 </html>
