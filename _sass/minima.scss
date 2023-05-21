@@ -37,6 +37,7 @@ $text-color: #2E2F26;
 $black: #2E2F26 !default;
 $background-color: #FFFFFF !default;
 $primary-color: #B73C55 !default;
+$primary-color-light: #F4E2E6 !default;
 $secondary-color-light: #E7F0F5 !default;
 $secondary-color-dark: #8FA3C4;
 $white: #FFFFFF !default;
@@ -52,14 +53,20 @@ $themes: (
     textHeadingColor: $primary-color,
     imgOutlineColor: $primary-color,
     itemHoverColor: $secondary-color-light,
+    codeBgColor: #eef,
+    codeColor: #e83e8c,
+    hrefColor: $primary-color,
   ),
   dark: (
-    bgColor: #222,
+    bgColor: $black,
     bgDarkColor: $black,
     textColor: #ddd,
-    textHeadingColor: $white,
+    textHeadingColor: $secondary-color-light,
     imgOutlineColor: #ddd,
-    itemHoverColor: black,
+    itemHoverColor: $primary-color,
+    codeBgColor: $black,
+    codeColor: $white,
+    hrefColor: #e83e8c,
   ),
 );
 

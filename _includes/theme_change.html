@@ -29,11 +29,13 @@
       changeToLightMode()
     }
     
-    lightSwitch.addEventListener("change", (event) => {
-      if (lightSwitch.checked) {
-        changeToLightMode()
-      } else {
-        changeToDarkMode()
-      }
-    });
+    if (lightSwitch) {
+      lightSwitch.addEventListener("change", (event) => {
+        if (lightSwitch.checked) {
+          changeToLightMode()
+        } else {
+          changeToDarkMode()
+        }
+      });
+    }
   </script>

@@ -2,10 +2,12 @@
  * Basic styling
  */
 body {
+  @include themify($themes) {
+    color: themed('textColor');  
+    background-color: themed('bgColor'); ;
+  }
   padding: 0;
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
-  color: $text-color;
-  background-color: $background-color;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
      -moz-font-feature-settings: "kern" 1;
@@ -18,11 +20,16 @@ body {
 }
 
 h2 {
-  display:inline-block;
+  margin-top: $spacing-unit;
   text-transform: uppercase;
-  @include relative-font-size(1.75);
+  @include relative-font-size(1.2);
 }
 
+p {
+  @include themify($themes) {
+    color: themed('textColor');  
+  }
+}
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
@@ -42,6 +49,7 @@ main {
   display: flex; /* Default value of `display` of `main` element is 'inline' in IE 11. */
   flex: 1;
   flex-direction: column;
+  overflow: hidden;
 }
 
 
@@ -52,7 +60,6 @@ img {
   max-width: 100%;
   vertical-align: middle;
 }
-
 
 
 /**
@@ -88,6 +95,9 @@ li {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
+  @include themify($themes) {
+    color: themed('textHeadingColor');  
+  }
   margin-top: $section-spacing-unit;
   margin-bottom: $spacing-unit;
   font-family: $title-font-family;
@@ -126,18 +136,13 @@ h1, h2, h3, h4, h5, h6 {
 
  .about, .postings {
     text-align: left;
-    
-    h2 {
-      margin-top: $spacing-unit;
-      text-transform: uppercase;
-      @include themify($themes) {
-        color: themed('textHeadingColor');  
-      }
-      @include relative-font-size(1.2);
-    }
+
     .content {
       @include relative-font-size(1);
       margin-bottom: $spacing-unit * 2;
+      @include themify($themes) {
+        color: themed('textColor');  
+      }
     }
  }
 
@@ -177,12 +182,15 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: $primary-color;
+  @include themify($themes) {
+    color: themed('hrefColor');  
+  }
   font-weight: 600;
-  text-decoration: none;
 
   &:hover {
-    color: $primary-color;
+    @include themify($themes) {
+      color: themed('hrefColor');  
+    }
     text-decoration: underline;
   }
 
@@ -222,11 +230,16 @@ code {
   @include relative-font-size(0.9375);
   border: 1px solid $grey-color-light;
   border-radius: 3px;
-  background-color: #eef;
+  @include themify($themes) {
+    background-color: themed('codeBgColor');  
+  }
 }
 
 code {
   padding: 1px 5px;
+  @include themify($themes) {
+    color: themed('codeColor');  
+  }
 }
 
 pre {
@@ -249,19 +262,15 @@ pre {
   margin-right: auto;
   margin-left: auto;
   @extend %clearfix;
-}
-
-@media (max-width: 870px){  
-  .wrapper {
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
-  }
+  padding: 10px;
 }
 
 .footer-col-wrapper {
   a {
     font-family: $footer-font-family;
-    color: $text-color;
+    @include themify($themes) {
+      color: themed('textColor');  
+    }
   }
 }
 

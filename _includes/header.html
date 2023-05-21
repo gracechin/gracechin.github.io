@@ -4,7 +4,7 @@
       <a href="{{ site.url }}" class="page-link home-link">Grace</a>
     </div>
     <div class="nav-pages-container">
-      {%- assign default_paths = site.pages | map: "path" -% | %}
+      {%- assign default_paths = site.pages | sort:"order" | map: "path" -% | %}
       {%- assign page_paths = site.header_pages | default: default_paths -%}
       {%- if page_paths -%}
         {%- for path in page_paths -%}
