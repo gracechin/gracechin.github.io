@@ -1,8 +1,8 @@
 ---
 layout: page
-title: "Wordflow UI/UX"
+title: "Wordflow"
 dates: "2023"
-description: "[Current] Redesigning UI/UX for a translation service web application"
+description: "Redesigning UI/UX for a translation service web application"
 icon: wordflow.png
 ---
 
