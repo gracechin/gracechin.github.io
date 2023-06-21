@@ -6,6 +6,13 @@ layout: default
   <header class="post-header">
     <h1 class="post-title">{{ page.title | escape }}</h1>
     <!-- {%- if page.dates -%}<p>{{page.dates}}</p>{%- endif -%} -->
+    {%- if page.link_to_project -%}
+      <button onclick="window.open(
+        '{{page.link_to_project}}',
+        '_blank'
+      );" type="button">Visit Project</button>
+    {%- endif -%}
+
   </header>
   
   <div class="{{ page.collection }}-content">

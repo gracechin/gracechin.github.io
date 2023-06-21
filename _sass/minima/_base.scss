@@ -61,6 +61,28 @@ img {
   vertical-align: middle;
 }
 
+/**
+ * Button
+ */
+
+button {
+  @include themify($themes) {
+    border: solid themed('primaryBtnBgColor'); 
+    background-color: themed('primaryBtnBgColor'); 
+    color: themed('primaryBtnTextColor');
+  }
+  border-radius: 5px;
+  font-weight: bold;
+
+  &:hover {
+    @include themify($themes) {
+      border: solid themed('primaryBtnBgColor'); 
+      background-color: themed('primaryBtnTextColor'); 
+      color: themed('primaryBtnBgColor');
+    }
+  }
+}
+
 
 /**
  * Figures
