@@ -3,7 +3,7 @@ layout: page
 title: "On it Card Game"
 dates: "2019"
 description: "DA&D New Blood Award winning period education card game"
-icon: onit.JPG
+icon: "onit.png"
 # external_link: "https://www.dandad.org/awards/new-blood/2019/mckinsey-design-the-case-for-her/3444/on-it/"
 ---
 

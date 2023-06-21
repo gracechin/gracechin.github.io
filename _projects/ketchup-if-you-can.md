@@ -3,7 +3,7 @@ layout: page
 title: "Ketchup If You Can"
 dates: "2018"
 description: "A toy to help rehabilitate children with hemiplegic cerebral palsy"
-icon: ketchup.JPG
+icon: "ketchup.png"
 video: https://www.youtube.com/embed/tEUqCEllvD0
 ---
 
