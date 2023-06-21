@@ -4,6 +4,7 @@ title: "Running & Drawing for Mind"
 dates: "2019"
 description: "Half-marathon to fundraise for a mental health charity"
 icon: "half-marathon.jpg"
+skills: "drawing, Inkscape"
 ---
 
 Thanks to the contributions of all the donors, we raised over 600 pounds for [_Mind_](https://www.mind.org.uk/) (a mental health charity)!
@@ -59,6 +60,6 @@ _Comic on the snapshot moments of the London Half-Marathon day_
 [8]: {{site.url}}/assets/pages/half-marathon/what_energy.png
 [9]: {{site.url}}/assets/pages/half-marathon/running_routine.jpg
 [10]: {{site.url}}/assets/pages/half-marathon/wind_wrestling.png
-[11]: {{site.url}}/assets/pages/half-marathon/legally_blond.png
+[11]: {{site.url}}/assets/pages/half-marathon/legally_blond.jpg
 [12]: {{site.url}}/assets/pages/half-marathon/behind_the_scenes.png
 [13]: {{site.url}}/assets/pages/half-marathon/snap_shot_moments.png

@@ -24,7 +24,7 @@ $semibold-font-weight: 600;
 
 // Spacing
 
-$spacing-unit: 30px !default;
+$spacing-unit: 15px !default;
 $section-spacing-unit: $spacing-unit*2;
 
 // Colors
@@ -89,6 +89,10 @@ $themes: (
 
 @function themed($key) {
   @return map-get($theme-map, $key);
+}
+
+@function tint($color, $percentage) {
+  @return mix(themed("bgColor"), $color, $percentage);
 }
 
 // Responsive media

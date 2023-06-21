@@ -4,7 +4,7 @@ title: "On it Card Game"
 dates: "2019"
 description: "DA&D New Blood Award winning period education card game"
 icon: "onit.png"
-# external_link: "https://www.dandad.org/awards/new-blood/2019/mckinsey-design-the-case-for-her/3444/on-it/"
+skills: "Adobe Illustrator, Adobe Premiere Pro"
 ---
 
 [This project](https://www.dandad.org/awards/new-blood/2019/mckinsey-design-the-case-for-her/3444/on-it/) won a [D&AD New Blood Pencil award](https://www.dandad.org/profiles/jury/517866/mckinsey-design-the-case-for-her/) in 2019.

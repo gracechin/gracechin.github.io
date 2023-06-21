@@ -107,7 +107,7 @@ h1, h2, h3, h4, h5, h6 {
 .title {
   @include relative-font-size(2.5);
   font-family: $title-font-family;
-  margin-bottom: $spacing-unit*1.5;
+  margin-bottom: $spacing-unit;
 }
 
 .subtitle {

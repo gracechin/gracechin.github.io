@@ -5,6 +5,7 @@ dates: "2018"
 description: "A toy to help rehabilitate children with hemiplegic cerebral palsy"
 icon: "ketchup.png"
 video: https://www.youtube.com/embed/tEUqCEllvD0
+skills: "3D printing, SolidWorks"
 ---
 
 As part of a university project, I worked in a team of 5 to develop, _Ketchup If You Can_, a toy designed to rehabilitate children aged 5-12 with hemiplegic cerebral palsy. The toy is inspired by an existing toy called _Bop It!_. The ketchup-themed toy instructs the player to perform a certain move, and if the player completes the move correctly within a time limit, they receive rewarding audio and haptic feedback. The game becomes more challenging as the player levels up, with the time limit decreasing.

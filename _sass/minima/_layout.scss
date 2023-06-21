@@ -294,16 +294,24 @@ a.page-link:focus {
       font-family: $subheading-font-family;
       font-style: normal;
       margin-top: 10px;
-      margin-bottom: 5px;
     }
 
     .description {
       @include themify($themes) {
         color: themed('textColor');  
       }
-      @include relative-font-size(1);
+      @include relative-font-size(0.9);
       font-family: $paragraph;
       font-weight: normal;
+      margin-bottom: $spacing-unit*0.5;
+    }
+
+    .skills {
+      @include relative-font-size(0.8);
+      font-weight: normal;
+      @include themify($themes) {
+        color: tint(themed('textColor'),  30%);  
+      }
     }
   }
 }
@@ -311,6 +319,12 @@ a.page-link:focus {
 .project-item:hover {
   @include themify($themes) {
     background-color: themed('itemHoverColor');  
+  }
+
+  img {
+    @include themify($themes) {
+      background-color: themed('bgColor');  
+    }
   }
 }
 
