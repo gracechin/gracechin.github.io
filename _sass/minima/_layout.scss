@@ -308,12 +308,17 @@ a.page-link:focus {
 
     .skills {
       @include relative-font-size(0.8);
-      font-weight: normal;
-      @include themify($themes) {
-        color: tint(themed('textColor'),  30%);  
-      }
+      margin-bottom: 0;
     }
   }
+}
+
+.skills {
+  font-weight: normal;
+  @include themify($themes) {
+    color: tint(themed('textColor'),  30%);  
+  }
+  margin-bottom: $spacing-unit*0.5;
 }
 
 .project-item:hover {
