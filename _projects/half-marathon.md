@@ -7,48 +7,59 @@ icon: "half-marathon.jpg"
 skills: "drawing, Inkscape"
 ---
 
-Thanks to the contributions of all the donors, we raised over 600 pounds for [_Mind_](https://www.mind.org.uk/) (a mental health charity)!
-
-To raise funds and awareness, I documented my running training journey through [a blog](https://www.facebook.com/gracerunningformind/), where I shared short comics and photos with supporters.
+Thanks to the contributions of all the donors, we raised over 600 pounds for [_Mind_](https://www.mind.org.uk/) (a mental health charity)! To raise funds and awareness, I documented my running training journey through [a Facebook blog](https://www.facebook.com/gracerunningformind/), where I shared self-illustrated short comics and photos with supporters.
 
 ![Half marathon running regrets short comic][1]
-_Comic on current self being frustrated with past self_
+
+<figcaption>Comic on current self being frustrated with past self</figcaption>
 
 ![Half marathon running post panic short comic][2]
-_Comic on panicking when I need to post something online_
+
+<figcaption>Comic on panicking when I need to post something online</figcaption>
 
 ![Half marathon running training program short comic][3]
-_Comic on my running training program_
+
+<figcaption>Comic on my running training program</figcaption>
 
 ![Half marathon running change in mindset short comic][4]
-_Comic on how running has changed my mindset_
+
+<figcaption>Comic on how running has changed my mindset</figcaption>
 
 ![Half marathon running thank you short comic][5]
-_Thanking supporters_
+
+<figcaption>Thanking supporters</figcaption>
 
 ![Half marathon running how slow do I go short comic][6]
-_Comic on how slow I run_
+
+<figcaption>Comic on how slow I run</figcaption>
 
 ![Half marathon running interval training short comic][7]
-_Comic on my attempt in doing interval training_
+
+<figcaption>Comic on my attempt in doing interval training</figcaption>
 
 ![Half marathon running what energy short comic][8]
-_Comic on crossing the street whilst running_
+
+<figcaption>Comic on crossing the street whilst running</figcaption>
 
 ![Half marathon running routine short comic][9]
-_Comic on my running routine_
+
+<figcaption>Comic on my running routine</figcaption>
 
 ![Half marathon running wind wrestling short comic][10]
-_Comic on wrestling the wind while running_
+
+<figcaption>Comic on wrestling the wind while running</figcaption>
 
 ![Half marathon running listening to legally blond on repeat short comic][11]
-_Comic on listening to Legally Blond while training_
+
+<figcaption>Comic on listening to Legally Blond while training</figcaption>
 
 ![Half marathon running behind the scenes short comic][12]
-_Comic on behind the scenes of the London Half-Marathon day_
+
+<figcaption>Comic on behind the scenes of the London Half-Marathon day</figcaption>
 
 ![Half marathon running snapshot moments short comic][13]
-_Comic on the snapshot moments of the London Half-Marathon day_
+
+<figcaption>Comic on the snapshot moments of the London Half-Marathon day</figcaption>
 
 [1]: {{site.url}}/assets/pages/half-marathon/regret-comic.jpg
 [2]: {{site.url}}/assets/pages/half-marathon/post_panic.jpg

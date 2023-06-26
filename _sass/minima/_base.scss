@@ -93,6 +93,11 @@ figure > img {
 
 figcaption {
   font-size: $small-font-size;
+  margin-bottom: $spacing-unit;
+  text-align: center;
+  @include themify($themes) {
+    color: themed('textCaptionColor');
+  }
 }
 
 
