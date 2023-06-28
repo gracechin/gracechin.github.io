@@ -4,15 +4,13 @@ title: To WordPress Or Not To WordPress
 date: 2023-06-26
 ---
 
-In starting this blog, I decided I would take this opportunity to try out and give my verdict on [WordPress.com](https://wordpress.com/). It is a popularly-used and recommended content management system.
+In starting a blog, I decided I would try out [WordPress.com](https://wordpress.com/). It is a popularly-used and regularly-recommended content management system. While it is popular, there are people who dislike it. For example, my web idol, _Lynn Fisher_, [migrated her blog away from WordPress](https://lynnandtonic.com/thoughts/entries/the-nbsp-was-breaking-after-all/). Also, an ex-colleague of mine, whom I look up to, strongly expressed his distaste for it. Despite these warnings, I thought "_It can't be that bad if it's that popular_" and decided to give it a try.
 
-While there are definitely people who like WordPress, I also know people who dislike it. For example, my web artist idol, _Lynn Fisher_, wrote a [post](https://lynnandtonic.com/thoughts/entries/the-nbsp-was-breaking-after-all/) regarding her blog migration away from WordPress. A previous colleague of mine, whom I looked up to, also expressed his distaste for WordPress. Despite these warnings, I thought "_It can't be that bad if it's that popular_" and decided to give it a go.
-
-After spending a couple hours toying around and building my blog site, like Lynn, various small but irritating aspects in WordPress slowly surfaced:
+After spending a couple of hours toying around and building my blog site, various small but irritating aspects of WordPress slowly surfaced.
 
 ### Pay For Design Freedom
 
-The appearance of a WordPress site is dictated by a selected `theme`, which displays the site's contents (e.g. text, images) in the specific theme's design. There are a multitude of opensourced themes to choose from and you can customise any chosen theme to your liking as long as you pay. In another words, if you want to change the colour scheme, typography, add custom CSS, or more, you will need to pay.
+The appearance of a WordPress site is dictated by a chosen `theme`. A theme takes the site's contents (e.g. text, images) and displays it using the theme's design. There are a multitude of opensourced themes to choose from which are customisable. But to customise certain aspects, you will need to pay. In another words, if you want to change the colour scheme, typography, add custom CSS, or more, you will need to pay.
 
 Though it may be worth it for some people, I was not particularly keen on the idea of paying for limited flexibility (i.e. customisable themes) when I can have even more flexibility (i.e. not use WordPress and themes) for free.
 
@@ -36,7 +34,7 @@ Left: WordPress editor - embedded Twitter post as expected
 
 ### Pay For Removing a Banner
 
-Finally, the last small thing which pushed me over towards not using WordPress was the banner. Before launching the site, I was busy spending hours getting around the paid customisations through trying various themes and seeing how far I could go without paying. It wasn't until I thought "_Okay, I have checked the site preview. I think I am happy with how it looks!_" and clicked `Launch site` does WordPress reveal that there was going to be an advertisement banner.
+Finally, the last small thing which pushed me over the edge of deciding not to use WordPress was the banner. Before launching the site, I spent hours getting around the paid customisations through trying various themes and seeing how far I could go without paying. It wasn't until I thought the site was ready and clicked `Launch site` did WordPress revealed that there was going to be an advertisement banner.
 
 ![WordPress banner](/assets/posties/2023-06-27/WordPress-banner.png)
 
@@ -44,10 +42,10 @@ Finally, the last small thing which pushed me over towards not using WordPress w
 Launched blog site with WordPress banner (much cry)
 </figcaption>
 
-To remove the advertisement banner, it required paying a monthly fee, which I was not keen to do. As opposed to paying to gain something, I would be paying to remove something that not using WordPress would already give me.
+To remove the advertisement banner, it required paying a monthly fee, which I was not keen to do. As opposed to paying to gain something, I would be paying to remove something that not using WordPress would give me.
 
 ### So, what now?
 
 For my blog, I think I will stay away from content management systems for the sake of maximising flexibility and minimising costs.
 
-Despite not using WordPress in the end, I am happy I gave it a chance. Though I will not be using what I designed in WordPress, it definitely did give me an idea of what I want my blog to look like. I think if payment wasn't an issue, WordPress would probably be worth the hype.
+Despite not using WordPress in the end, I'm glad I gave it a chance. Though I will not be using what I built in WordPress, it definitely did gave me an idea of what I want my blog to look like. I think if money wasn't an issue, WordPress may be worth the hype.
