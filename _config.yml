@@ -24,6 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   I like creating things. Here, I share my projects.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: https://gracechin.github.io
+blogurl: https://gracechinblog.netlify.app/
 github_username: gracechin
 linkedin_username: gracehychin
 
