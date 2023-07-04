@@ -1,26 +1,36 @@
 ---
 layout: default
 ---
-<article class="post">
 
+<article class="post">
   <header class="post-header">
     <h1 class="post-title">{{ page.title | escape }}</h1>
     {%- if page.link_to_project -%}
-      <button onclick="window.open(
+    <button
+      onclick="window.open(
         '{{page.link_to_project}}',
         '_blank'
-      );" type="button">Visit Project</button>
+      );"
+      type="button"
+    >
+      Visit Project
+    </button>
+    {%- endif -%} {%- if page.github-url -%}
+    <button
+      onclick="window.open(
+      '{{page.link_to_project}}',
+      '_blank'
+    );"
+      type="button"
+    >
+      Github
+    </button>
     {%- endif -%}
   </header>
 
   {%- if page.skills -%}
-  <div class="skills">
-    🛠️ {{page.skills}}
-  </div>
+  <div class="skills">🛠️ {{page.skills}}</div>
   {%- endif -%}
-  
-  <div class="{{ page.collection }}-content">
-    {{ content }}
-  </div>
 
+  <div class="{{ page.collection }}-content">{{ content }}</div>
 </article>

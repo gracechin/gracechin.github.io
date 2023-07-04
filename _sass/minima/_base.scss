@@ -59,6 +59,9 @@ main {
 img {
   max-width: 100%;
   vertical-align: middle;
+  @include themify($themes) {
+    background-color: themed('imgBgColor'); ;
+  }
 }
 
 /**
@@ -73,6 +76,7 @@ button {
   }
   border-radius: 5px;
   font-weight: bold;
+  margin-right: 10px;
 
   &:hover {
     @include themify($themes) {

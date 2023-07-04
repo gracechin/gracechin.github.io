@@ -325,12 +325,6 @@ a.page-link:focus {
   @include themify($themes) {
     background-color: themed('itemHoverColor');  
   }
-
-  img {
-    @include themify($themes) {
-      background-color: themed('bgColor');  
-    }
-  }
 }
 
 /**

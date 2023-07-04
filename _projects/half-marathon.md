@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Running & Drawing for Mind"
+title: Fundraising for Mind
 dates: "2019"
 description: "Half-marathon to fundraise for a mental health charity"
 icon: "half-marathon.jpg"
