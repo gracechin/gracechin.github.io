@@ -1,0 +1,466 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=League+Spartan:wght@600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
+/* Base */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1em;
+  font-weight: 400;
+  color: #2e2f26;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "League Spartan", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #b73c55;
+}
+
+hr {
+  color: grey;
+  margin: 20px 0;
+}
+
+pre,
+code {
+  background-color: rgb(253, 246, 227);
+  border-radius: 5px;
+  color: #e83e8c;
+  padding: 0 5px;
+  font-size: 1.2em;
+}
+
+span {
+  color: grey;
+}
+
+a {
+  color: #b73c55;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: #b73c55 underline 3px;
+}
+
+button {
+  border: 2px solid #b73c55;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: transparent;
+  font-size: 1em;
+  font-weight: bold;
+  color: #b73c55;
+  margin: 20px 0;
+}
+button:hover {
+  background-color: #b73c55;
+  color: white;
+}
+
+/* Navigation bar */
+.wrapper {
+  margin: 0 5%;
+}
+
+nav > ul {
+  list-style-type: none;
+  margin: 20px 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+nav > ul a {
+  color: #b73c55;
+  text-decoration: none;
+  font-family: "League Spartan", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 600;
+  pointer-events: auto;
+}
+nav > ul li {
+  display: inline;
+  padding: 5px 7px;
+  border-radius: 3px;
+  border: 2px solid transparent;
+  font-size: 1.25em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+nav > ul li:has(> a):hover {
+  background-color: #b73c55;
+}
+nav > ul li:has(> a):hover a {
+  color: white;
+}
+nav > ul li.nav-brand {
+  border: 2px solid #b73c55;
+}
+
+/* Home */
+.home .card {
+  margin: 20px 0;
+  color: white;
+  padding: 40px;
+  background-color: #b73c55;
+  border-radius: 30px;
+}
+.home .card h1 {
+  font-size: 2em;
+  color: white;
+}
+.home .card .card-container {
+  max-width: 650px;
+  margin: auto;
+  font-size: 1.25em;
+}
+
+/* Post List */
+.post-list {
+  margin: 5%;
+}
+.post-list h2 {
+  font-size: 2.5em;
+  text-transform: uppercase;
+}
+.post-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+.post-list ul .icon {
+  display: block;
+  position: relative;
+  float: left;
+  z-index: 1;
+  margin: 0;
+  margin-right: 16px;
+}
+.post-list ul .icon img {
+  float: left;
+  width: 80px;
+  height: 80px;
+  border-radius: 2px;
+}
+.post-list ul h3 {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+.post-list ul span {
+  margin: 0;
+  padding: 0;
+  font-size: 0.8em;
+}
+.post-list ul p {
+  margin-top: 10px;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* Post page */
+.post article {
+  max-width: 700px;
+  margin: auto;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 300px;
+  line-height: 25px;
+}
+.post article hr {
+  border: 1px solid #b73c55;
+}
+.post article header h1 {
+  font-size: 2em;
+}
+.post article a {
+  color: #b73c55;
+}
+.post nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.post nav .right {
+  text-align: right;
+  right: 0;
+  margin-left: 5px;
+}
+.post nav .left {
+  text-align: left;
+  left: 0;
+  margin-right: 5px;
+}
+.post img {
+  border: 2px solid #8fa3c4;
+  border-radius: 5px;
+}
+
+/* Media */
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+figcaption {
+  font-size: 0.9em;
+  text-align: center;
+  color: grey;
+}
+
+.video-container {
+  width: 100%;
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Tag page */
+.tag-page {
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: right;
+  text-align: center;
+  margin: 20px;
+}
+
+.github-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-image: url(/assets/icon/github.svg);
+  vertical-align: baseline;
+  margin: 5px;
+}
+
+.linkedin-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  background-image: url(/assets/icon/linkedin.svg);
+}
+
+.email {
+  margin: 5px;
+}
+
+/* Home page banner */
+.cover-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+}
+.cover-container .cover-banner {
+  position: relative;
+  border-radius: 30px;
+}
+.cover-container .cover-banner .home {
+  -webkit-mask: url(/assets/about/home-hk.svg) no-repeat center/auto 85vh;
+  mask: url(/assets/about/home-hk.svg) no-repeat center/auto 85vh;
+  height: 90vh;
+  width: auto;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: auto 90%;
+  background-color: #b73c55;
+}
+.cover-container .cover-banner .me {
+  background-image: url(/assets/about/me-0.svg);
+  height: 90vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-repeat: no-repeat;
+  background-position: 50% 75%;
+  background-size: auto 60%;
+  width: 100vw;
+  animation-fill-mode: forwards;
+  animation-name: me-sayin-hello;
+  animation-duration: 1s;
+  animation-delay: 1s;
+}
+
+@keyframes me-sayin-hello {
+  0% {
+    background-image: url(/assets/about/me-1.svg);
+  }
+  23% {
+    background-image: url(/assets/about/me-1.svg);
+  }
+  25% {
+    background-image: url(/assets/about/me-2.svg);
+  }
+  47% {
+    background-image: url(/assets/about/me-2.svg);
+  }
+  50% {
+    background-image: url(/assets/about/me-3.svg);
+  }
+  73% {
+    background-image: url(/assets/about/me-3.svg);
+  }
+  75% {
+    background-image: url(/assets/about/me-4.svg);
+  }
+  98% {
+    background-image: url(/assets/about/me-4.svg);
+  }
+  100% {
+    background-image: url(/assets/about/me-5.svg);
+  }
+}
+.switch-input {
+  display: none;
+}
+
+.light-switch {
+  z-index: 1;
+  position: absolute;
+  top: 30%;
+  margin-left: 250px;
+  left: 50%;
+  display: block;
+  width: 5vh;
+  height: 5vh;
+}
+.light-switch .platform {
+  margin: auto;
+  margin-top: 10%;
+  width: 90%;
+  height: 80%;
+  background: white;
+  border: solid 1px #b73c55;
+  border-radius: 3%;
+}
+.light-switch .platform .button {
+  margin: auto;
+  margin-top: 20%;
+  width: 60%;
+  height: 60%;
+  background: #b73c55;
+  border: solid 1px #b73c55;
+  border-radius: 5%;
+}
+.light-switch .platform .switch {
+  margin: auto;
+  position: relative;
+  width: 100%;
+  height: 95%;
+  border-radius: 5%;
+  background-color: white;
+}
+.light-switch .platform .light {
+  position: absolute;
+  margin: auto;
+  margin-left: 45%;
+  margin-top: 70%;
+  width: 10%;
+  height: 5%;
+  border-radius: 25%;
+  background: #b73c55;
+}
+
+.about {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.2em;
+}
+.about h1 {
+  text-transform: uppercase;
+}
+.about p {
+  line-height: 1.5em;
+}
+
+@keyframes moveSide1 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes moveSide2 {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+#light-switch:checked ~ .cover-container .cover-banner {
+  background-color: #2e2f26;
+}
+#light-switch:checked ~ .cover-container .home {
+  background-color: #ddd;
+}
+#light-switch:checked ~ .cover-container .me {
+  filter: brightness(0.75);
+}
+#light-switch:checked ~ .cover-container .me:after {
+  content: "";
+  background: radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, green 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, green 80%, transparent) , radial-gradient(farthest-side, blue 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, blue 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, green 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, blue 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, blue 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, green 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, blue 80%, transparent) , radial-gradient(farthest-side, green 80%, transparent) , radial-gradient(farthest-side, blue 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, blue 80%, transparent) , radial-gradient(farthest-side, green 80%, transparent) , radial-gradient(farthest-side, blue 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, blue 80%, transparent) , radial-gradient(farthest-side, blue 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, blue 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, green 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, green 80%, transparent) , radial-gradient(farthest-side, green 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, green 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, green 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, blue 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent);
+  background-position: 59% 47% , 68% 82% , 57% 52% , 57% 59% , 26% 89% , 70% 16% , 2% 76% , 3% 68% , 23% 74% , 14% 83% , 43% 8% , 40% 90% , 9% 69% , 36% 46% , 37% 54% , 62% 56% , 66% 100% , 67% 93% , 34% 14% , 13% 51% , 33% 15% , 5% 76% , 15% 17% , 61% 15% , 6% 31% , 34% 82% , 9% 90% , 64% 7% , 47% 11% , 69% 33% , 81% 72% , 31% 15% , 77% 74% , 50% 11% , 78% 63% , 91% 51% , 89% 21% , 11% 55% , 6% 50% , 71% 50% , 76% 34% , 16% 73% , 87% 16% , 45% 33% , 9% 92% , 59% 3% , 8% 94% , 24% 60% , 100% 81% , 17% 29% , 51% 95% , 61% 2% , 78% 23% , 57% 45% , 6% 57% , 42% 24% , 36% 35% , 69% 8% , 4% 31% , 38% 100% , 87% 62% , 97% 87% , 84% 19% , 60% 34% , 27% 99% , 30% 50% , 98% 67% , 60% 10% , 37% 33% , 91% 51% , 62% 78% , 80% 7% , 91% 55% , 98% 2% , 77% 19% , 27% 13% , 23% 66% , 89% 22% , 91% 74% , 40% 22%;
+  background-size: 75px 75px , 75px 75px , 69px 69px , 68px 68px , 102px 102px , 71px 71px , 68px 68px , 77px 77px , 83px 83px , 110px 110px , 119px 119px , 104px 104px , 92px 92px , 100px 100px , 90px 90px , 107px 107px , 100px 100px , 83px 83px , 64px 64px , 72px 72px , 86px 86px , 76px 76px , 62px 62px , 113px 113px , 91px 91px , 61px 61px , 108px 108px , 63px 63px , 120px 120px , 94px 94px , 68px 68px , 88px 88px , 71px 71px , 116px 116px , 90px 90px , 74px 74px , 117px 117px , 76px 76px , 108px 108px , 72px 72px , 81px 81px , 118px 118px , 66px 66px , 62px 62px , 71px 71px , 76px 76px , 83px 83px , 118px 118px , 116px 116px , 81px 81px , 80px 80px , 107px 107px , 95px 95px , 107px 107px , 105px 105px , 88px 88px , 118px 118px , 88px 88px , 90px 90px , 69px 69px , 99px 99px , 98px 98px , 101px 101px , 113px 113px , 107px 107px , 66px 66px , 105px 105px , 92px 92px , 101px 101px , 100px 100px , 83px 83px , 73px 73px , 105px 105px , 109px 109px , 108px 108px , 88px 88px , 92px 92px , 81px 81px , 80px 80px , 106px 106px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  background-repeat: no-repeat;
+  animation: moveSide1 10s linear infinite;
+}
+#light-switch:checked ~ .cover-container .me:before {
+  content: "";
+  background: radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, blue 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, green 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, green 80%, transparent) , radial-gradient(farthest-side, green 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, green 80%, transparent) , radial-gradient(farthest-side, blue 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, green 80%, transparent) , radial-gradient(farthest-side, blue 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, blue 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, blue 80%, transparent) , radial-gradient(farthest-side, blue 80%, transparent) , radial-gradient(farthest-side, blue 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, green 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, green 80%, transparent) , radial-gradient(farthest-side, blue 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, blue 80%, transparent) , radial-gradient(farthest-side, green 80%, transparent) , radial-gradient(farthest-side, green 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, green 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, green 80%, transparent) , radial-gradient(farthest-side, blue 80%, transparent) , radial-gradient(farthest-side, orange 80%, transparent) , radial-gradient(farthest-side, yellow 80%, transparent) , radial-gradient(farthest-side, green 80%, transparent) , radial-gradient(farthest-side, red 80%, transparent) , radial-gradient(farthest-side, purple 80%, transparent);
+  background-position: 10% 82% , 99% 61% , 14% 17% , 69% 63% , 63% 96% , 1% 69% , 14% 10% , 38% 78% , 42% 4% , 37% 66% , 98% 23% , 73% 70% , 100% 38% , 68% 52% , 74% 15% , 87% 97% , 24% 24% , 43% 43% , 55% 11% , 48% 54% , 53% 76% , 68% 13% , 45% 71% , 13% 50% , 79% 21% , 98% 57% , 12% 92% , 19% 11% , 80% 42% , 24% 5% , 50% 85% , 33% 78% , 27% 43% , 68% 62% , 64% 100% , 84% 25% , 24% 23% , 12% 35% , 10% 71% , 95% 75% , 7% 94% , 20% 54% , 86% 2% , 49% 100% , 27% 32% , 47% 31% , 57% 31% , 62% 31% , 44% 17% , 62% 19% , 34% 77% , 44% 54% , 77% 46% , 72% 8% , 76% 17% , 100% 1% , 58% 93% , 51% 35% , 20% 69% , 40% 48% , 77% 49% , 99% 65% , 76% 16% , 21% 48% , 94% 1% , 15% 20% , 24% 86% , 90% 10% , 44% 30% , 76% 59% , 92% 73% , 65% 4% , 6% 3% , 46% 11% , 40% 3% , 27% 66% , 61% 86% , 86% 91% , 91% 53% , 5% 1%;
+  background-size: 74px 74px , 72px 72px , 113px 113px , 79px 79px , 68px 68px , 99px 99px , 86px 86px , 116px 116px , 119px 119px , 104px 104px , 70px 70px , 68px 68px , 88px 88px , 72px 72px , 120px 120px , 98px 98px , 100px 100px , 100px 100px , 94px 94px , 96px 96px , 66px 66px , 109px 109px , 92px 92px , 118px 118px , 120px 120px , 66px 66px , 73px 73px , 104px 104px , 113px 113px , 73px 73px , 106px 106px , 94px 94px , 94px 94px , 91px 91px , 76px 76px , 85px 85px , 116px 116px , 117px 117px , 74px 74px , 62px 62px , 106px 106px , 93px 93px , 83px 83px , 89px 89px , 120px 120px , 107px 107px , 75px 75px , 64px 64px , 105px 105px , 67px 67px , 114px 114px , 82px 82px , 61px 61px , 108px 108px , 86px 86px , 65px 65px , 83px 83px , 67px 67px , 106px 106px , 101px 101px , 88px 88px , 106px 106px , 78px 78px , 98px 98px , 84px 84px , 67px 67px , 75px 75px , 85px 85px , 90px 90px , 104px 104px , 100px 100px , 66px 66px , 105px 105px , 85px 85px , 111px 111px , 116px 116px , 70px 70px , 99px 99px , 95px 95px , 61px 61px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  background-repeat: no-repeat;
+  animation: moveSide2 10s linear infinite;
+}
+
+#light-switch:checked ~ #light-switch-label .platform {
+  background: #2e2f26;
+  border: solid 1px #ddd;
+}
+#light-switch:checked ~ #light-switch-label .platform .button {
+  background: #ddd;
+  border-color: #ddd;
+}
+#light-switch:checked ~ #light-switch-label .platform .switch {
+  background-color: #2e2f26;
+  margin-top: 4%;
+}
+#light-switch:checked ~ #light-switch-label .platform .light {
+  background: yellow;
+}
+
+/** Media responsiveness **/
+@media only screen and (max-width: 625px) {
+  #light-switch,
+  #light-switch-label {
+    display: none;
+  }
+}
