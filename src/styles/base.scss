@@ -1,0 +1,580 @@
+@charset "utf-8";
+@use "sass:math";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=League+Spartan:wght@600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
+
+//  Font
+
+$default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol" !default;
+$base-font-family: "Inter", -apple-system, BlinkMacSystemFont,
+  $default-font-family;
+$heading-font-family: "League Spartan", $default-font-family;
+$content-font-family: "Inter", -apple-system, BlinkMacSystemFont,
+  $default-font-family;
+
+$base-font-size: 1em !default;
+$base-font-weight: 400 !default;
+$small-font-size: $base-font-size * 0.875 !default;
+$base-line-height: 1.5 !default;
+
+$extra-bold-font-weight: 800;
+$bold-font-weight: 700;
+$semibold-font-weight: 600;
+
+// Spacing
+
+$spacing-unit: 15px !default;
+$section-spacing-unit: $spacing-unit * 2;
+
+// Colors
+
+$text-color: #2e2f26;
+$light-text-color: grey;
+$background-color: #ffffff !default;
+$primary-color: #b73c55 !default;
+$primary-color-light: #f4e2e6 !default;
+$secondary-color-light: #e7f0f5 !default;
+$secondary-color-dark: #8fa3c4;
+
+/* Base */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-weight: $base-font-weight;
+  color: $text-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $heading-font-family;
+  color: $primary-color;
+}
+
+hr {
+  color: grey;
+  margin: 20px 0;
+}
+
+pre,
+code {
+  background-color: rgb(253, 246, 227);
+  border-radius: 5px;
+  color: #e83e8c;
+  padding: 0 5px;
+  font-size: $base-font-size * 1.2;
+}
+
+span {
+  color: grey;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: $primary-color underline 3px;
+  }
+}
+
+button {
+  border: 2px solid $primary-color;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: transparent;
+  font-size: $base-font-size;
+  font-weight: bold;
+  color: $primary-color;
+  margin: 20px 0;
+
+  &:hover {
+    background-color: $primary-color;
+    color: white;
+  }
+}
+/* Navigation bar */
+
+.wrapper {
+  margin: 0 5%;
+}
+
+nav > ul {
+  list-style-type: none;
+  margin: 20px 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+
+  a {
+    color: $primary-color;
+    text-decoration: none;
+    font-family: $heading-font-family;
+    font-weight: $semibold-font-weight;
+    pointer-events: auto;
+  }
+
+  li {
+    display: inline;
+    padding: 5px 7px;
+    border-radius: 3px;
+    border: 2px solid transparent;
+    font-size: 1.25em;
+    text-transform: uppercase;
+    pointer-events: none;
+
+    &:has(> a) {
+      &:hover {
+        background-color: $primary-color;
+        a {
+          color: white;
+        }
+      }
+    }
+
+    &.nav-brand {
+      border: 2px solid $primary-color;
+    }
+  }
+}
+
+/* Home */
+
+.home {
+  .card {
+    margin: 20px 0;
+    color: white;
+    padding: 40px;
+    background-color: $primary-color;
+    border-radius: 30px;
+
+    h1 {
+      font-size: 2em;
+      color: white;
+    }
+
+    .card-container {
+      max-width: 650px;
+      margin: auto;
+      font-size: 1.25em;
+    }
+  }
+}
+
+/* Post List */
+
+.post-list {
+  margin: 5%;
+
+  h2 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    .icon {
+      display: block;
+      position: relative;
+      float: left;
+      z-index: 1;
+      margin: 0;
+      margin-right: 16px;
+
+      img {
+        float: left;
+        width: 80px;
+        height: 80px;
+        border-radius: 2px;
+      }
+    }
+
+    h3 {
+      font-size: 1.5em;
+      margin-bottom: 5px;
+    }
+
+    span {
+      margin: 0;
+      padding: 0;
+      font-size: 0.8em;
+    }
+
+    p {
+      margin-top: 10px;
+      font-family: $content-font-family;
+    }
+  }
+}
+
+/* Post page */
+
+.post {
+  article {
+    max-width: 700px;
+    margin: auto;
+    font-family: $content-font-family;
+    font-weight: 300px;
+    line-height: 25px;
+
+    hr {
+      border: 1px solid $primary-color;
+    }
+
+    header {
+      h1 {
+        font-size: 2em;
+      }
+    }
+
+    a {
+      color: $primary-color;
+    }
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+    .right {
+      text-align: right;
+      right: 0;
+      margin-left: 5px;
+    }
+
+    .left {
+      text-align: left;
+      left: 0;
+      margin-right: 5px;
+    }
+  }
+
+  img {
+    border: 2px solid $secondary-color-dark;
+    border-radius: 5px;
+  }
+}
+
+/* Media */
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+figcaption {
+  font-size: 0.9em;
+  text-align: center;
+  color: $light-text-color;
+}
+
+.video-container {
+  width: 100%;
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Tag page */
+
+.tag-page {
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  justify-content: right;
+  text-align: center;
+  margin: 20px;
+}
+
+.github-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-image: url(/assets/icon/github.svg);
+  vertical-align: baseline;
+  margin: 5px;
+}
+
+.linkedin-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  background-image: url(/assets/icon/linkedin.svg);
+}
+
+.email {
+  margin: 5px;
+}
+
+/* Home page banner */
+
+.cover-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+
+  .cover-banner {
+    position: relative;
+    border-radius: 30px;
+
+    .home {
+      -webkit-mask: url(/assets/about/home-hk.svg) no-repeat center/auto 85vh;
+      mask: url(/assets/about/home-hk.svg) no-repeat center/auto 85vh;
+      height: 90vh;
+      width: auto;
+      position: relative;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: auto 90%;
+      background-color: $primary-color;
+    }
+
+    .me {
+      background-image: url(/assets/about/me-0.svg);
+      height: 90vh;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-repeat: no-repeat;
+      background-position: 50% 75%;
+      background-size: auto 60%;
+      width: 100vw;
+      animation-fill-mode: forwards;
+      animation-name: me-sayin-hello;
+      animation-duration: 1s;
+      animation-delay: 1s;
+    }
+  }
+}
+
+@keyframes me-sayin-hello {
+  0% {
+    background-image: url(/assets/about/me-1.svg);
+  }
+  23% {
+    background-image: url(/assets/about/me-1.svg);
+  }
+  25% {
+    background-image: url(/assets/about/me-2.svg);
+  }
+  47% {
+    background-image: url(/assets/about/me-2.svg);
+  }
+  50% {
+    background-image: url(/assets/about/me-3.svg);
+  }
+  73% {
+    background-image: url(/assets/about/me-3.svg);
+  }
+  75% {
+    background-image: url(/assets/about/me-4.svg);
+  }
+  98% {
+    background-image: url(/assets/about/me-4.svg);
+  }
+  100% {
+    background-image: url(/assets/about/me-5.svg);
+  }
+}
+
+// Light switch
+// https://codepen.io/gracechin/pen/abaamgJ
+
+.switch-input {
+  display: none;
+}
+
+.light-switch {
+  z-index: 1;
+  position: absolute;
+  top: 30%;
+  margin-left: 250px;
+  left: 50%;
+  display: block;
+  width: 5vh;
+  height: 5vh;
+
+  .platform {
+    margin: auto;
+    margin-top: 10%;
+    width: 90%;
+    height: 80%;
+    background: white;
+    border: solid 1px $primary-color;
+    border-radius: 3%;
+
+    .button {
+      margin: auto;
+      margin-top: 20%;
+      width: 60%;
+      height: 60%;
+      background: $primary-color;
+      border: solid 1px $primary-color;
+      border-radius: 5%;
+    }
+
+    .switch {
+      margin: auto;
+      position: relative;
+      width: 100%;
+      height: 95%;
+      border-radius: 5%;
+      background-color: white;
+    }
+
+    .light {
+      position: absolute;
+      margin: auto;
+      margin-left: 45%;
+      margin-top: 70%;
+      width: 10%;
+      height: 5%;
+      border-radius: 25%;
+      background: $primary-color;
+    }
+  }
+}
+
+.about {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.2em;
+
+  h1 {
+    text-transform: uppercase;
+  }
+  p {
+    line-height: 1.5em;
+  }
+}
+
+// Disco time!
+
+$dark-bg-color: $text-color;
+$light-outline-color: #ddd;
+$disco-colors: red, orange, yellow, green, blue, purple;
+
+@function ball() {
+  @return radial-gradient(
+    farthest-side,
+    nth($disco-colors, random(length($disco-colors))) 80%,
+    transparent
+  );
+}
+
+@mixin disco-balls($n) {
+  $bg: null;
+  $bg-pos: null;
+  $bg-size: null;
+  @for $i from 1 through $n {
+    $s: math.random(60) + 60 + px;
+    $bg: $bg ball() #{if($i != $n, ",", "")};
+    $bg-pos: $bg-pos
+      percentage(math.random(100) / 100)
+      percentage(math.random(100) / 100)
+      #{if($i != $n, ",", "")};
+    $bg-size: $bg-size $s $s #{if($i != $n, ",", "")};
+  }
+  content: "";
+  background: $bg;
+  background-position: $bg-pos;
+  background-size: $bg-size;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  background-repeat: no-repeat;
+}
+
+@keyframes moveSide1 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes moveSide2 {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+#light-switch:checked ~ .cover-container {
+  .cover-banner {
+    background-color: $dark-bg-color;
+  }
+  .home {
+    background-color: $light-outline-color;
+  }
+  .me {
+    filter: brightness(0.75);
+    &:after {
+      @include disco-balls(80);
+      animation: moveSide1 10s linear infinite;
+    }
+    &:before {
+      @include disco-balls(80);
+      animation: moveSide2 10s linear infinite;
+    }
+  }
+}
+
+#light-switch:checked ~ #light-switch-label {
+  .platform {
+    background: $dark-bg-color;
+    border: solid 1px $light-outline-color;
+    .button {
+      background: $light-outline-color;
+      border-color: $light-outline-color;
+    }
+    .switch {
+      background-color: $dark-bg-color;
+      margin-top: 4%;
+    }
+    .light {
+      background: yellow;
+    }
+  }
+}
+
+/** Media responsiveness **/
+
+@media only screen and (max-width: 625px) {
+  #light-switch,
+  #light-switch-label {
+    display: none;
+  }
+}

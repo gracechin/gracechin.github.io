@@ -1,0 +1,38 @@
+---
+layout: base.html
+---
+
+{% assign previousPost = collections.posts | getPreviousCollectionItem: page %}
+{% assign nextPost = collections.posts | getNextCollectionItem: page %} {%-
+assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+
+<div class="post">
+  <article>
+    <header>
+      <h1>{{ title | escape }}</h1>
+      <span>{{ date | date: date_format }}</span>
+    </header>
+    <div>{{ content }}</div>
+    <p>
+      <span>
+        {% for t in tags %}
+        <a href="/tags/{{ t }}">#{{t}}</a>
+        {% endfor %}
+      </span>
+    </p>
+  </article>
+  <hr />
+  <nav>
+    <div class="col left">
+      {% if previousPost %}
+      <div>← Older</div>
+      <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>{% endif
+      %}
+    </div>
+    <div class="col right">
+      {% if nextPost %}
+      <div>Newer →</div>
+      <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>{% endif %}
+    </div>
+  </nav>
+</div>

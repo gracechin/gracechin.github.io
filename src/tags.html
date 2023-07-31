@@ -1,0 +1,37 @@
+---
+layout: base.html
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+permalink: /tags/{{ tag }}/
+---
+
+<div class="tag-page">
+  <div class="post-list">
+    <h2>#{{ tag }}</h2>
+    <ul>
+      {% for post in collections[tag] reversed %}
+      <li>
+        {% if post.data.icon %}
+        <a href="{{ post.url }}" class="icon"
+          ><img src="/assets/{{ post.data.icon }}"
+        /></a>
+        {% endif %}
+        <div>
+          <h3>
+            <a href="{{ post.url }}">{{ post.data.title }}</a>
+          </h3>
+          <span>{{ post.data.date | formatDate }}</span>
+          <span>
+            {% for t in post.data.tags %}
+            <a href="/tags/{{ t }}">#{{t}}</a>
+            {% endfor %}
+          </span>
+          <p>{{ post.data.page.excerpt | md | stripPara }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

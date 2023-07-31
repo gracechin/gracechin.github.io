@@ -1,0 +1,63 @@
+---
+layout: base.html
+---
+
+<input type="checkbox" id="light-switch" class="switch-input" />
+<label for="light-switch" class="light-switch" id="light-switch-label">
+  <div class="platform">
+    <div class="button">
+      <div class="switch"><div class="light"></div></div>
+    </div>
+  </div>
+</label>
+
+<div class="cover-container">
+  <div class="cover-banner">
+    <div class="home"></div>
+    <div class="me"></div>
+  </div>
+</div>
+
+<div class="home">
+  <div class="card">
+    <div class="card-container">
+      <h1>Welcome to Grace Space!</h1>
+      <p>
+        Hi, I am Grace Chin. I like making things, coding, and learning as I go.
+        In this little corner of the internet, I call "Grace Space", I document
+        my journey as a growing developer, as well as a designer.
+      </p>
+    </div>
+  </div>
+
+  {% assign featured_tags = "projects,dev,personal" | split: ',' %} {% for tag
+  in featured_tags %} {% assign latest_posts = collections[tag] | reverse %}
+  <div class="post-list">
+    <h2>#{{ tag }}</h2>
+    <ul>
+      {% for post in latest_posts limit:3 %}
+      <li>
+        {% if post.data.icon %}
+        <a href="{{ post.url }}" class="icon"
+          ><img src="/assets/{{ post.data.icon }}"
+        /></a>
+        {% endif %}
+        <div>
+          <h3>
+            <a href="{{ post.url }}">{{ post.data.title }}</a>
+          </h3>
+          <span>{{ post.data.date | formatDate }}</span>
+          <span>
+            {% for t in post.data.tags %}
+            <a href="/tags/{{ t }}">#{{t}}</a>
+            {% endfor %}
+          </span>
+          <p>{{ post.data.page.excerpt | md | stripPara }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+    <button onclick="window.location.href='/tags/{{tag}}';">View All</button>
+  </div>
+  {% endfor %}
+</div>

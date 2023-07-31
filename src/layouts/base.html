@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Grace Space</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="/styles/base.css" />
+
+    <!-- Syntax highlighting theme -->
+    <link
+      href="https://unpkg.com/prismjs@1.20.0/themes/prism-solarizedlight.css"
+      rel="stylesheet"
+    />
+
+    <!-- Preload me images for About page -->
+    {% for i in (1..5) %}
+    <link
+      rel="preload"
+      href="../assets/about/me-{{ i }}.svg"
+      as="image"
+      type="image/svg+xml"
+    />
+    {%- endfor -%}
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <nav>
+          <ul>
+            <li class="nav-brand"><a href="/">Grace Space</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>{{ content }}</main>
+      <footer>
+        <span class="email">gracechinhy@gmail.com</span>
+        <a href="https://github.com/gracechin"
+          ><span class="github-icon"></span
+        ></a>
+        <a href="https://www.linkedin.com/in/gracehychin/"
+          ><span class="linkedin-icon"></span
+        ></a>
+      </footer>
+    </div>
+  </body>
+</html>
