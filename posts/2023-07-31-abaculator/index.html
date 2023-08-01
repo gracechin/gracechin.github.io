@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Grace Space</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="/styles/base.css" />
+
+    <!-- Syntax highlighting theme -->
+    <link
+      href="https://unpkg.com/prismjs@1.20.0/themes/prism-solarizedlight.css"
+      rel="stylesheet"
+    />
+
+    <!-- Preload me images for About page -->
+    
+    <link
+      rel="preload"
+      href="../assets/about/me-1.svg"
+      as="image"
+      type="image/svg+xml"
+    />
+    <link
+      rel="preload"
+      href="../assets/about/me-2.svg"
+      as="image"
+      type="image/svg+xml"
+    />
+    <link
+      rel="preload"
+      href="../assets/about/me-3.svg"
+      as="image"
+      type="image/svg+xml"
+    />
+    <link
+      rel="preload"
+      href="../assets/about/me-4.svg"
+      as="image"
+      type="image/svg+xml"
+    />
+    <link
+      rel="preload"
+      href="../assets/about/me-5.svg"
+      as="image"
+      type="image/svg+xml"
+    /></head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <nav>
+          <ul>
+            <li class="nav-brand"><a href="/">Grace Space</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+
+<div class="post">
+  <article>
+    <header>
+      <h1>Abaculator (ABAcus + calCULATOR)</h1>
+      <span>Jul 31, 2023</span>
+    </header>
+    <div><p>A basic cal<strong>culator</strong> with <strong>aba</strong>cus visulisations and sounds 🧮</p>
+<p><a href="https://gracechin.github.io/abaculator/"><strong>→ Visit &quot;Abaculator&quot;</strong></a></p>
+<p><a href="https://github.com/gracechin/abaculator"><strong>→ View GitHub (source code)</strong></a></p>
+<p>The main idea behind abaculator is to spark the curiousity of visitors by giving them a glimpse of an abacus working in parrallel with the modern calculator. The abacus visulisations don't accurately show how the abacus performs different mathematical operations, but just representations of the whole numbers entered in the calculator.</p>
+<p>The inspiration for this project stems from my awe for the Chinese abacus, also known as the &quot;calculating tray&quot;. This ancient counting tool is constructed from a rectangular wooden frame, featuring two decks. The upper deck comprises of two beads, while the lower deck contains five beads. Even though calculators have replaced the abacus in most scenarios, it is still being used for calculations to this day.</p>
+<p><a href="https://gracechin.github.io/abaculator/"><img src="/assets/2023-07-31/abaculator.png" alt="Screenshot of the abaculator"></a></p>
+<figcaption>Screenshot of the Abaculator showing an abacus on the top and a calculator on the bottom</figcaption>
+<hr>
+<p>In this project, I used <a href="https://vuejs.org/">VueJS</a> for the first time. It is a &quot;progressive JavaScript framework&quot; that was first released in 2014. A <a href="https://survey.stackoverflow.co/2022/#most-popular-technologies-webframe">2022 Stack Overflow survey</a> revealed that 18.82% of respondants used VueJS. While it is not as popular as React, I still wanted to give it a go and see what it is like. From what I read, it is quite easy to learn especially since I already have a bit of experience with React.</p>
+<p><a href="https://survey.stackoverflow.co/2022/#most-popular-technologies-webframe"><img src="/assets/2023-07-31/web_frameworks_tech.jpg" alt="2022 Web frameworks and technologies popularity"></a></p>
+<figcaption>Chart showing popularity of different web frameworks and technologies based on data from a 2022 Stack Overflow survey</figcaption>
+<h1>Building the Calculator</h1>
+<p>To create a calculator component, I followed two Youtube tutorials, <a href="https://www.youtube.com/watch?v=m1_ih43p24s&amp;ab_channel=freeCodeCamp.org">&quot;Build a Calulator with Vue.js&quot;</a> (thank you freeCodeCamp.org!) and <a href="https://www.youtube.com/watch?v=SLk0lfUX3PY&amp;ab_channel=ProgrammerNotes">&quot;Build a calculator app with VueJS&quot;</a> (thank you Programmer Notes!).</p>
+<p>In Vue, single-file components (file extension <code>.vue</code>) have three parts:</p>
+<ol>
+<li>the <strong><code>&lt;template&gt;</code></strong> section, which uses an HTML-based syntax to enable data-dependent DOM rendering.</li>
+<li>the <strong><code>&lt;script&gt;</code></strong> section, which uses JavaScript and is responsible for handling data manipulation and states, as well as importing components.</li>
+<li>the <strong><code>&lt;style&gt;</code></strong> section, which uses CSS. The <code>scoped</code> attribute can be added to specify that the CSS only applies to the current component.</li>
+</ol>
+<pre class="language-html"><code class="language-html"><span class="token comment">&lt;!-- example_vue_single_file_component.vue --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>{{ msg }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">msg</span><span class="token operator">:</span> <span class="token string">"Hello world!"</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">.example</span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<p>To create the calculator buttons, I used Vue's built-in <code>v-for</code> directive to render the div block multiple times. The <code>calculatorElements</code> array contains the content of the buttons, which includes numbers and operators such as 7, 8, 9, /, 4, 5, 6, x, 1, 2, 3, +, C, 0, =, and -.</p>
+<p>The <code>:class</code> attribute binding was used to conditionally render the operator CSS class, allowing the operator buttons to be a different color than the number buttons.</p>
+<pre class="language-html"><code class="language-html"><span class="token comment">&lt;!-- Calculator.vue --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span>
+  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span>
+  <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>n in calculatorElements<span class="token punctuation">"</span></span>
+  <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>n<span class="token punctuation">"</span></span>
+  <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{ 'operator': ['/', 'x', '+', 'C', '=', '-'].includes(n) }<span class="token punctuation">"</span></span>
+  <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>action(n)<span class="token punctuation">"</span></span>
+<span class="token punctuation">></span></span>
+  {{ n }}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>To handle the click effects, I used a <code>v-on</code> event listener to trigger the <code>action</code> method. Within the <code>v-for</code> loop, I passed the looped item directly into the action method, which made it very convenient to handle the effects when different buttons were clicked. It was a straightforward process to handle the click events and execute the necessary actions based on the button that was clicked.</p>
+<h1>Building the Abacus</h1>
+<p>Unlike the calculator component, the abacus component was created from scratch without a tutorial. I mainly used a combination of SASS <code>mixin</code>s and Vue built-in directives and bindings.</p>
+<p>To render the multiple columns of the abacus, I used the <code>v-for</code> directive. Each column consists of an upper deck <code>&lt;div class=&quot;deck-upper&quot;&gt;</code> and a lower deck <code>&lt;div class=&quot;deck-lower&quot;&gt;</code>. Within each deck, I used another <code>v-for</code> to render the beads for the upper and lower decks.</p>
+<pre class="language-html"><code class="language-html"><span class="token comment">&lt;!-- Abacus.vue --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span>
+  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col<span class="token punctuation">"</span></span>
+  <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(val, idx) in this.$store.state.abacusArr<span class="token punctuation">"</span></span>
+  <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>idx<span class="token punctuation">"</span></span>
+  <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>`col-${val}`<span class="token punctuation">"</span></span>
+<span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>deck deck-upper<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bead<span class="token punctuation">"</span></span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>upperBead in 2<span class="token punctuation">"</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>upperBead<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>deck deck-lower<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bead<span class="token punctuation">"</span></span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>lowerBead in 5<span class="token punctuation">"</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>lowerBead<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p><img src="/assets/2023-07-31/abacus_col.jpg" alt="Diagram showing how the abacus is coded by column"></p>
+<figcaption>Diagram showing how the abacus is coded by column</figcaption>
+<p>In an abacus, each column represents a digit of the displayed number, which means that the state of the abacus can be defined using an array of digits. For example, if the number displayed on the abacus is 357, the rightmost column would represent 7, the column to the left of it would represent 5, and the column two spaces to the left of it would represent 3. Therefore, the abacus state for this number can be represented as <code>[0, 0, 0, 0, 0, 3, 5, 7]</code>, where each element in the array corresponds to the digit represented by a particular column in the abacus.</p>
+<p><img src="/assets/2023-07-31/abacus_357.jpg" alt="Diagram showing how number 357 is represented using the abacus"></p>
+<p>Each column in an abacus represents the possible digits 0-9 using different bead configurations. To achieve this in my abacus component, I utilized SASS CSS <code>@mixins</code> to define the possible bead configurations for each digit.</p>
+<p>The <code>activate-deck-beads</code> mixin was used to translate the beads for the upper and lower decks. Meanwhile, the <code>generate-col-beads-classes</code> mixin was used to generate the classes for each digit, such that <code>col-1</code> class configures the beads to represent number 1, <code>col-2</code> class configures the beads to represent number 2, <code>col-3</code> class configures the beads to represent number 3, and so on.</p>
+<p>By using these mixins, I was able to easily generate the necessary CSS classes to represent the different bead configurations for each digit.</p>
+<pre class="language-css"><code class="language-css"><span class="token comment">/* Abacus.vue */</span>
+
+$<span class="token property">upper-deck</span><span class="token punctuation">:</span> <span class="token string">"upper"</span><span class="token punctuation">;</span>
+$<span class="token property">lower-deck</span><span class="token punctuation">:</span> <span class="token string">"lower"</span><span class="token punctuation">;</span>
+
+<span class="token atrule"><span class="token rule">@mixin</span> <span class="token function">activate-deck-beads</span><span class="token punctuation">(</span>$n<span class="token punctuation">,</span> $deck<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@if</span> <span class="token punctuation">(</span>$n > 0<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+    <span class="token atrule"><span class="token rule">@for</span> $i from 1 through $n</span> <span class="token punctuation">{</span>
+      <span class="token atrule"><span class="token rule">@if</span> $deck == $upper-deck</span> <span class="token punctuation">{</span>
+        <span class="token selector">.deck-upper > .bead:nth-child(#</span><span class="token punctuation">{</span>3-$i<span class="token punctuation">}</span><span class="token selector">)</span> <span class="token punctuation">{</span>
+          <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateY</span><span class="token punctuation">(</span>$bead-gap<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span> <span class="token atrule"><span class="token rule">@else</span> if $deck == $lower-deck</span> <span class="token punctuation">{</span>
+        <span class="token selector">.deck-lower > .bead:nth-child(#</span><span class="token punctuation">{</span>$i<span class="token punctuation">}</span><span class="token selector">)</span> <span class="token punctuation">{</span>
+          <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateY</span><span class="token punctuation">(</span>0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@mixin</span> <span class="token function">generate-col-beads-classes</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@for</span> $n from 1 through 9</span> <span class="token punctuation">{</span>
+    <span class="token selector">.col-#</span><span class="token punctuation">{</span>$n<span class="token punctuation">}</span> <span class="token punctuation">{</span>
+      $<span class="token property">upper-value</span><span class="token punctuation">:</span> math.<span class="token function">floor</span><span class="token punctuation">(</span>math.<span class="token function">div</span><span class="token punctuation">(</span>$n<span class="token punctuation">,</span> 5<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      $<span class="token property">lower-value</span><span class="token punctuation">:</span> $n % 5<span class="token punctuation">;</span>
+      <span class="token atrule"><span class="token rule">@include</span> <span class="token function">activate-deck-beads</span><span class="token punctuation">(</span>$upper-value<span class="token punctuation">,</span> $upper-deck<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+      <span class="token atrule"><span class="token rule">@include</span> <span class="token function">activate-deck-beads</span><span class="token punctuation">(</span>$lower-value<span class="token punctuation">,</span> $lower-deck<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>The class for each column is assigned using the Vue class binding <code>:class=&quot;col-${val}&quot;</code></p>
+<h1>Putting them together</h1>
+<p>To synchronise the calculator and abacus components, <a href="https://vuex.vuejs.org/">Vuex</a> state management pattern and library was used. A <a href="https://github.com/gracechin/abaculator/blob/main/src/store/store.js">store.js</a> was created to store the states and mutations, which were imported into the components.</p>
+<h1>Thoughts?</h1>
+<p>This project was quite fun to execute. Although Vue is supposed to be straightforward to learn since I already know React, I found that the directives and class bindings took some getting used to. If I were to use Vue for a bigger project, I think I might need to make myself a little cheatsheet for those parts.</p>
+<p>I am proud that I managed to execute the abacus to a certain extent. It was not obvious to me how I should have executed it (e.g. how much I should rely on SASS vs. Vue HTML-based directives). It would be interesting to see how other people would code up an abacus.</p>
+<p>Anyway, that's all for now! Happy calculating and hope it sparks ✨ an interest in you to find out more about abacuses 🧮!</p>
+</div>
+    <p>
+      <span>
+        
+        <a href="/tags/posts">#posts</a>
+        
+        <a href="/tags/projects">#projects</a>
+        
+        <a href="/tags/HTML">#HTML</a>
+        
+        <a href="/tags/Vue">#Vue</a>
+        
+        <a href="/tags/JavaScript">#JavaScript</a>
+        
+        <a href="/tags/SASS">#SASS</a>
+        
+        <a href="/tags/CSS">#CSS</a>
+        
+      </span>
+    </p>
+  </article>
+  <hr />
+  <nav>
+    <div class="col left">
+      
+      <div>← Older</div>
+      <a href="/posts/2023-07-25-blog-folio/">Switching To A Blog-folio</a>
+    </div>
+    <div class="col right">
+      
+    </div>
+  </nav>
+</div>
+</main>
+      <footer>
+        <span class="email">gracechinhy@gmail.com</span>
+        <a href="https://github.com/gracechin"
+          ><span class="github-icon"></span
+        ></a>
+        <a href="https://www.linkedin.com/in/gracehychin/"
+          ><span class="linkedin-icon"></span
+        ></a>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -65,10 +65,11 @@ hr {
 pre,
 code {
   background-color: rgb(253, 246, 227);
-  border-radius: 5px;
+  border-radius: 1px;
   color: #e83e8c;
-  padding: 0 5px;
-  font-size: $base-font-size * 1.2;
+  padding: 1px 5px;
+  font-size: $base-font-size * 0.9;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
 }
 
 span {
