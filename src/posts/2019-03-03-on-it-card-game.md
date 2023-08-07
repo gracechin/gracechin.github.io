@@ -10,7 +10,7 @@ tags:
   - drawing
 ---
 
-DA&D New Blood Award winning period education card game
+DA&D New Blood Award winning period education card game.
 
 ---
 

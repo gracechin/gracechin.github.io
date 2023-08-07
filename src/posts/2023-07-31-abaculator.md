@@ -11,7 +11,7 @@ tags:
   - CSS
 ---
 
-A basic cal**culator** with **aba**cus visulisations and sounds 🧮
+A basic cal**culator** with **aba**cus visulisations and sounds 🧮.
 
 ---
 
