@@ -498,8 +498,8 @@ $disco-colors: red, orange, yellow, green, blue, purple;
     $s: math.random(60) + 60 + px;
     $bg: $bg ball() #{if($i != $n, ",", "")};
     $bg-pos: $bg-pos
-      percentage(math.random(100) / 100)
-      percentage(math.random(100) / 100)
+      percentage(math.div(math.random(100), 100))
+      percentage(math.div(math.random(100), 100))
       #{if($i != $n, ",", "")};
     $bg-size: $bg-size $s $s #{if($i != $n, ",", "")};
   }
