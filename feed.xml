@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  <subtitle>Grace Space - I document my journey as a growing developer, as well as a designer</subtitle>
+  <link href="https://gracechin.github.io/feed.xml" rel="self"/>
+  <link href=""/>
+  <updated>2023-08-07T00:00:00Z</updated>
+  <id></id>
+  <author>
+    <name></name>
+    <email></email>
+  </author>
+  
+  <entry>
+    <title>Why I Manually Deploy Using Netlify</title>
+    <link href="/posts/2023-08-07-manually-deploy-with-netlify/"/>
+    <updated>2023-08-07T00:00:00Z</updated>
+    <id>/posts/2023-08-07-manually-deploy-with-netlify/</id>
+    <content type="html">&lt;p&gt;Recently, I have been manually deploying my projects using &lt;a href=&quot;https://www.netlify.com/&quot;&gt;Netlify&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Why &lt;em&gt;Netlify&lt;/em&gt;?&lt;/h1&gt;
+&lt;p&gt;Since I was first introduced to Netlify, I have been a fan of it due to the following:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Amazing user experience&lt;/strong&gt; - It is user-friendly and enjoyable to work with. They even have a fun matching game that keeps you entertained while waiting for your project to deploy.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Effortless connection with GitHub&lt;/strong&gt; - It can connect with multiple GitHub repositories and can even support continuous deployment. This means that any new code pushed to the main branch can be automatically built and deployed, streamlining the development process.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Allows for customisations&lt;/strong&gt; - For instance, you can customise the domain name of your site, as long as it ends with &amp;quot;.netlify.app&amp;quot;. This allows you to establish a unique online presence tailored to your needs.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Largely free with generous features&lt;/strong&gt; - With the free package, you can deploy up to 500 sites and enjoy 100 GB/month bandwidth, allowing you to accomplish a lot without incurring additional costs.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1&gt;Why do I deploy manually?&lt;/h1&gt;
+&lt;p&gt;However, despite the convenience of Netlify&#39;s continuous deployment, I have found a limitation with the Starter package that concerns me – the 300 build minutes per month restriction. Similar to &lt;a href=&quot;https://eugeneyan.com/writing/netlify-back-to-github-pages/&quot;&gt;Yan&#39;s experience&lt;/a&gt;, as someone who frequently tweaks things, I can imagine that 300 minutes won&#39;t last long if every Git &lt;code&gt;push&lt;/code&gt; triggers a build and deployment. Consequently, to optimise my build minutes, I have chosen to manually deploy instead.&lt;/p&gt;
+&lt;h1&gt;How I deploy manually?&lt;/h1&gt;
+&lt;p&gt;To manually deploy a Netlify site, I first reconfigure the build settings for the site&#39;s build status to &lt;strong&gt;&amp;quot;stopped builds&amp;quot;&lt;/strong&gt;. This ensures that Netlify no longer automatically triggers builds and deployments whenever new code is pushed to the main branch.&lt;/p&gt;
+&lt;p&gt;Next, I use Netlify&#39;s command line interface (CLI) to build and deploy my site. To setup Netlify CLI, I followed &lt;a href=&quot;https://docs.netlify.com/cli/get-started/&quot;&gt;Netlify&#39;s documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;From the terminal, within my site&#39;s repository, I link the local repository and the configured Netlify site:&lt;/p&gt;
+&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;netlify &lt;span class=&quot;token function&quot;&gt;link&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To &lt;strong&gt;build&lt;/strong&gt; the site locally:&lt;/p&gt;
+&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;netlify build&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To &lt;strong&gt;deploy and preview&lt;/strong&gt; the site via a website draft URL:&lt;/p&gt;
+&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;netlify deploy&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To &lt;strong&gt;deploy the site on production&lt;/strong&gt;:&lt;/p&gt;
+&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;netlify deploy &lt;span class=&quot;token parameter variable&quot;&gt;--prod&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And that&#39;s it!&lt;/p&gt;
+&lt;p&gt;Following these steps, I can manually control the build and deployment process of my Netlify sites.&lt;/p&gt;
+&lt;h1&gt;Reference&lt;/h1&gt;
+&lt;p&gt;Yan, Ziyou. (Oct 2020). &lt;em&gt;Why I switched from Netlify back to GitHub Pages.&lt;/em&gt; eugeneyan.com. &lt;a href=&quot;https://eugeneyan.com/writing/netlify-back-to-github-pages/&quot;&gt;https://eugeneyan.com/writing/netlify-back-to-github-pages/&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Abaculator (ABAcus + calCULATOR)</title>
+    <link href="/posts/2023-07-31-abaculator/"/>
+    <updated>2023-07-31T00:00:00Z</updated>
+    <id>/posts/2023-07-31-abaculator/</id>
+    <content type="html">&lt;p&gt;A basic cal&lt;strong&gt;culator&lt;/strong&gt; with &lt;strong&gt;aba&lt;/strong&gt;cus visulisations and sounds 🧮.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://gracechin.github.io/abaculator/&quot;&gt;&lt;strong&gt;→ Visit &amp;quot;Abaculator&amp;quot;&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/gracechin/abaculator&quot;&gt;&lt;strong&gt;→ View GitHub (source code)&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The main idea behind abaculator is to spark the curiousity of visitors by giving them a glimpse of an abacus working in parrallel with the modern calculator. The abacus visulisations don&#39;t accurately show how the abacus performs different mathematical operations, but just representations of the whole numbers entered in the calculator.&lt;/p&gt;
+&lt;p&gt;The inspiration for this project stems from my awe for the Chinese abacus, also known as the &amp;quot;calculating tray&amp;quot;. This ancient counting tool is constructed from a rectangular wooden frame, featuring two decks. The upper deck comprises of two beads, while the lower deck contains five beads. Even though calculators have replaced the abacus in most scenarios, it is still being used for calculations to this day.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://gracechin.github.io/abaculator/&quot;&gt;&lt;img src=&quot;/assets/2023-07-31/abaculator.png&quot; alt=&quot;Screenshot of the abaculator&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;figcaption&gt;Screenshot of the Abaculator showing an abacus on the top and a calculator on the bottom&lt;/figcaption&gt;
+&lt;hr /&gt;
+&lt;p&gt;In this project, I used &lt;a href=&quot;https://vuejs.org/&quot;&gt;VueJS&lt;/a&gt; for the first time. It is a &amp;quot;progressive JavaScript framework&amp;quot; that was first released in 2014. A &lt;a href=&quot;https://survey.stackoverflow.co/2022/#most-popular-technologies-webframe&quot;&gt;2022 Stack Overflow survey&lt;/a&gt; revealed that 18.82% of respondants used VueJS. While it is not as popular as React, I still wanted to give it a go and see what it is like. From what I read, it is quite easy to learn especially since I already have a bit of experience with React.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://survey.stackoverflow.co/2022/#most-popular-technologies-webframe&quot;&gt;&lt;img src=&quot;/assets/2023-07-31/web_frameworks_tech.jpg&quot; alt=&quot;2022 Web frameworks and technologies popularity&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;figcaption&gt;Chart showing popularity of different web frameworks and technologies based on data from a 2022 Stack Overflow survey&lt;/figcaption&gt;
+&lt;h1&gt;Building the Calculator&lt;/h1&gt;
+&lt;p&gt;To create a calculator component, I followed two Youtube tutorials, &lt;a href=&quot;https://www.youtube.com/watch?v=m1_ih43p24s&amp;amp;ab_channel=freeCodeCamp.org&quot;&gt;&amp;quot;Build a Calulator with Vue.js&amp;quot;&lt;/a&gt; (thank you freeCodeCamp.org!) and &lt;a href=&quot;https://www.youtube.com/watch?v=SLk0lfUX3PY&amp;amp;ab_channel=ProgrammerNotes&quot;&gt;&amp;quot;Build a calculator app with VueJS&amp;quot;&lt;/a&gt; (thank you Programmer Notes!).&lt;/p&gt;
+&lt;p&gt;In Vue, single-file components (file extension &lt;code&gt;.vue&lt;/code&gt;) have three parts:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;the &lt;strong&gt;&lt;code&gt;&amp;lt;template&amp;gt;&lt;/code&gt;&lt;/strong&gt; section, which uses an HTML-based syntax to enable data-dependent DOM rendering.&lt;/li&gt;
+&lt;li&gt;the &lt;strong&gt;&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;&lt;/strong&gt; section, which uses JavaScript and is responsible for handling data manipulation and states, as well as importing components.&lt;/li&gt;
+&lt;li&gt;the &lt;strong&gt;&lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt;&lt;/strong&gt; section, which uses CSS. The &lt;code&gt;scoped&lt;/code&gt; attribute can be added to specify that the CSS only applies to the current component.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;&amp;lt;!-- example_vue_single_file_component.vue --&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;template&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;example&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;{{ msg }}&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;template&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token script&quot;&gt;&lt;span class=&quot;token language-javascript&quot;&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token literal-property property&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Hello world!&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;style&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token style&quot;&gt;&lt;span class=&quot;token language-css&quot;&gt;
+  &lt;span class=&quot;token selector&quot;&gt;.example&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; red&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;style&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To create the calculator buttons, I used Vue&#39;s built-in &lt;code&gt;v-for&lt;/code&gt; directive to render the div block multiple times. The &lt;code&gt;calculatorElements&lt;/code&gt; array contains the content of the buttons, which includes numbers and operators such as 7, 8, 9, /, 4, 5, 6, x, 1, 2, 3, +, C, 0, =, and -.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;:class&lt;/code&gt; attribute binding was used to conditionally render the operator CSS class, allowing the operator buttons to be a different color than the number buttons.&lt;/p&gt;
+&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;&amp;lt;!-- Calculator.vue --&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt;
+  &lt;span class=&quot;token attr-name&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;button&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token attr-name&quot;&gt;v-for&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;n in calculatorElements&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token attr-name&quot;&gt;:key&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;n&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token attr-name&quot;&gt;:class&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;{ &#39;operator&#39;: [&#39;/&#39;, &#39;x&#39;, &#39;+&#39;, &#39;C&#39;, &#39;=&#39;, &#39;-&#39;].includes(n) }&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token attr-name&quot;&gt;@click&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;action(n)&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  {{ n }}
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To handle the click effects, I used a &lt;code&gt;v-on&lt;/code&gt; event listener to trigger the &lt;code&gt;action&lt;/code&gt; method. Within the &lt;code&gt;v-for&lt;/code&gt; loop, I passed the looped item directly into the action method, which made it very convenient to handle the effects when different buttons were clicked. It was a straightforward process to handle the click events and execute the necessary actions based on the button that was clicked.&lt;/p&gt;
+&lt;h1&gt;Building the Abacus&lt;/h1&gt;
+&lt;p&gt;Unlike the calculator component, the abacus component was created from scratch without a tutorial. I mainly used a combination of SASS &lt;code&gt;mixin&lt;/code&gt;s and Vue built-in directives and bindings.&lt;/p&gt;
+&lt;p&gt;To render the multiple columns of the abacus, I used the &lt;code&gt;v-for&lt;/code&gt; directive. Each column consists of an upper deck &lt;code&gt;&amp;lt;div class=&amp;quot;deck-upper&amp;quot;&amp;gt;&lt;/code&gt; and a lower deck &lt;code&gt;&amp;lt;div class=&amp;quot;deck-lower&amp;quot;&amp;gt;&lt;/code&gt;. Within each deck, I used another &lt;code&gt;v-for&lt;/code&gt; to render the beads for the upper and lower decks.&lt;/p&gt;
+&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;&amp;lt;!-- Abacus.vue --&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt;
+  &lt;span class=&quot;token attr-name&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;col&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token attr-name&quot;&gt;v-for&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;(val, idx) in this.$store.state.abacusArr&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token attr-name&quot;&gt;:key&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;idx&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token attr-name&quot;&gt;:class&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;`col-${val}`&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;deck deck-upper&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;bead&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;v-for&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;upperBead in 2&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;:key&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;upperBead&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;deck deck-lower&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;bead&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;v-for&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;lowerBead in 5&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;:key&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;lowerBead&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2023-07-31/abacus_col.jpg&quot; alt=&quot;Diagram showing how the abacus is coded by column&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;Diagram showing how the abacus is coded by column&lt;/figcaption&gt;
+&lt;p&gt;In an abacus, each column represents a digit of the displayed number, which means that the state of the abacus can be defined using an array of digits. For example, if the number displayed on the abacus is 357, the rightmost column would represent 7, the column to the left of it would represent 5, and the column two spaces to the left of it would represent 3. Therefore, the abacus state for this number can be represented as &lt;code&gt;[0, 0, 0, 0, 0, 3, 5, 7]&lt;/code&gt;, where each element in the array corresponds to the digit represented by a particular column in the abacus.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2023-07-31/abacus_357.jpg&quot; alt=&quot;Diagram showing how number 357 is represented using the abacus&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Each column in an abacus represents the possible digits 0-9 using different bead configurations. To achieve this in my abacus component, I utilized SASS CSS &lt;code&gt;@mixins&lt;/code&gt; to define the possible bead configurations for each digit.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;activate-deck-beads&lt;/code&gt; mixin was used to translate the beads for the upper and lower decks. Meanwhile, the &lt;code&gt;generate-col-beads-classes&lt;/code&gt; mixin was used to generate the classes for each digit, such that &lt;code&gt;col-1&lt;/code&gt; class configures the beads to represent number 1, &lt;code&gt;col-2&lt;/code&gt; class configures the beads to represent number 2, &lt;code&gt;col-3&lt;/code&gt; class configures the beads to represent number 3, and so on.&lt;/p&gt;
+&lt;p&gt;By using these mixins, I was able to easily generate the necessary CSS classes to represent the different bead configurations for each digit.&lt;/p&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;/* Abacus.vue */&lt;/span&gt;
+
+$&lt;span class=&quot;token property&quot;&gt;upper-deck&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;upper&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+$&lt;span class=&quot;token property&quot;&gt;lower-deck&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;lower&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@mixin&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;activate-deck-beads&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;$n&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; $deck&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;$n &gt; 0&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@for&lt;/span&gt; $i from 1 through $n&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@if&lt;/span&gt; $deck == $upper-deck&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token selector&quot;&gt;.deck-upper &gt; .bead:nth-child(#&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;3-$i&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token selector&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;token property&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;translateY&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;$bead-gap&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@else&lt;/span&gt; if $deck == $lower-deck&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token selector&quot;&gt;.deck-lower &gt; .bead:nth-child(#&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;$i&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token selector&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;token property&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;translateY&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;0&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@mixin&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;generate-col-beads-classes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@for&lt;/span&gt; $n from 1 through 9&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token selector&quot;&gt;.col-#&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;$n&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      $&lt;span class=&quot;token property&quot;&gt;upper-value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; math.&lt;span class=&quot;token function&quot;&gt;floor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;math.&lt;span class=&quot;token function&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;$n&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 5&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      $&lt;span class=&quot;token property&quot;&gt;lower-value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $n % 5&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;activate-deck-beads&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;$upper-value&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; $upper-deck&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;
+      &lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;activate-deck-beads&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;$lower-value&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; $lower-deck&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The class for each column is assigned using the Vue class binding &lt;code&gt;:class=&amp;quot;col-${val}&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;h1&gt;Putting them together&lt;/h1&gt;
+&lt;p&gt;To synchronise the calculator and abacus components, &lt;a href=&quot;https://vuex.vuejs.org/&quot;&gt;Vuex&lt;/a&gt; state management pattern and library was used. A &lt;a href=&quot;https://github.com/gracechin/abaculator/blob/main/src/store/store.js&quot;&gt;store.js&lt;/a&gt; was created to store the states and mutations, which were imported into the components.&lt;/p&gt;
+&lt;h1&gt;Thoughts?&lt;/h1&gt;
+&lt;p&gt;This project was quite fun to execute. Although Vue is supposed to be straightforward to learn since I already know React, I found that the directives and class bindings took some getting used to. If I were to use Vue for a bigger project, I think I might need to make myself a little cheatsheet for those parts.&lt;/p&gt;
+&lt;p&gt;I am proud that I managed to execute the abacus to a certain extent. It was not obvious to me how I should have executed it (e.g. how much I should rely on SASS vs. Vue HTML-based directives). It would be interesting to see how other people would code up an abacus.&lt;/p&gt;
+&lt;p&gt;Anyway, that&#39;s all for now! Happy calculating and hope it sparks ✨ an interest in you to find out more about abacuses 🧮!&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Switching To A Blog-folio</title>
+    <link href="/posts/2023-07-25-blog-folio/"/>
+    <updated>2023-07-25T00:00:00Z</updated>
+    <id>/posts/2023-07-25-blog-folio/</id>
+    <content type="html">&lt;p&gt;I updated my web portfolio to become more blog-orientated.&lt;/p&gt;
+&lt;p&gt;Recently I read an article, &lt;a href=&quot;https://medium.com/portfolio-principles/why-your-next-design-portfolio-should-be-a-blog-e5d801750b1d&quot;&gt;&amp;quot;Why your next Design Portfolio should be a Blog&amp;quot;&lt;/a&gt; by Martijn van de Broeck, who argued that design portfolios should be a blog because:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Blogs focus on the most relevant content.&lt;/li&gt;
+&lt;li&gt;Readers can engage with blogs.&lt;/li&gt;
+&lt;li&gt;Blogs reveal personality.&lt;/li&gt;
+&lt;li&gt;While portfolios are design driven, blogs are content driven.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I was particularly convinced by the notion of recording our imperfect and bumpy journey. While I have been told that portfolios should only present a carefully-curated set of polished projects, I believe that it is the wild messy journey in and out of projects that reveal our individuality and personality. It may also be a form of inspiration to others. Additionally, the commitment to documentation would no doubt aid memory and personal reflection. All of this led me to updating this website again with the aim of it becoming more of a &lt;em&gt;blog-folio&lt;/em&gt;.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h1&gt;What did I change?&lt;/h1&gt;
+&lt;h3&gt;Using 11ty&lt;/h3&gt;
+&lt;p&gt;I took this opportunity to migrate my website to use &lt;a href=&quot;https://www.11ty.dev/&quot;&gt;11ty&lt;/a&gt;. After my last success in &lt;a href=&quot;/posts/2023-06-30-building-a-blog&quot;&gt;using 11ty for my blog&lt;/a&gt;, I decided I would use 11ty for my blog-folio. This was quite straightforward to do since my blog was already using 11ty.&lt;/p&gt;
+&lt;h3&gt;Merging projects and blog&lt;/h3&gt;
+&lt;p&gt;Previously, my portfolio had a separate projects and blog section. The projects section contained project pages. Meanwhile, the blog contained blog post pages. The project pages and post pages were separated such that the blog was hosted on a separate website and had a different URL altogether.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2023-07-25/projects_page.png&quot; alt=&quot;Projects page of Grace Chin&#39;s website&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;Screenshot of my old projects section taken 25/07/2023&lt;/figcaption&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2023-07-25/blog.png&quot; alt=&quot;Grace Chin&#39;s Blog&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;Screenshot of my old blog taken 25/07/2023&lt;/figcaption&gt;
+&lt;p&gt;In making my site more blog-orientated, I converted my project pages into blog posts. To do this, I converted my Jeckyll project markdowns into 11ty blog post markdowns, and stored them all under one &amp;quot;posts&amp;quot; directory (as seen in the &lt;a href=&quot;https://github.com/gracechin/gracechin.github.io&quot;&gt;source code&lt;/a&gt;). This meant that now the blog posts and projects posts would live together and can be managed conveniently in the same way.&lt;/p&gt;
+&lt;h3&gt;Categorising posts using tags&lt;/h3&gt;
+&lt;p&gt;To organise the posts, tags were used. This allowed for the homepage to showcase recent posts of selected categories (e.g. projects).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2023-07-25/categorised_posts.png&quot; alt=&quot;Home page list of posts in Grace Chin&#39;s website&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;Screenshot of homepage featuring categories of posts using tags taken 25/07/2023&lt;/figcaption&gt;
+&lt;h3&gt;Other little stuff&lt;/h3&gt;
+&lt;p&gt;Apart from the changes already mentioned, I also changed some minor things here and there (e.g. a hidden surprise ✨). But that&#39;s it for now!&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Building A Blog With Eleventy</title>
+    <link href="/posts/2023-06-30-building-a-blog/"/>
+    <updated>2023-06-30T00:00:00Z</updated>
+    <id>/posts/2023-06-30-building-a-blog/</id>
+    <content type="html">&lt;p&gt;Yay! I have finally deployed my blog using &lt;a href=&quot;https://www.11ty.dev/&quot;&gt;11ty&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;After &lt;a href=&quot;/posts/2023-06-26-to-wordpress-or-not-to-wordpress/&quot;&gt;my previous attempt on creating a blog using WordPress&lt;/a&gt;, I retreated back to my comfort zone of using &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;. It was great to gain back flexibility without having to worry about paying. Half-way into recreating my blog in Jekyll, I remembered Lynn mentioning 11ty (&lt;em&gt;Eleventy&lt;/em&gt;) in one of her posts and decided to look it up. After seeing such positive reviews from her and others, I decided to give 11ty a try.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.11ty.dev/&quot;&gt;11ty&lt;/a&gt; is impressively created and maintained by &lt;a href=&quot;https://www.zachleat.com/&quot;&gt;Zach Leatherman&lt;/a&gt;. Like Jekyll, it is a static site generator. While Jekyll was released in 2008, 11ty was released in 2018. Unlike Jekyll, which is built with Ruby (a language that I don&#39;t know), 11ty is built with JavaScript (a language I am more familiar with).&lt;/p&gt;
+&lt;p&gt;Building a blog with 11ty was quite straightforward. I followed their &lt;a href=&quot;https://www.youtube.com/watch?v=kzf9A9tkkl4&amp;amp;ab_channel=Eleventy&quot;&gt;6-minute video tutorial on YouTube&lt;/a&gt;. Unlike Jekyll, there was no default structure that I had to start with when starting a new project. The structure was much more customisable and can be built from scratch. This made it easier to piece out the blog from my Jeckyll blog. Also, since I only have four blog posts, I didn&#39;t need to implement any automation for migrating from Jeckyll.&lt;/p&gt;
+&lt;p&gt;Here are somethings I learnt about developing with 11ty:&lt;/p&gt;
+&lt;h3&gt;Debugging&lt;/h3&gt;
+&lt;p&gt;Probably one of the most useful things is how to debug parsed frontmatter objects. There were many scenarios where things were not showing up because my referencing of frontmatter data was just wrong. Adding a &lt;code&gt;debug&lt;/code&gt; filter in the config file (&lt;code&gt;.eleventy.js&lt;/code&gt;) certainly helped!&lt;/p&gt;
+&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// .eleventy.js&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; inspect &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;util&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;inspect&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function-variable function&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;eleventyConfig&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  eleventyConfig&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;addFilter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;debug&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&amp;lt;pre&gt;&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;inspect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;content&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&amp;lt;/pre&gt;&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Syntax Highlighting&lt;/h3&gt;
+&lt;p&gt;To support syntax highlighting, I installed a &lt;a href=&quot;https://www.11ty.dev/docs/plugins/syntaxhighlight/&quot;&gt;syntax highlighting plugin&lt;/a&gt;, which has a number of &lt;a href=&quot;https://prismjs.com/#supported-languages&quot;&gt;supported languages&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; @11ty/eleventy-plugin-syntaxhighlight --save-dev&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I added it to the config file,&lt;/p&gt;
+&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;//.eleventy.js&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; syntaxHighlight &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;@11ty/eleventy-plugin-syntaxhighlight&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function-variable function&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;eleventyConfig&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  eleventyConfig&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;addPlugin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;syntaxHighlight&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;then selected and added a &lt;a href=&quot;https://prismjs.com/&quot;&gt;PrismJS&lt;/a&gt; theme CSS.&lt;/p&gt;
+&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;link&lt;/span&gt;
+  &lt;span class=&quot;token attr-name&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;https://unpkg.com/prismjs@1.20.0/themes/prism-solarizedlight.css&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token attr-name&quot;&gt;rel&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;stylesheet&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Excerpts&lt;/h3&gt;
+&lt;p&gt;To give a mini preview of blog posts, I wanted to provide excerpts for each post. The excerpts were defined by:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Setting the front matter parsing option so that &lt;code&gt;excerpt&lt;/code&gt; is &lt;code&gt;true&lt;/code&gt;, and&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// .eleventy.js&lt;/span&gt;
+module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function-variable function&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;eleventyConfig&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  eleventyConfig&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setFrontMatterParsingOptions&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token literal-property property&quot;&gt;excerpt&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;Adding a divider (&lt;code&gt;---&lt;/code&gt;) to the each post&#39;s markdown, where the content above the divider becomes the excerpt.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; This is the title of the blog
+&lt;span class=&quot;token key atrule&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Date of blog
+
+&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;
+This is going to be the excerpt. Below is the added divider to define the excerpt.
+&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;
+This is a continuation of the blog post and is not going to be in the excerpt.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To parse the excerpt such that markdown tags are rendered, I followed this &lt;a href=&quot;https://github.com/11ty/eleventy/issues/1380#issuecomment-698457560&quot;&gt;Github issue&#39;s comment&lt;/a&gt; (Much thanks to @jonathanyeong for reporting the issue, @revelt for providing a solution, and everyone else who gave their input!).&lt;/p&gt;
+&lt;p&gt;I added another filter,&lt;/p&gt;
+&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// .eleventy.js&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; markdownIt &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;markdown-it&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function-variable function&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;eleventyConfig&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  eleventyConfig&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;addFilter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;md&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;content &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;markdownIt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token literal-property property&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;content&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and changed the template.&lt;/p&gt;
+&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;post.data.page.excerpt | md&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Tags&lt;/h3&gt;
+&lt;p&gt;Following &lt;a href=&quot;https://www.11ty.dev/docs/quicktips/tag-pages/&quot;&gt;11ty&#39;s documentation&lt;/a&gt;, implementing tags was reasonably straightforward. Tags for each post were added to the front matter.&lt;/p&gt;
+&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;token key atrule&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Building A Blog With Eleventy
+&lt;span class=&quot;token key atrule&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token datetime number&quot;&gt;2023-06-30&lt;/span&gt;
+&lt;span class=&quot;token key atrule&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; dev
+&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A sample pagination template (&lt;code&gt;tags.njk&lt;/code&gt;) in the documentation was used to generate tag pages that showed relevant posts for each tag. It was my first time using &lt;a href=&quot;https://mozilla.github.io/nunjucks/&quot;&gt;Nunjucks&lt;/a&gt;, &amp;quot;&lt;em&gt;a rich and powerful templating language for JavaScript&lt;/em&gt;&amp;quot;. While it&#39;s new to me, interestingly the &lt;a href=&quot;https://frontend.design-system.service.gov.uk/use-nunjucks/&quot;&gt;UK government uses Nunjucks&lt;/a&gt; (the more you know!).&lt;/p&gt;
+&lt;h3&gt;What&#39;s next?&lt;/h3&gt;
+&lt;p&gt;Now that I have a separate site for my blog, I will need to update my portfolio website to reference it. There&#39;s definitely still more that I want to add and learn (e.g. RSS subscription option, eventually a search function as I accumulate more posts, maybe some sort of analytics...), but for now, I am happy with what I have done so far.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>To WordPress Or Not To WordPress</title>
+    <link href="/posts/2023-06-26-to-wordpress-or-not-to-wordpress/"/>
+    <updated>2023-06-26T00:00:00Z</updated>
+    <id>/posts/2023-06-26-to-wordpress-or-not-to-wordpress/</id>
+    <content type="html">&lt;p&gt;In starting this blog, I tried out &lt;a href=&quot;https://wordpress.com/&quot;&gt;WordPress.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It is a popularly-used and regularly-recommended content management system (CMS). While it is popular, there are people who have distanced themselves from it. For example, my web idol, &lt;em&gt;Lynn Fisher&lt;/em&gt;, &lt;a href=&quot;https://lynnandtonic.com/thoughts/entries/the-nbsp-was-breaking-after-all/&quot;&gt;migrated her blog away from WordPress&lt;/a&gt;. Also, an ex-colleague of mine, whom I look up to, strongly expressed his distaste for it. Despite other&#39;s feedback, I thought I&#39;d give it a try.&lt;/p&gt;
+&lt;p&gt;After spending a couple of hours toying around and building my blog site, various small but inconvenient aspects of WordPress gradually surfaced.&lt;/p&gt;
+&lt;h3&gt;Pay For Design Freedom&lt;/h3&gt;
+&lt;p&gt;The appearance of a WordPress site is dictated by a chosen &lt;code&gt;theme&lt;/code&gt;. A theme takes the site&#39;s contents (e.g. text, images) and displays it using the theme&#39;s design. There are a multitude of opensourced themes to choose from which are customisable. But to customise certain aspects, you will need to pay. In another words, if you want to change the colour scheme, typography, add custom CSS, or more, you will need to pay.&lt;/p&gt;
+&lt;p&gt;Though it may be worth it for some people, I was not particularly keen on the idea of paying for limited flexibility (i.e. customisable themes) when I can have even more flexibility (i.e. not use WordPress and themes) for free.&lt;/p&gt;
+&lt;h3&gt;Not Exactly WYSIWYG&lt;/h3&gt;
+&lt;p&gt;One of the main advantages advertised of WordPress is WYSIWYG (What You See Is What You Get) component of it. However, this is not exactly the case. While the differences between the editor preview and the actual site were minor, every little bit counted as a slight inconvenience.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2023-06-27/WordPress-margin.jpg&quot; alt=&quot;WordPress margin&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;
+Left: WordPress editor - no spacing between left block and window edge 
+&lt;br /&gt; Right: WordPress full site preview - has spacing between left block and window edge
+&lt;/figcaption&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2023-06-27/WordPress-twitter.jpg&quot; alt=&quot;WordPress twitter embeding&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;
+Left: WordPress editor - embedded Twitter post as expected
+&lt;br /&gt; Right: WordPress full site preview - not showing Twitter post as expected
+&lt;/figcaption&gt;
+&lt;h3&gt;Pay For Removing a Banner&lt;/h3&gt;
+&lt;p&gt;Finally, the last small thing which pushed me over the edge of deciding not to use WordPress was the banner. Before launching the site, I spent hours getting around the paid customisations through trying various themes and seeing how far I could go without paying. It wasn&#39;t until I thought the site was ready and clicked &lt;code&gt;Launch site&lt;/code&gt; did WordPress revealed that there was going to be an advertisement banner.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2023-06-27/WordPress-banner.png&quot; alt=&quot;WordPress banner&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;
+Launched blog site with WordPress banner (much cry)
+&lt;/figcaption&gt;
+&lt;p&gt;To remove the advertisement banner, it required paying a monthly fee, which I was not keen to do.&lt;/p&gt;
+&lt;h3&gt;So, what now?&lt;/h3&gt;
+&lt;p&gt;For my blog, I think I will stay away from coupled CMS for the sake of maximising flexibility and minimising costs.&lt;/p&gt;
+&lt;p&gt;Despite not using WordPress in the end, I&#39;m glad I gave it a chance. Though I will not be using what I built in WordPress, it definitely did gave me an idea of what I want my blog to look like. I think if money wasn&#39;t an issue, WordPress may be worth it.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Red Moon</title>
+    <link href="/posts/2023-06-16-red-moon/"/>
+    <updated>2023-06-16T00:00:00Z</updated>
+    <id>/posts/2023-06-16-red-moon/</id>
+    <content type="html">&lt;p&gt;For tracking menstrual cycles, one cycle at a time.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://track-your-red-moon.netlify.app/&quot;&gt;&lt;strong&gt;→ Visit &amp;quot;Red Moon&amp;quot;&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/gracechin/red-moon&quot;&gt;&lt;strong&gt;→ Visit GitHub (source code)&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In 2022, I was introduced to a way of understanding my body using the &lt;em&gt;Fertility Awareness Method (FAM)&lt;/em&gt; (thanks to a book by Toni Weschler). Long story short, I began self-tracking certain things, such as my temperature in the morning, my daily mood, and other parameters.&lt;/p&gt;
+&lt;p&gt;While there are plenty of period tracking apps, some didn&#39;t follow the FAM approach, some had fees, some didn&#39;t have the features I wanted, and some didn&#39;t look very attractive. As a result, I resorted to recording several cycles using pen and paper.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2023-06-16/paper_tracking.jpeg&quot; alt=&quot;Fertility Awareness Method via paper tracking&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;In the middle of tracking my 7th cycle, I got tired of writing and drawing the same template every month so I stopped tracking. To satisfy my own wants and needs, I decided I needed to develop my own tracking tool. That was how &lt;em&gt;Red Moon&lt;/em&gt; started.&lt;/p&gt;
+&lt;h3&gt;Tracking One Cycle at A Time&lt;/h3&gt;
+&lt;p&gt;Having tracked with paper and pen, I knew that I never needed to update previous cycles&#39; data. I only ever needed to look at them for reference. This gave me the idea that users can export their data after each cycle and store that data themselves. The only data the app needed to store, to allow for updates, and to display is the most recent data (or current cycle&#39;s data), which are stored in the &lt;code&gt;localStorage&lt;/code&gt; of the browser.&lt;/p&gt;
+&lt;h3&gt;The Period Chart&lt;/h3&gt;
+&lt;p&gt;The most important aspect of an FAM tracker is probably the chart. It is where all the magic of understanding the body happens ✨. A typical FAM chart can be broken down into two tables and a graph, where each table column would correspond with the x-axis labels in the chart.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2023-06-16/synchronised-chart-diagram.png&quot; alt=&quot;Period chart diagram&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;The chart was one of the trickiest parts to implement. Unfortunately, current React chart libraries (e.g. &lt;code&gt;react-chartjs-2&lt;/code&gt;, which I tried using) did not provide the flexibility needed to create a synchronised chart-table component. In searching around, I found &lt;strong&gt;&lt;a href=&quot;https://saschaklatt.dev/&quot;&gt;Sascha Klatt&lt;/a&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;a href=&quot;https://bilebile.de/#/&quot;&gt;Murat Kemalder&lt;/a&gt;&lt;/strong&gt; ‘s &lt;strong&gt;&lt;em&gt;&lt;a href=&quot;https://saschaklatt.dev/projects/react-d3-synchronized-chart-data-table&quot;&gt;Chartkin Table Walker&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt;, which uses &lt;code&gt;D3.js&lt;/code&gt; JS library. With the flexibility of using the library came a steep learning curve. Thankfully, there were plenty of online blogs and how-to pages available for me to dig around.&lt;/p&gt;
+&lt;h3&gt;Not The End&lt;/h3&gt;
+&lt;p&gt;Making &lt;em&gt;Red Moon&lt;/em&gt; has definitely revived my habit of tracking everyday. While the important features are implemented and it is live, I can see myself adding even more features (and probably fixing bugs) as I go. If you are interested, watch &lt;a href=&quot;https://github.com/gracechin/red-moon&quot;&gt;this space&lt;/a&gt;!&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>2023 Website Revamp For A New Start</title>
+    <link href="/posts/2023-05-02-website-revamp-ideas/"/>
+    <updated>2023-05-01T00:00:00Z</updated>
+    <id>/posts/2023-05-02-website-revamp-ideas/</id>
+    <content type="html">&lt;p&gt;To mark the start of finding a new job and moving to another country, I revamped my website.&lt;/p&gt;
+&lt;p&gt;After looking at several inspiring websites, I decided that for this revamp, I wanted to express more of my personality as well as make it fun! I was mainly inspired by &lt;a href=&quot;https://lynnandtonic.com/&quot;&gt;lynnandtonic&#39;s website&lt;/a&gt;, and have been fangirling about it ever since finding it. Not only does it showcase really cool and fun projects, but it also impressively showcases annual iterations of the website in the &lt;a href=&quot;https://lynnandtonic.com/archive/&quot;&gt;Archive page&lt;/a&gt;, which I find motivating and encouraging. I am especially wowed by the wild and imaginative digital easter eggs on the websites (e.g., re-sizing the window to show animations, dragging and dropping icons to change the theme of components).&lt;/p&gt;
+&lt;p&gt;Without further ado, here is how I revamped my website.&lt;/p&gt;
+&lt;h3&gt;The illustrated cover&lt;/h3&gt;
+&lt;p&gt;Highly inspired by &lt;a href=&quot;https://lynnandtonic.com/archive/2018/&quot;&gt;lynnandtonic&#39;s 2018 website&lt;/a&gt;, which features a Bob&#39;s burger-styled illustration of lynn in her room, I decided to sketch myself in our (Dan + my) HK home in the style of &lt;a href=&quot;https://twitter.com/little_digits/status/1326339039197360128&quot;&gt;LittleDigits&#39; illustration&lt;/a&gt; of Hilda from the Netflix TV Series &lt;em&gt;Hilda&lt;/em&gt;. I really liked the idea of paying homage to our humble home in HK seeing as we would be moving away to the UK soon.&lt;/p&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;go to work, draw hilda. Come home...draw hilda. No complaints here. &lt;a href=&quot;https://t.co/cHQgmP2Jwe&quot;&gt;pic.twitter.com/cHQgmP2Jwe&lt;/a&gt;&lt;/p&gt;&amp;mdash; LittleDigits (@little_digits) &lt;a href=&quot;https://twitter.com/little_digits/status/1326339039197360128?ref_src=twsrc%5Etfw&quot;&gt;November 11, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;p&gt;Since I do not have a drawing tablet/pad, the illustrations were drawn using my mousepad in Figma. I roughly traced a photo of our home and a sketch of myself.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2023-05-02/2023-website-sketches.jpg&quot; alt=&quot;2023-website-sketches.jpg&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;Sketches of myself using pen, pencil, and paper&lt;/figcaption&gt;
+&lt;h3&gt;Home page fun elements&lt;/h3&gt;
+&lt;p&gt;To welcome visitors, I thought it would be cute to have a little animation of myself saying hello. The animation was created by using &lt;code&gt;@keyframes&lt;/code&gt; CSS to run through the six SVG images that make up the frames of the animation. To prevent lagging in the animation, I had to preloaded the images.&lt;/p&gt;
+&lt;p&gt;![2023-website animation frames of me](/assets/2023-05-02/2023-website-drawings-of-me
+.png)
+&lt;em&gt;Animation frames of myself created using Figma variants&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;For the digital easter egg, my plan was to use the light switch of our HK home to toggle the light/dark mode of the website. It was very satisfying to create the light switch using CSS (&lt;a href=&quot;https://codepen.io/gracechin/pen/abaamgJ&quot;&gt;see my CodePen&lt;/a&gt;), since I am new to drawing with CSS. As it was my first time implementing dark mode, to toggle the theme of the website, I followed &lt;a href=&quot;https://medium.com/@dmitriy.borodiy/easy-color-theming-with-scss-bc38fd5734d1&quot;&gt;Dmitry Borody&#39;s post about theming web applications with SASS&lt;/a&gt;, which I found rather clever!&lt;/p&gt;
+&lt;p&gt;
+&lt;/p&gt;&lt;div class=&quot;video-container&quot;&gt;
+    &lt;iframe src=&quot;/assets/2023-05-02/2023-website-light-switch.mp4&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;figcaption&gt;Animation of me saying &quot;hello&quot; and the toggling of the light/dark mode using the light switch&lt;/figcaption&gt;
+&lt;h3&gt;See you next time!&lt;/h3&gt;
+&lt;p&gt;That&#39;s pretty much all for this time&#39;s revamp! I will probably incrementally add more fun interactions to this website later on, but for now, this is a great start. See you for the part 2!&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>My Past Website Developments</title>
+    <link href="/posts/2023-05-01-past-websites/"/>
+    <updated>2023-05-01T00:00:00Z</updated>
+    <id>/posts/2023-05-01-past-websites/</id>
+    <content type="html">&lt;p&gt;Inspired by &lt;a href=&quot;https://lynnandtonic.com/archive/&quot;&gt;lynnandtonic&#39;s Archive&lt;/a&gt;, in this post, I share various versions of my website.&lt;/p&gt;
+&lt;h3&gt;2019&lt;/h3&gt;
+&lt;p&gt;My first-ever version of my website was in 2019, just after I graduated from college. The website lasted me through my first job. I remember it being the first time using &lt;a href=&quot;https://getbootstrap.com/&quot;&gt;Bootstrap&lt;/a&gt; to make my website responsive. Back then, I tried to keep the style minimalistic, clean, and chic. Many of the projects showcased were past university projects.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2023-05-01/2019-website.jpg&quot; alt=&quot;2019-website&quot; /&gt;
+&lt;em&gt;My 2019 website&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;2022&lt;/h3&gt;
+&lt;p&gt;In 2022, I updated my website and used &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; for my very first time. It all started when I came across &lt;a href=&quot;https://www.ianli.com/&quot;&gt;Ian Li&#39;s website&lt;/a&gt; during my time as a researcher. I really liked the design of the website. Though the design is simple, clean, and easy to understand, it still manages to present character and individuality through the colour scheme, illustrations, and layout. I also enjoyed looking through the fun personal projects.&lt;/p&gt;
+&lt;p&gt;Inspired by the website and his work, I dug into his GitHub account to get some hints on how he implemented his website. That was when I was first introduced to Jekyll! After some self-learning and trial-and-error, I am now a fan of Jekyll. Unlike how my original website (&lt;a href=&quot;https://github.com/gracechin/gracechin.github.io/tree/0177e838e07e2a3edfa77010c18471b045b701bf&quot;&gt;source code&lt;/a&gt;) was built, which involved a fair amount of copy-and-pasting HTML code (e.g., for the navigation bar and footer), Jekyll produces a complete static website based on given content and templates. Using Jekyll reduced code repetition and allowed for easier content management of the website.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2023-05-01/2022-website.png&quot; alt=&quot;2022-website&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;My 2022 website&lt;/figcaption&gt;
+&lt;h3&gt;Next&lt;/h3&gt;
+&lt;p&gt;That&#39;s pretty much all the major developments I made since I first started this website! &#39;Till the next time I decide to iterate on this website!&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>What I Learnt From Working For Start-ups</title>
+    <link href="/posts/2023-04-24-working-for-startups/"/>
+    <updated>2023-04-24T00:00:00Z</updated>
+    <id>/posts/2023-04-24-working-for-startups/</id>
+    <content type="html">&lt;p&gt;To help myself remember what I have learned and my experiences from working with various start-ups, I thought it might be helpful to write them down. Here they are!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;I learnt...&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;...how to use git.&lt;/strong&gt; The first time I created a pull request on GitHub, it was intimidating. But now, I feel much more confident in using Git. I really appreciate the workflow and how it allows coders to collaboratively work on the same project. By letting others review my code and reviewing others&#39; code, I have learned a lot.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;...how to write clean code.&lt;/strong&gt; From watching &lt;a href=&quot;http://cleancoder.com/products&quot;&gt;Uncle Bob&lt;/a&gt;&#39;s videos, which were introduced to me by an experienced developer, I learnt good coding practices (e.g. writing tests).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;...the importance of a good work space.&lt;/strong&gt; This is something I didn&#39;t think was as important before. I learnt the value of keyboard shortcuts, essential keyboard configurations (e.g. changing the &lt;code&gt;Caps Lock&lt;/code&gt; key to &lt;code&gt;Control&lt;/code&gt; for easy access of keys), time-saving development environment plugins, and ways to make the terminal easier to work with (e.g. &lt;a href=&quot;https://fishshell.com/&quot;&gt;Fish&lt;/a&gt;, &lt;a href=&quot;https://ohmyz.sh/&quot;&gt;Oh My Zsh&lt;/a&gt;). Apart from these practical tips, I found that each developer in the start-ups had their own individualized desk things (i.e., clickety-clack keyboards, mouse/touchpad, fidget toys, headphones, fun mugs), which spoke to each developer&#39;s personality and inspired me to invest in a set of my own.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;...how to use an Apple laptop.&lt;/strong&gt; Being cheap, I never owned a personal Mac laptop prior to working in these start-ups. Using an Apple laptop for work has successfully convinced me to purchase my own Apple laptop.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;...how to strive for a CI/CD or Agile work flow.&lt;/strong&gt; This involves automating tests as much as possible to shorten the systems development work cycle. I remember, at one point, I had to implement end-to-end tests by simulating what a user would do for various use cases to make the development cycle more efficient.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;...what project management looks like.&lt;/strong&gt; The different start-ups used different project management systems like Trello, Jira, and Notion. In appreciation of the satisfaction of moving the tasks to done, I have also incorporated these systems into my personal life as well via Notion.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That&#39;s it for now! No doubt, there is still lots to learn...&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Gizmo The Cat</title>
+    <link href="/posts/2022-09-03-gizmo-the-cat/"/>
+    <updated>2022-09-03T00:00:00Z</updated>
+    <id>/posts/2022-09-03-gizmo-the-cat/</id>
+    <content type="html">&lt;p&gt;A random website to find a cat called &#39;Gizmo&#39;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://gizmo-the-cat.netlify.app/&quot;&gt;&lt;strong&gt;→ Visit &amp;quot;Gizmo The Cat&amp;quot;&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/gracechin/gizmo-the-cat&quot;&gt;&lt;strong&gt;→ Visit GitHub (source code)&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This is a random project I did during COVID times. At the time I was fascinated by &lt;a href=&quot;https://theuselessweb.com/&quot;&gt;The Useless Web&lt;/a&gt;. The site would take me to all sorts of other websites that were &amp;quot;useless&amp;quot;, and I would play and explore. Eventually, I wanted to make one too. A &lt;a href=&quot;https://youtu.be/Sj1vbbRA07g&quot;&gt;Youtube tutorial&lt;/a&gt; for &lt;a href=&quot;https://puginarug.com/&quot;&gt;Pug in a Rug&lt;/a&gt; inspired me to make one. The idea behind Gizmo the Cat was inspired by &lt;a href=&quot;https://findtheinvisiblecow.com/&quot;&gt;Find the Invisible Cow&lt;/a&gt; and a real cat I know called &amp;quot;Gizmo&amp;quot;.&lt;/p&gt;
+&lt;p&gt;In &lt;em&gt;Find the Invisible Cow&lt;/em&gt;, players find the cow through moving their mouse and hearing the word &amp;quot;Cow!&amp;quot;. The shouting gets the louder as the mouse gets closer to the cow. In &lt;em&gt;Gizmo the Cat&lt;/em&gt;, instead of using hearing to find the cat, players use their mouse as a &amp;quot;flashlight&amp;quot; to find the cat. This mimicked more of real-life in that occassionally Gizmo had to be found in the dark.&lt;/p&gt;
+&lt;p&gt;Gizmo is a neighbour&#39;s cat that likes to hide and roam into other people&#39;s house. This was quite annoying because it meant that Gizmo sometimes would get locked in to other people&#39;s house by accident. One time, it nearly got ran over because it was hiding behind one of the parked car&#39;s wheels. This is how I got the idea of finding Gizmo the aim of the game.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://gizmo-the-cat.netlify.app/&quot;&gt;&lt;img src=&quot;/assets/2022-09-03/gizmo-screenshot.png&quot; alt=&quot;Gizmo the Cat game&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;figcaption&gt;Screenshot of &lt;i&gt;Gizmo The Cat&lt;/i&gt;&lt;/figcaption&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Running And Drawing For Mind</title>
+    <link href="/posts/2019-05-31-half-marathon/"/>
+    <updated>2019-05-31T00:00:00Z</updated>
+    <id>/posts/2019-05-31-half-marathon/</id>
+    <content type="html">&lt;p&gt;Thanks to the contributions of all the donors, we raised over 600 pounds for &lt;a href=&quot;https://www.mind.org.uk/&quot;&gt;&lt;em&gt;Mind&lt;/em&gt;&lt;/a&gt; (a mental health charity)!&lt;/p&gt;
+&lt;p&gt;To raise funds and awareness, in 2019, I documented my running training journey through &lt;a href=&quot;https://www.facebook.com/gracerunningformind/&quot;&gt;a Facebook blog&lt;/a&gt;, where I shared self-illustrated short comics and photos with supporters. Looking back, I am quite proud of what I did. I hope to do something similar later, but I think I am going to give running a pause for now.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2019-05-31/regret-comic.jpg&quot; alt=&quot;Half marathon running regrets short comic&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;Comic on current self being frustrated with past self&lt;/figcaption&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2019-05-31/post_panic.jpg&quot; alt=&quot;Half marathon running post panic short comic&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;Comic on panicking when I need to post something online&lt;/figcaption&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2019-05-31/training_program.jpg&quot; alt=&quot;Half marathon running training program short comic&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;Comic on my running training program&lt;/figcaption&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2019-05-31/mindset_change.jpg&quot; alt=&quot;Half marathon running change in mindset short comic&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;Comic on how running has changed my mindset&lt;/figcaption&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2019-05-31/thank_you.jpg&quot; alt=&quot;Half marathon running thank you short comic&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;Thanking supporters&lt;/figcaption&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2019-05-31/how_slow_i_run.png&quot; alt=&quot;Half marathon running how slow do I go short comic&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;Comic on how slow I run&lt;/figcaption&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2019-05-31/interval_training.png&quot; alt=&quot;Half marathon running interval training short comic&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;Comic on my attempt in doing interval training&lt;/figcaption&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2019-05-31/what_energy.png&quot; alt=&quot;Half marathon running what energy short comic&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;Comic on crossing the street whilst running&lt;/figcaption&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2019-05-31/running_routine.jpg&quot; alt=&quot;Half marathon running routine short comic&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;Comic on my running routine&lt;/figcaption&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2019-05-31/wind_wrestling.png&quot; alt=&quot;Half marathon running wind wrestling short comic&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;Comic on wrestling the wind while running&lt;/figcaption&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2019-05-31/legally_blond.jpg&quot; alt=&quot;Half marathon running listening to legally blond on repeat short comic&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;Comic on listening to Legally Blond while training&lt;/figcaption&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2019-05-31/behind_the_scenes.png&quot; alt=&quot;Half marathon running behind the scenes short comic&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;Comic on behind the scenes of the London Half-Marathon day&lt;/figcaption&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2019-05-31/snap_shot_moments.png&quot; alt=&quot;Half marathon running snapshot moments short comic&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;Comic on the snapshot moments of the London Half-Marathon day&lt;/figcaption&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Ketchup If You Can</title>
+    <link href="/posts/2019-04-02-ketchup-if-you-can/"/>
+    <updated>2019-04-02T00:00:00Z</updated>
+    <id>/posts/2019-04-02-ketchup-if-you-can/</id>
+    <content type="html">&lt;p&gt;A toy to for rehabilitating children with hemiplegic cerebral palsy.&lt;/p&gt;
+&lt;p&gt;As part of a university project, I worked in a team of 5 to develop, &lt;em&gt;Ketchup If You Can&lt;/em&gt;, a toy designed to rehabilitate children aged 5-12 with hemiplegic cerebral palsy. The toy is inspired by an existing toy called &lt;em&gt;Bop It!&lt;/em&gt;. The ketchup-themed toy instructs the player to perform a certain move, and if the player completes the move correctly within a time limit, they receive rewarding audio and haptic feedback. The game becomes more challenging as the player levels up, with the time limit decreasing.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2020-08-02/ketchup-diagrams.png&quot; alt=&quot;ketchup toy diagram&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;The moves (squeeze, twist, shake, and flip) chosen for the game are based on common movements in bimanual activities. The bottle is designed to encourage the use of two hands, which is important for children with cerebral palsy who may be reluctant to use their weaker hand.&lt;/p&gt;
+&lt;p&gt;We presented our toy to experts, who suggested further work and testing due to its potential.&lt;/p&gt;
+&lt;p&gt;
+&lt;/p&gt;&lt;div class=&quot;video-container&quot;&gt;
+    &lt;iframe src=&quot;https://www.youtube.com/embed/tEUqCEllvD0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2020-08-02/ketchup-team.JPG&quot; alt=&quot;ketchup toy team&quot; /&gt;&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>On It Card Game</title>
+    <link href="/posts/2019-03-03-on-it-card-game/"/>
+    <updated>2019-03-03T00:00:00Z</updated>
+    <id>/posts/2019-03-03-on-it-card-game/</id>
+    <content type="html">&lt;p&gt;DA&amp;amp;D New Blood Award winning period education card game.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.dandad.org/awards/new-blood/2019/mckinsey-design-the-case-for-her/3444/on-it/&quot;&gt;This project&lt;/a&gt; won a &lt;a href=&quot;https://www.dandad.org/profiles/jury/517866/mckinsey-design-the-case-for-her/&quot;&gt;D&amp;amp;AD New Blood Pencil award&lt;/a&gt; in 2019.&lt;/p&gt;
+&lt;p&gt;My talented university classmates and I developed a card game called &lt;em&gt;On It&lt;/em&gt; that focuses on period education. The objective of the game is to encourage conversation around menstruation, so that children do not feel isolated or ashamed. Our goal was to create a future where everyone feels comfortable with their body and its natural processes, starting with destigmatizing menstruation. The game features imaginative illustrations that were created using Adobe Illustrator.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2019-03-03/onit-playing.JPG&quot; alt=&quot;Playing On It&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Check out the video below for a quick introduction to &lt;em&gt;On It&lt;/em&gt;.&lt;/p&gt;
+&lt;div class=&quot;video-container&quot;&gt;
+&lt;iframe src=&quot;https://www.youtube.com/embed/vwKYpNPGtRU?modestbranding=1&amp;showinfo=0&amp;fs=0&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>(Unsuccessful, But Entertaining) Robot Feeding A Person</title>
+    <link href="/posts/2018-04-04-robot-feeding/"/>
+    <updated>2018-04-04T00:00:00Z</updated>
+    <id>/posts/2018-04-04-robot-feeding/</id>
+    <content type="html">&lt;p&gt;This university group robotics project&#39;s aim was to program the Baxter robot to feed a person autonomously.&lt;/p&gt;
+&lt;p&gt;The aim of the project was to program a robot to feed a person autonomously. This involved identifying a person&#39;s face, mouth, and food. Baxter robot was controlled using Python and inverse kinematics. Unfortunately, due to time limitations, the task could not be fully executed, however, we made a great start.&lt;/p&gt;
+&lt;p&gt;The documentation for this project is shown &lt;a href=&quot;https://de3-rob1-feeding.readthedocs.io/en/latest/index.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&quot;video-container&quot;&gt;
+&lt;iframe src=&quot;https://www.youtube.com/embed/USokTxmsZnA&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+</feed>
