@@ -1,7 +1,9 @@
 const sass = require("sass");
+const inspect = require("util").inspect;
 const { DateTime } = require("luxon");
 const markdownIt = require("markdown-it");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function (eleventyConfig) {
   // Copy files to output directory
@@ -28,6 +30,11 @@ module.exports = function (eleventyConfig) {
     );
   });
 
+  // For debugging
+  eleventyConfig.addFilter("debug", (content) => {
+    return `<pre>${inspect(content)}</pre>`;
+  });
+
   // Syntax highlighting
   eleventyConfig.addPlugin(syntaxHighlight);
 
@@ -44,13 +51,15 @@ module.exports = function (eleventyConfig) {
     return content.replace("<p>", "").replace("</p>", "");
   });
 
+  // RSS feed
+  eleventyConfig.addPlugin(pluginRss);
+
   return {
     dir: {
       input: "src",
       output: "dist",
       includes: "includes",
       layouts: "layouts",
-      data: "data",
     },
   };
 };

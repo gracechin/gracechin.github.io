@@ -30,8 +30,9 @@ layout: base.html
     </div>
   </div>
 
-  {% assign featured_tags = "projects,dev,personal" | split: ',' %} {% for tag
-  in featured_tags %} {% assign latest_posts = collections[tag] | reverse %}
+  {{ metadata | debug }} {% assign featured_tags = "projects,dev,personal" |
+  split: ',' %} {% for tag in featured_tags %} {% assign latest_posts =
+  collections[tag] | reverse %}
   <div class="post-list">
     <h2>#{{ tag }}</h2>
     <ul>

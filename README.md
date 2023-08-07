@@ -23,3 +23,4 @@ This website is hosted using [Github Pages](https://pages.github.com/). The chan
 - Output directory by default is `_site`.
 - Code snippets are styled using [PrismJS](https://prismjs.com/) syntax highlighting solarised light theme. Here are the [languages supported by PrismJS](https://prismjs.com/#supported-languages). To stop liquid from rendering when showing a code block or snippet use `{% raw %} ... {% endraw}` tags.
 - `.nojekyll` is used to tell Github that this is not a Jekyll project.
+- RSS feeder is implemented using `@11ty/eleventy-plugin-rss`, and `feed.njk` as instructed in [a blog post](https://conr.dev/posts/2022/07/rss-for-11ty/).
