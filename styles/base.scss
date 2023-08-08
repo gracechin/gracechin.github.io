@@ -72,6 +72,29 @@ code {
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
 }
 
+blockquote {
+  font-size: 1.3em;
+  font-family: $heading-font-family;
+  font-style: italic;
+  color: $text-color;
+  margin: 0;
+  padding: 1.2em 30px 1.2em 75px;
+  border-left: 8px solid $primary-color;
+  line-height: 1.6;
+  position: relative;
+  background: $primary-color-light;
+}
+
+blockquote::before {
+  font-family: $base-font-family;
+  content: "\201C";
+  color: $primary-color;
+  font-size: 4em;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+}
+
 span {
   color: grey;
 }
