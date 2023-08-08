@@ -7,7 +7,7 @@ tags:
   - dev
 ---
 
-Recently, I have been manually deploying my projects using [Netlify](https://www.netlify.com/).
+Recently, I have been manually deploying 🚀 my projects using [Netlify](https://www.netlify.com/).
 
 ---
 

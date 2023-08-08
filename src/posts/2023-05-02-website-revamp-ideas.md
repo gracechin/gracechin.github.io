@@ -6,7 +6,7 @@ tags:
   - this website
 ---
 
-To mark the start of finding a new job and moving to another country, I revamped my website.
+To mark the start of finding a new job 💼 and moving to another country 🇭🇰🇬🇧, I revamped my website.
 
 ---
 
