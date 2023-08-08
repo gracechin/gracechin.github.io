@@ -1,6 +1,12 @@
 {
+  "url": "https://gracechin.github.io/",
+  "author": {
+    "name": "Grace Chin",
+    "email": "gracechinhy@gmail.com"
+  },
   "feed": {
-    "subtitle": "Grace Space - I document my journey as a growing developer, as well as a designer",
+    "title": "Grace Space",
+    "subtitle": "I document my journey as a growing developer, as well as a designer",
     "filename": "feed.xml",
     "path": "/feed.xml",
     "url": "https://gracechin.github.io/feed.xml",
