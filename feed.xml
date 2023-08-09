@@ -4,12 +4,46 @@
   <subtitle>I document my journey as a growing developer, as well as a designer</subtitle>
   <link href="https://gracechin.github.io/feed.xml" rel="self"/>
   <link href="https://gracechin.github.io/"/>
-  <updated>2023-08-07T00:00:00Z</updated>
+  <updated>2023-08-09T00:00:00Z</updated>
   <id>https://gracechin.github.io/</id>
   <author>
     <name>Grace Chin</name>
     <email>gracechinhy@gmail.com</email>
   </author>
+  
+  <entry>
+    <title>Adding An RSS Feed</title>
+    <link href="https://gracechin.github.io/posts/2023-08-09-RSS-feed/"/>
+    <updated>2023-08-09T00:00:00Z</updated>
+    <id>https://gracechin.github.io/posts/2023-08-09-RSS-feed/</id>
+    <content type="html">&lt;p&gt;I learnt 📚 about RSS 🗞️ and added it to this site ✨.&lt;/p&gt;
+&lt;p&gt;As someone who spends a majority of their time consuming content from social media, RSS was a completely new thing for me. I was first aware of it when seeing &amp;quot;RSS&amp;quot; subscribe buttons on dev blogs, which left me wondering &lt;em&gt;what is it?&lt;/em&gt; and &lt;em&gt;how can I subscribe to this blog using RSS?&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Unlike the well-known social media platforms (e.g. Instagram, Twitter, Facebook), the content a user receives is completely under the user&#39;s control. When using web feeds, there are no ads, clickbaits, and algorithms. As &lt;a href=&quot;https://aboutfeeds.com/why&quot;&gt;explained by Matt Webb&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;No-one owns web feeds, so there’s no-one harvesting all the personal data and profiting off it&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;What is RSS?&lt;/h1&gt;
+&lt;p&gt;RSS stands for &lt;strong&gt;R&lt;/strong&gt;eally &lt;strong&gt;S&lt;/strong&gt;imple &lt;strong&gt;S&lt;/strong&gt;yndication, or &lt;strong&gt;R&lt;/strong&gt;ich &lt;strong&gt;S&lt;/strong&gt;ite &lt;strong&gt;S&lt;/strong&gt;ummary, or &lt;strong&gt;R&lt;/strong&gt;DF &lt;strong&gt;S&lt;/strong&gt;ite &lt;strong&gt;S&lt;/strong&gt;ummary. RSS was invented in 1999 by pioneers at Netscape as part of the rise in blogs in the early 2000s (sources &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2565593/&quot;&gt;5&lt;/a&gt;, &lt;a href=&quot;https://interconnected.org/home/2020/07/29/improving_rss&quot;&gt;6&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/RSS&quot;&gt;RSS&lt;/a&gt; (also known as &lt;em&gt;web feed&lt;/em&gt;, &lt;em&gt;feed&lt;/em&gt;, &lt;em&gt;RSS feed&lt;/em&gt;) is a web feed that allows users to access new updates on websites in a standardised way. By subscribing to RSS feeds (e.g. feeds from podcasts, blogs and news sites), users can keep track of updates from a number of websites using a single platform called &lt;em&gt;aggregator&lt;/em&gt;, &lt;em&gt;feed reader&lt;/em&gt;, or &lt;em&gt;RSS reader&lt;/em&gt;. The RSS feed provides content via XML while the RSS reader would process the XML.&lt;/p&gt;
+&lt;h1&gt;How do I use RSS?&lt;/h1&gt;
+&lt;p&gt;I find &lt;a href=&quot;https://aboutfeeds.com/&quot;&gt;&lt;em&gt;About Feeds&lt;/em&gt; site&lt;/a&gt; super useful in learning how to use RSS, especially if you are new to it like me! Personally, I&#39;ve started using &lt;a href=&quot;https://feedly.com/&quot;&gt;feedly&lt;/a&gt;. Not sure what I think of it yet, but that&#39;s for another post!&lt;/p&gt;
+&lt;h1&gt;How I added RSS Feed to my 11ty site?&lt;/h1&gt;
+&lt;p&gt;I followed &lt;a href=&quot;https://conr.dev/posts/2022/07/rss-for-11ty/&quot;&gt;this blog post by &lt;em&gt;conr&lt;/em&gt;&lt;/a&gt; to create an &lt;a href=&quot;https://gracechin.github.io/feed.xml&quot;&gt;online XML feed for this site&lt;/a&gt;. As for ease of access, I added an RSS button on the navigation bar.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://gracechin.github.io/assets/2023-08-09/updated-navbar.jpg&quot; alt=&quot;Updated navigation bar to add RSS&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;Updated navigation bar&lt;/figcaption&gt;
+&lt;h1&gt;What next?&lt;/h1&gt;
+&lt;p&gt;Now that I&#39;ve started using &lt;a href=&quot;https://feedly.com/&quot;&gt;feedly&lt;/a&gt; and have added RSS to this site, I am excited to read other people&#39;s writing and, hopefully, for other people to read my writing! ✨ Thank you for reading! ✨&lt;/p&gt;
+&lt;h1&gt;References&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/RSS&quot;&gt;https://en.wikipedia.org/wiki/RSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://aboutfeeds.com/&quot;&gt;https://aboutfeeds.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://conr.dev/posts/2022/07/rss-for-11ty/&quot;&gt;https://conr.dev/posts/2022/07/rss-for-11ty/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://aboutfeeds.com/why&quot;&gt;https://aboutfeeds.com/why&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2565593/&quot;&gt;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2565593/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://interconnected.org/home/2020/07/29/improving_rss&quot;&gt;https://interconnected.org/home/2020/07/29/improving_rss&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+  </entry>
   
   <entry>
     <title>Why I Manually Deploy Using Netlify</title>
