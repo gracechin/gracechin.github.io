@@ -4,7 +4,6 @@ date: 2023-08-11
 icon: 2023-08-11/microbit-icon.jpeg
 tags:
   - projects
-  - dev
   - Python
 ---
 
