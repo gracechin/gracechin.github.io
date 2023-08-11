@@ -4,12 +4,174 @@
   <subtitle>I document my journey as a growing developer, as well as a designer</subtitle>
   <link href="https://gracechin.github.io/feed.xml" rel="self"/>
   <link href="https://gracechin.github.io/"/>
-  <updated>2023-08-09T00:00:00Z</updated>
+  <updated>2023-08-11T00:00:00Z</updated>
   <id>https://gracechin.github.io/</id>
   <author>
     <name>Grace Chin</name>
     <email>gracechinhy@gmail.com</email>
   </author>
+  
+  <entry>
+    <title>Micro:bit - Don&#39;t Drop The Ball</title>
+    <link href="https://gracechin.github.io/posts/2023-08-11-dont-drop-the-ball/"/>
+    <updated>2023-08-11T00:00:00Z</updated>
+    <id>https://gracechin.github.io/posts/2023-08-11-dont-drop-the-ball/</id>
+    <content type="html">&lt;p&gt;A little game I made using a Micro:bit 🕹️👾&lt;/p&gt;
+&lt;p&gt;Recently, I have become fascinated with the &lt;a href=&quot;https://microbit.org/&quot;&gt;BBC micro:bit&lt;/a&gt;. It has been described as a &amp;quot;pocket-sized computer&amp;quot; and is much like a beginner-friendly Raspberry Pi or Arduino. Micro:bit is designed by the BBC to educate people on how computers work and to inspire children to engage in digital creation.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The Micro:bit Educational Foundation is a not-for-profit organisation that aims to inspire every child to create their best digital future. - &lt;a href=&quot;https://microbit.org/&quot;&gt;&lt;em&gt;Micro:bit&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Given my recent interest in this electronic, I was pleasantly surprised to find that my sister-in-law&#39;s boyfriend had a Micro:bit ✨, which he ordered during COVID lockdown, for me to borrow and play around with 🕹️. With that, I thought I would try and make a little game 👾.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://gracechin.github.io/assets/2023-08-11/microbit.jpeg&quot; alt=&quot;Micro:bit Starter Kit&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;Micro:bit Starter Kit&lt;/figcaption&gt;
+&lt;h1&gt;What did I use?&lt;/h1&gt;
+&lt;p&gt;The Micro:bit can be programmed using (1) Microsoft&#39;s &lt;a href=&quot;https://makecode.microbit.org/&quot;&gt;MakeCode editor&lt;/a&gt;, which allows programming using colourful blocks like in &lt;a href=&quot;https://scratch.mit.edu/&quot;&gt;Scratch&lt;/a&gt;, or (2) their own &lt;a href=&quot;https://python.microbit.org/v/3&quot;&gt;Python editor&lt;/a&gt;, which is also known as &lt;a href=&quot;https://microbit-micropython.readthedocs.io/en/v2-docs/&quot;&gt;&lt;em&gt;MicroPython&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Since I am already familiar with text-based programming and Python, I opted for MicroPython. The editor is user-friendly, accompanied by easily accessible documentation and drag-and-drop code snippets. I especially like how there is a simulator of the Micro:bit on the side which quickens the development process.&lt;/p&gt;
+&lt;h1&gt;What game did I make?&lt;/h1&gt;
+&lt;p&gt;I decided to create a game that makes use of the accelerometers in the Micro:bit. The goal of the game is to keep the &amp;quot;ball&amp;quot; on the board and prevent it from falling off. As the player tilts the board, the ball rolls across the board. To add difficulty, the ball speeds up as you level-up.&lt;/p&gt;
+&lt;h1&gt;My source code&lt;/h1&gt;
+&lt;p&gt;Below is a copy of the source code.&lt;/p&gt;
+&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Imports go at the top&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; microbit &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; time
+
+DIRECTION &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;direction&#39;&lt;/span&gt;
+MAGNITUDE &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;magnitude&#39;&lt;/span&gt;
+DOWN &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;DOWN&#39;&lt;/span&gt;
+RIGHT &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;RIGHT&#39;&lt;/span&gt;
+LEFT &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;LEFT&#39;&lt;/span&gt;
+UP &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;UP&#39;&lt;/span&gt;
+
+GRAVITY_MODE &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    DOWN&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;DIRECTION&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;y&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; MAGNITUDE&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    RIGHT&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;DIRECTION&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;x&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; MAGNITUDE&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    UP&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;DIRECTION&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;y&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; MAGNITUDE&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    LEFT&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;DIRECTION&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;x&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; MAGNITUDE&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+ANTICLOCKWISE_GRAVITY_CHANGE &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    DOWN &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; RIGHT&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    RIGHT &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; UP&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    UP &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; LEFT&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    LEFT &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; DOWN
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+CLOCKWISE_GRAVITY_CHANGE &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    DOWN &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; LEFT&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    RIGHT &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; DOWN&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    UP &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; RIGHT&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    LEFT &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; UP
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+LEVELS_TO_MS &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# millisecs per frame for each level&lt;/span&gt;
+    &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;250&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;150&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+MAX_LEVEL &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# States&lt;/span&gt;
+WON &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;WON&#39;&lt;/span&gt;
+PLAY &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;PLAY&#39;&lt;/span&gt;
+IDLE &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;IDLE&#39;&lt;/span&gt;
+
+FILLED_VALUE &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+MAX_VALID_VALUE &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;
+MIN_VALID_VALUE &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+TILT_THRESHOLD &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;500&lt;/span&gt;
+COUNT_PER_LEVEL &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;15&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;isPointValid&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;pt&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    x &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; pt&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;x&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+    y &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; pt&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;y&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+        x &lt;span class=&quot;token operator&quot;&gt;&amp;lt;=&lt;/span&gt; MAX_VALID_VALUE &lt;span class=&quot;token keyword&quot;&gt;and&lt;/span&gt; x &lt;span class=&quot;token operator&quot;&gt;&gt;=&lt;/span&gt; MIN_VALID_VALUE &lt;span class=&quot;token keyword&quot;&gt;and&lt;/span&gt;
+        y &lt;span class=&quot;token operator&quot;&gt;&amp;lt;=&lt;/span&gt; MAX_VALID_VALUE &lt;span class=&quot;token keyword&quot;&gt;and&lt;/span&gt; y &lt;span class=&quot;token operator&quot;&gt;&gt;=&lt;/span&gt; MIN_VALID_VALUE
+    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;loopDisplay&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        display&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;show&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        time&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sleep&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;countDown&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;level&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    loopDisplay&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;Image&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;HAPPY&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;LEVEL &quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;level&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# Intitalise&lt;/span&gt;
+point &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;x&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;y&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# coordinate of the ball&lt;/span&gt;
+gravity_key &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;DOWN&#39;&lt;/span&gt;
+counter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# to see how much &quot;time&quot; has passed for leveling up!&lt;/span&gt;
+level &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# initial level&lt;/span&gt;
+state &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; PLAY
+countDown&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;level&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; isPointValid&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;point&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;and&lt;/span&gt; state &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; PLAY&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        display&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;clear&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        display&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;set_pixel&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;point&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;x&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;point&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;y&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;FILLED_VALUE&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        time&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sleep_ms&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;LEVELS_TO_MS&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;level&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; counter &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; COUNT_PER_LEVEL&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; level &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; MAX_LEVEL&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                level &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; level &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+                point &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;x&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;y&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+                gravity_key &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;DOWN&#39;&lt;/span&gt;
+                counter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+                countDown&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;level&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                state &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; WON
+
+        &lt;span class=&quot;token comment&quot;&gt;# Tilt to control ball&lt;/span&gt;
+        x_strength &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; accelerometer&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;get_x&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        y_strength &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; accelerometer&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;get_y&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;x_strength&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;=&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;y_strength&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; x_strength &lt;span class=&quot;token operator&quot;&gt;&gt;=&lt;/span&gt; TILT_THRESHOLD&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                gravity_key &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; RIGHT
+            &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; x_strength &lt;span class=&quot;token operator&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;TILT_THRESHOLD&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                gravity_key &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; LEFT
+        &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; y_strength &lt;span class=&quot;token operator&quot;&gt;&gt;=&lt;/span&gt; TILT_THRESHOLD&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                gravity_key &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; DOWN
+            &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; y_strength &lt;span class=&quot;token operator&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;TILT_THRESHOLD&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                gravity_key &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; UP
+
+        &lt;span class=&quot;token comment&quot;&gt;# Press buttons to control ball&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; button_b&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;was_pressed&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            gravity_key &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; ANTICLOCKWISE_GRAVITY_CHANGE&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;gravity_key&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; button_a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;was_pressed&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            gravity_key &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; CLOCKWISE_GRAVITY_CHANGE&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;gravity_key&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+
+        &lt;span class=&quot;token comment&quot;&gt;# Update gravity&lt;/span&gt;
+        gravity &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; GRAVITY_MODE&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;gravity_key&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+        point&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;gravity&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;DIRECTION&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; point&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;gravity&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;DIRECTION&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; gravity&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;MAGNITUDE&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+
+        &lt;span class=&quot;token comment&quot;&gt;# Increment counter&lt;/span&gt;
+        counter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; counter &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;# When the player has lost&lt;/span&gt;
+        loopDisplay&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;Image&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;SAD&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        state &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; IDLE
+
+    &lt;span class=&quot;token comment&quot;&gt;# When the player has won&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; state &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; WON&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        loopDisplay&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;Image&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;HAPPY&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;YOU WON!&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        state &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; IDLE
+
+    &lt;span class=&quot;token comment&quot;&gt;# Waiting for the player to be ready to restart game&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; state &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; IDLE &lt;span class=&quot;token keyword&quot;&gt;or&lt;/span&gt; button_b&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;was_pressed&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;or&lt;/span&gt; button_a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;was_pressed&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        point &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;x&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;y&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        gravity_key &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;DOWN&#39;&lt;/span&gt;
+        counter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+        level &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+        state &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; PLAY&lt;/code&gt;&lt;/pre&gt;
+&lt;h1&gt;The Result&lt;/h1&gt;
+&lt;p&gt;Creating and playing the game was incredibly enjoyable :D&lt;/p&gt;
+&lt;div class=&quot;video-container&quot;&gt;
+&lt;iframe src=&quot;https://www.youtube.com/embed/J7zYmJxGVPk?modestbranding=1&amp;showinfo=0&amp;fs=0&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;p&gt;Overall, I&#39;m quite impressed with what you can do with Micro:bit! I would recommend it to people who want to learn how to code and create something fun!&lt;/p&gt;
+</content>
+  </entry>
   
   <entry>
     <title>Adding An RSS Feed</title>
