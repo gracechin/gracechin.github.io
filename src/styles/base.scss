@@ -13,7 +13,7 @@ $heading-font-family: "League Spartan", $default-font-family;
 $content-font-family: "Inter", -apple-system, BlinkMacSystemFont,
   $default-font-family;
 
-$base-font-size: 1em !default;
+$base-font-size: 1.1em !default;
 $base-font-weight: 400 !default;
 $small-font-size: $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
@@ -32,14 +32,21 @@ $section-spacing-unit: $spacing-unit * 2;
 $text-color: #2e2f26;
 $light-text-color: grey;
 $background-color: #ffffff !default;
-$primary-color: #b73c55 !default;
+$primary-color: #2e2f26 !default;
 $primary-color-light: #f4e2e6 !default;
 $secondary-color-light: #e7f0f5 !default;
 $secondary-color-dark: #8fa3c4;
 
-/* Base */
+// Border
 
-body {
+$border: 1px solid #2e2f26;
+
+/* Base */
+body,
+html {
+  display: inline-block; // to prevent collapsing margins
+  height: 100vh;
+  width: 100vw;
   margin: 0;
   padding: 0;
   font-family: $base-font-family;
@@ -102,10 +109,7 @@ span {
 a {
   color: $primary-color;
   text-decoration: none;
-
-  &:hover {
-    text-decoration: $primary-color underline 3px;
-  }
+  text-decoration: $primary-color underline 3px;
 }
 
 button {
@@ -123,71 +127,95 @@ button {
     color: white;
   }
 }
+
 /* Navigation bar */
 
 .wrapper {
-  margin: 0 100px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-nav > ul {
-  list-style-type: none;
-  margin: 20px 0;
-  padding: 0;
-  display: flex;
-  direction: column;
+/* Navigation bar */
 
-  a {
-    color: $primary-color;
-    text-decoration: none;
-    font-family: $heading-font-family;
-    font-weight: $semibold-font-weight;
-    pointer-events: auto;
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5em 1.5em;
+  border-bottom: $border;
+
+  ul {
+    list-style-type: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    column-gap: 1em;
   }
 
   li {
-    display: inline;
-    padding: 5px 7px;
-    border-radius: 3px;
-    border: 2px solid transparent;
-    font-size: 1.25em;
-    text-transform: uppercase;
-    pointer-events: none;
-
-    &:has(> a) {
-      &:hover {
-        background-color: $primary-color;
-        a {
-          color: white;
-        }
-      }
-    }
-
-    &.nav-brand {
-      border: 2px solid $primary-color;
-    }
+    margin-top: auto;
+    margin-bottom: auto;
   }
+
+  a,
+  .nav-brand,
+  .nav-text {
+    text-decoration: none;
+    font-size: 1em;
+    color: $primary-color;
+    font-family: $heading-font-family;
+    font-weight: $semibold-font-weight;
+    // Align text vertically center ignoring font descender
+    margin-top: 0.27em;
+  }
+
+  .nav-icons {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5em;
+  }
+}
+
+.github-icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-image: url(/assets/icon/github.svg);
+}
+
+.linkedin-icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-image: url(/assets/icon/linkedin.svg);
+}
+
+/* Content */
+
+.content-wrapper {
+  display: flex;
+  flex-grow: 1;
 }
 
 /* Home */
 
 .home {
-  .card {
-    margin: 20px 0;
-    color: white;
-    padding: 40px;
-    background-color: $primary-color;
-    border-radius: 30px;
+  position: absolute;
+  margin: auto;
+  bottom: 50%;
+  width: 100%;
 
-    h1 {
-      font-size: 2em;
-      color: white;
-    }
-
-    .card-container {
-      max-width: 650px;
-      margin: auto;
-      font-size: 1.25em;
-    }
+  h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 2em;
+    line-height: 1.25em;
   }
 }
 
@@ -328,27 +356,7 @@ figcaption {
 
 footer {
   display: flex;
-  justify-content: right;
-  text-align: center;
-  margin: 20px;
-}
-
-.github-icon {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-size: contain;
-  background-image: url(/assets/icon/github.svg);
-  vertical-align: baseline;
-  margin: 5px;
-}
-
-.linkedin-icon {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  background-size: contain;
-  background-image: url(/assets/icon/linkedin.svg);
+  border-top: $border;
 }
 
 .email {
