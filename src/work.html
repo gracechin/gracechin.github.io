@@ -1,0 +1,23 @@
+---
+layout: base.html
+---
+
+<div class="post-list">
+    <h1>Work</h1>
+    {% assign latest_posts = collections["posts"] | reverse %}
+    <ul>
+        {% for post in latest_posts %}
+        <li>
+            {% if post.data.icon %}
+            <div class="icon"><img src="/assets/{{ post.data.icon }}" /></div>
+            {% endif %}
+            <div>
+                <h3>
+                    <a href="{{ post.url }}">{{ post.data.title }}</a>
+                </h3>
+                <p>{{ post.data.page.excerpt | md | stripPara }}</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

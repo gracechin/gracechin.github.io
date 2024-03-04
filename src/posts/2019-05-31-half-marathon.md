@@ -5,7 +5,6 @@ icon: 2019-05-31/half-marathon.jpg
 tags:
   - projects
   - drawing
-  - personal
   - running
 ---
 
