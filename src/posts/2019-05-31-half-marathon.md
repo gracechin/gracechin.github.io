@@ -8,9 +8,11 @@ tags:
   - running
 ---
 
-Thanks to the contributions of all the donors, we raised over 600 pounds for [_Mind_](https://www.mind.org.uk/) (a mental health charity)!
+Fundraising for a mental health charity, _Mind_
 
 ---
+
+Thanks to the contributions of all the donors, we raised over 600 pounds for [_Mind_](https://www.mind.org.uk/) (a mental health charity)!
 
 To raise funds and awareness, in 2019, I documented my running training journey through [a Facebook blog](https://www.facebook.com/gracerunningformind/), where I shared self-illustrated short comics and photos with supporters. Looking back, I am quite proud of what I did. I hope to do something similar later, but I think I am going to give running a pause for now.
 

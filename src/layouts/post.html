@@ -3,14 +3,13 @@ layout: base.html
 ---
 
 {% assign previousPost = collections.posts | getPreviousCollectionItem: page %}
-{% assign nextPost = collections.posts | getNextCollectionItem: page %} {%-
-assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+{% assign nextPost = collections.posts | getNextCollectionItem: page %}
 
-<div class="post">
+<div class="container post">
   <article>
     <header>
       <h1>{{ title | escape }}</h1>
-      <span>{{ date | date: date_format }}</span>
+      <span>{{ date | formatDate }}</span>
     </header>
     <div>{{ content }}</div>
     <p>

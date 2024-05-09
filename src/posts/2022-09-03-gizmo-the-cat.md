@@ -12,7 +12,7 @@ project-site-url: https://gizmo-the-cat.netlify.app/
 github-url: https://github.com/gracechin/gizmo-the-cat
 ---
 
-A random website to find a cat called 'Gizmo'.
+A simple web game for finding _Gizmo_ the cat 🐈‍⬛
 
 ---
 

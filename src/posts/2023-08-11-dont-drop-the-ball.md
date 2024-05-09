@@ -21,22 +21,22 @@ Given my recent interest in this electronic, I was pleasantly surprised to find 
 
 <figcaption>Micro:bit Starter Kit</figcaption>
 
-# What did I use?
+## What did I use?
 
 The Micro:bit can be programmed using (1) Microsoft's [MakeCode editor](https://makecode.microbit.org/), which allows programming using colourful blocks like in [Scratch](https://scratch.mit.edu/), or (2) their own [Python editor](https://python.microbit.org/v/3), which is also known as [_MicroPython_](https://microbit-micropython.readthedocs.io/en/v2-docs/).
 
 Since I am already familiar with text-based programming and Python, I opted for MicroPython. The editor is user-friendly, accompanied by easily accessible documentation and drag-and-drop code snippets. I especially like how there is a simulator of the Micro:bit on the side which quickens the development process.
 
-# What game did I make?
+## What game did I make?
 
 I decided to create a game that makes use of the accelerometers in the Micro:bit. The goal of the game is to keep the "ball" on the board and prevent it from falling off. As the player tilts the board, the ball rolls across the board. To add difficulty, the ball speeds up as you level-up.
 
-# My source code
+## My source code
 
 Below is a copy of the source code.
 
 ```python
-# Imports go at the top
+## Imports go at the top
 from microbit import *
 import time
 
@@ -66,14 +66,14 @@ CLOCKWISE_GRAVITY_CHANGE = {
     LEFT : UP
 }
 LEVELS_TO_MS = {
-    1: 1000, # millisecs per frame for each level
+    1: 1000, ## millisecs per frame for each level
     2: 500,
     3: 250,
     4: 200,
     5: 150
 }
 MAX_LEVEL = 5
-# States
+## States
 WON = 'WON'
 PLAY = 'PLAY'
 IDLE = 'IDLE'
@@ -100,11 +100,11 @@ def loopDisplay(a):
 def countDown(level):
     loopDisplay([Image.HAPPY, "LEVEL "+str(level)])
 
-# Intitalise
-point = {'x': 2, 'y': 0} # coordinate of the ball
+## Intitalise
+point = {'x': 2, 'y': 0} ## coordinate of the ball
 gravity_key = 'DOWN'
-counter = 0 # to see how much "time" has passed for leveling up!
-level = 1 # initial level
+counter = 0 ## to see how much "time" has passed for leveling up!
+level = 1 ## initial level
 state = PLAY
 countDown(level)
 
@@ -124,7 +124,7 @@ while True:
             else:
                 state = WON
 
-        # Tilt to control ball
+        ## Tilt to control ball
         x_strength = accelerometer.get_x()
         y_strength = accelerometer.get_y()
 
@@ -139,30 +139,30 @@ while True:
             if y_strength <= -TILT_THRESHOLD:
                 gravity_key = UP
 
-        # Press buttons to control ball
+        ## Press buttons to control ball
         if button_b.was_pressed():
             gravity_key = ANTICLOCKWISE_GRAVITY_CHANGE[gravity_key]
 
         if button_a.was_pressed():
             gravity_key = CLOCKWISE_GRAVITY_CHANGE[gravity_key]
 
-        # Update gravity
+        ## Update gravity
         gravity = GRAVITY_MODE[gravity_key]
         point[gravity[DIRECTION]] = point[gravity[DIRECTION]] + gravity[MAGNITUDE]
 
-        # Increment counter
+        ## Increment counter
         counter = counter + 1
     else:
-        # When the player has lost
+        ## When the player has lost
         loopDisplay([Image.SAD])
         state == IDLE
 
-    # When the player has won
+    ## When the player has won
     if state == WON:
         loopDisplay([Image.HAPPY, 'YOU WON!'])
         state = IDLE
 
-    # Waiting for the player to be ready to restart game
+    ## Waiting for the player to be ready to restart game
     if state == IDLE or button_b.was_pressed() or button_a.was_pressed():
         point = {'x': 2, 'y': 0}
         gravity_key = 'DOWN'
@@ -171,7 +171,7 @@ while True:
         state = PLAY
 ```
 
-# The Result
+## The Result
 
 Creating and playing the game was incredibly enjoyable :D
 

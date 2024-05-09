@@ -9,7 +9,7 @@ tags:
   - SolidWorks
 ---
 
-A toy to for rehabilitating children with hemiplegic cerebral palsy.
+Designing a toy for rehabilitating children with hemiplegic cerebral palsy.
 
 ---
 

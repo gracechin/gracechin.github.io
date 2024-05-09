@@ -7,7 +7,7 @@ tags:
   - MEng Design Engineering
 ---
 
-This university group robotics project's aim was to program the Baxter robot to feed a person autonomously.
+University group project to program a robot to feed a person autonomously
 
 ---
 
