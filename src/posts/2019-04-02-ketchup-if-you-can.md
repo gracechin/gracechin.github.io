@@ -4,6 +4,7 @@ date: 2019-04-02
 icon: 2019-04-02/icon.png
 tags:
   - projects
+  - featured
   - MEng Design Engineering
   - 3D printing
   - SolidWorks

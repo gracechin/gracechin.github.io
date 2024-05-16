@@ -153,7 +153,7 @@ button {
 
 /* Navigation bar */
 
-nav {
+nav.navbar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -221,16 +221,19 @@ nav {
 /* Home */
 
 .home {
-  position: absolute;
-  margin: auto;
-  bottom: 50%;
-  width: 100%;
-
-  h1 {
-    margin: 0;
-    text-align: center;
-    font-size: 2em;
-    line-height: 1.25em;
+  h2 {
+    margin-top: 1.2em;
+    margin-bottom: 0.5em;
+    font-size: 1.7em;
+  }
+  .post-list {
+    ul {
+      margin: 0;
+    }
+    h3 {
+      display: block;
+      margin: 0.5em 0;
+    }
   }
 }
 
@@ -238,7 +241,7 @@ nav {
 
 .container {
   max-width: 600px;
-  padding: 20px;
+  padding: 2em;
   align-self: center;
 }
 
@@ -270,7 +273,7 @@ nav {
       display: inline-block;
       padding: 0.5em;
       margin: 0;
-      font-size: 0.7em;
+      font-size: 0.9em;
       font-weight: 100;
     }
 
@@ -354,11 +357,6 @@ figcaption {
 }
 
 /* Tag page */
-
-.tag-page {
-  max-width: 800px;
-  margin: auto;
-}
 
 /* Footer */
 

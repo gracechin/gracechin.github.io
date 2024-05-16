@@ -5,7 +5,7 @@ permalink: /about/
 
 # About me
 
-I'm Grace Chin and I'm a front-end web developer based in Oxfordshire, UK. I like designing and making things for the Internet.
+I'm Grace Chin and I'm a front-end web developer based in Oxfordshire, UK. I like designing and making things for the web.
 
 ## How did I get here?
 

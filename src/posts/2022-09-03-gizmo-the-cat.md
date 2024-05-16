@@ -3,6 +3,7 @@ title: Gizmo The Cat
 date: 2022-09-03
 icon: 2022-09-03/gizmo.png
 tags:
+  - featured
   - projects
   - HTML
   - CanvasAPI

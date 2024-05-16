@@ -11,16 +11,17 @@ layout: base.html
       <h1>{{ title | escape }}</h1>
       <span>{{ date | formatDate }}</span>
     </header>
-    <div>{{ content }}</div>
-    <p>
-      <span>
-        {% for t in tags %}
-        <a href="/tags/{{ t }}">#{{t}}</a>
-        {% endfor %}
-      </span>
-    </p>
+    <main>
+      <div>{{ content }}</div>
+      <p>
+        <span>
+          {% for t in tags %}
+          <a href="/tags/{{ t }}">#{{t}}</a>
+          {% endfor %}
+        </span>
+      </p>
+    </main>
   </article>
-  <hr />
   <nav>
     <div class="col left">
       {% if previousPost %}
