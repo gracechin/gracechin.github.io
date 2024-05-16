@@ -1,318 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Grace Space</title>
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="/styles/base.css" />
 
-    <!-- Syntax highlighting theme -->
-    <link
-      href="https://unpkg.com/prismjs@1.20.0/themes/prism-solarizedlight.css"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Grace Space</title>
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="/styles/base.css" />
 
-    <!-- Preload me images for About page -->
-    
-    <link
-      rel="preload"
-      href="../assets/about/me-1.svg"
-      as="image"
-      type="image/svg+xml"
-    />
-    <link
-      rel="preload"
-      href="../assets/about/me-2.svg"
-      as="image"
-      type="image/svg+xml"
-    />
-    <link
-      rel="preload"
-      href="../assets/about/me-3.svg"
-      as="image"
-      type="image/svg+xml"
-    />
-    <link
-      rel="preload"
-      href="../assets/about/me-4.svg"
-      as="image"
-      type="image/svg+xml"
-    />
-    <link
-      rel="preload"
-      href="../assets/about/me-5.svg"
-      as="image"
-      type="image/svg+xml"
-    /></head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <nav>
-          <ul>
-            <li><a href="/about">About</a></li>
-            <li class="nav-brand"><a href="/">Grace Space</a></li>
-            <li><a href="/feed.xml">RSS</a></li>
-          </ul>
-        </nav>
-      </header>
-      <main>
-<input type="checkbox" id="light-switch" class="switch-input" />
-<label for="light-switch" class="light-switch" id="light-switch-label">
-  <div class="platform">
-    <div class="button">
-      <div class="switch"><div class="light"></div></div>
-    </div>
-  </div>
-</label>
+  <!-- Preload nav bar icons -->
+  <link rel="preload" href="/assets/icon/github.svg" as="image">
+  <link rel="preload" href="/assets/icon/linkedin.svg" as="image">
 
-<div class="cover-container">
-  <div class="cover-banner">
-    <div class="home"></div>
-    <div class="me"></div>
-  </div>
-</div>
+  <!-- Syntax highlighting theme -->
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-solarizedlight.css" rel="stylesheet" />
+</head>
 
-<div class="home">
-  <div class="card">
-    <div class="card-container">
-      <h1>Welcome to Grace Space!</h1>
-      <p>
-        Hi, I am Grace Chin. I like making things, coding, and learning as I go.
-        In this little corner of the internet, I call "Grace Space", I document
-        my journey as a growing developer, as well as a designer.
-      </p>
-    </div>
-  </div>
+<body>
+  <div class="wrapper">
+    <nav class="navbar">
+      <div class="nav-brand"><a href="/">GC</a></div>
+      <ul>
+        <li class="nav-text"><a href="/about">About</a></li>
+        <li class="nav-text"><a href="/notes">Notes</a></li>
+
+        <div class="nav-icons">
+          <li>
+            <a href="https://github.com/gracechin">
+              <span class="github-icon"></span></a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/gracehychin/">
+              <span class="linkedin-icon"></span>
+            </a>
+        </div>
+        </li>
+      </ul>
+    </nav>
 
     
+<main class="container home">
+  <h1>Hi, I am Grace Chin</h1>
+  <p>
+    I'm a front-end web developer based in Oxfordshire, UK. I like designing and
+    making things for the web.
+  </p>
+  <h2>Here are a few things I made:</h2>
   <div class="post-list">
-    <h2>#projects</h2>
     <ul>
       
       <li>
-        
-        <a href="/posts/2023-08-11-dont-drop-the-ball/" class="icon"
-          ><img src="/assets/2023-08-11/microbit-icon.jpeg"
-        /></a>
-        
-        <div>
-          <h3>
-            <a href="/posts/2023-08-11-dont-drop-the-ball/">Micro:bit - Don't Drop The Ball</a>
-          </h3>
-          <span>11 Aug 2023</span>
-          <span>
-            
-            <a href="/tags/posts">#posts</a>
-            
-            <a href="/tags/projects">#projects</a>
-            
-            <a href="/tags/Python">#Python</a>
-            
-          </span>
-          <p>A little game I made using a Micro:bit 🕹️👾
+        <h3>
+          <a href="/posts/2022-09-03-gizmo-the-cat/">Gizmo The Cat</a>
+        </h3>
+        <p>A simple web game for finding <em>Gizmo</em> the cat 🐈‍⬛
 </p>
-        </div>
       </li>
       
       <li>
-        
-        <a href="/posts/2023-07-31-abaculator/" class="icon"
-          ><img src="/assets/2023-07-31/logo.png"
-        /></a>
-        
-        <div>
-          <h3>
-            <a href="/posts/2023-07-31-abaculator/">Abaculator (ABAcus + calCULATOR)</a>
-          </h3>
-          <span>31 Jul 2023</span>
-          <span>
-            
-            <a href="/tags/posts">#posts</a>
-            
-            <a href="/tags/projects">#projects</a>
-            
-            <a href="/tags/HTML">#HTML</a>
-            
-            <a href="/tags/Vue">#Vue</a>
-            
-            <a href="/tags/JavaScript">#JavaScript</a>
-            
-            <a href="/tags/SASS">#SASS</a>
-            
-            <a href="/tags/CSS">#CSS</a>
-            
-          </span>
-          <p>A basic cal<strong>culator</strong> with <strong>aba</strong>cus visulisations and sounds 🧮.
+        <h3>
+          <a href="/posts/2019-04-02-ketchup-if-you-can/">Ketchup If You Can</a>
+        </h3>
+        <p>Designing a toy for rehabilitating children with hemiplegic cerebral palsy.
 </p>
-        </div>
       </li>
       
       <li>
-        
-        <a href="/posts/2023-06-16-red-moon/" class="icon"
-          ><img src="/assets/2023-06-16/red_moon.png"
-        /></a>
-        
-        <div>
-          <h3>
-            <a href="/posts/2023-06-16-red-moon/">Red Moon</a>
-          </h3>
-          <span>16 Jun 2023</span>
-          <span>
-            
-            <a href="/tags/posts">#posts</a>
-            
-            <a href="/tags/projects">#projects</a>
-            
-            <a href="/tags/ReactJS">#ReactJS</a>
-            
-            <a href="/tags/D3.js">#D3.js</a>
-            
-            <a href="/tags/LESS">#LESS</a>
-            
-            <a href="/tags/CSS">#CSS</a>
-            
-            <a href="/tags/React Bootstrap">#React Bootstrap</a>
-            
-            <a href="/tags/Webpack">#Webpack</a>
-            
-          </span>
-          <p>For tracking menstrual cycles, one cycle at a time.
+        <h3>
+          <a href="/posts/2019-03-03-on-it-card-game/">On It Card Game</a>
+        </h3>
+        <p>DA&amp;D New Blood Award winning period education card game
 </p>
-        </div>
       </li>
       
     </ul>
-    <button onclick="window.location.href='/tags/projects';">View All</button>
   </div>
-   
-  <div class="post-list">
-    <h2>#dev</h2>
-    <ul>
-      
-      <li>
-        
-        <div>
-          <h3>
-            <a href="/posts/2023-08-09-RSS-feed/">Adding An RSS Feed</a>
-          </h3>
-          <span>09 Aug 2023</span>
-          <span>
-            
-            <a href="/tags/posts">#posts</a>
-            
-            <a href="/tags/dev">#dev</a>
-            
-            <a href="/tags/blog">#blog</a>
-            
-            <a href="/tags/this website">#this website</a>
-            
-          </span>
-          <p>I learnt 📚 about RSS 🗞️ and added it to this site ✨.
-</p>
-        </div>
-      </li>
-      
-      <li>
-        
-        <div>
-          <h3>
-            <a href="/posts/2023-08-07-manually-deploy-with-netlify/">Why I Manually Deploy Using Netlify</a>
-          </h3>
-          <span>07 Aug 2023</span>
-          <span>
-            
-            <a href="/tags/posts">#posts</a>
-            
-            <a href="/tags/Netlify">#Netlify</a>
-            
-            <a href="/tags/GitHub">#GitHub</a>
-            
-            <a href="/tags/dev">#dev</a>
-            
-          </span>
-          <p>Recently, I have been manually deploying 🚀 my projects using <a href="https://www.netlify.com/">Netlify</a>.
-</p>
-        </div>
-      </li>
-      
-      <li>
-        
-        <div>
-          <h3>
-            <a href="/posts/2023-07-25-blog-folio/">Switching To A Blog-folio</a>
-          </h3>
-          <span>25 Jul 2023</span>
-          <span>
-            
-            <a href="/tags/posts">#posts</a>
-            
-            <a href="/tags/dev">#dev</a>
-            
-            <a href="/tags/blog">#blog</a>
-            
-            <a href="/tags/this website">#this website</a>
-            
-          </span>
-          <p>I updated my web portfolio to become more blog-orientated.
-</p>
-        </div>
-      </li>
-      
-    </ul>
-    <button onclick="window.location.href='/tags/dev';">View All</button>
-  </div>
-   
-  <div class="post-list">
-    <h2>#personal</h2>
-    <ul>
-      
-      <li>
-        
-        <a href="/posts/2019-05-31-half-marathon/" class="icon"
-          ><img src="/assets/2019-05-31/half-marathon.jpg"
-        /></a>
-        
-        <div>
-          <h3>
-            <a href="/posts/2019-05-31-half-marathon/">Running And Drawing For Mind</a>
-          </h3>
-          <span>31 May 2019</span>
-          <span>
-            
-            <a href="/tags/posts">#posts</a>
-            
-            <a href="/tags/projects">#projects</a>
-            
-            <a href="/tags/drawing">#drawing</a>
-            
-            <a href="/tags/personal">#personal</a>
-            
-            <a href="/tags/running">#running</a>
-            
-          </span>
-          <p>Thanks to the contributions of all the donors, we raised over 600 pounds for <a href="https://www.mind.org.uk/"><em>Mind</em></a> (a mental health charity)!
-</p>
-        </div>
-      </li>
-      
-    </ul>
-    <button onclick="window.location.href='/tags/personal';">View All</button>
-  </div>
-  
-</div>
 </main>
-      <footer>
-        <span class="email">gracechinhy@gmail.com</span>
-        <a href="https://github.com/gracechin"
-          ><span class="github-icon"></span
-        ></a>
-        <a href="https://www.linkedin.com/in/gracehychin/"
-          ><span class="linkedin-icon"></span
-        ></a>
-      </footer>
-    </div>
-  </body>
+
+  </div>
+</body>
+
 </html>
