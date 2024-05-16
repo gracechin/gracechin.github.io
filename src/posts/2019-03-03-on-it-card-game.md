@@ -3,6 +3,7 @@ title: On It Card Game
 date: 2019-03-03
 icon: 2019-03-03/onit.png
 tags:
+  - featured
   - projects
   - MEng Design Engineering
   - Adobe Illustrator
@@ -10,7 +11,7 @@ tags:
   - drawing
 ---
 
-DA&D New Blood Award winning period education card game.
+DA&D New Blood Award winning period education card game
 
 ---
 

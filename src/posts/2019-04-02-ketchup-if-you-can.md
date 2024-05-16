@@ -4,12 +4,13 @@ date: 2019-04-02
 icon: 2019-04-02/icon.png
 tags:
   - projects
+  - featured
   - MEng Design Engineering
   - 3D printing
   - SolidWorks
 ---
 
-A toy to for rehabilitating children with hemiplegic cerebral palsy.
+Designing a toy for rehabilitating children with hemiplegic cerebral palsy.
 
 ---
 

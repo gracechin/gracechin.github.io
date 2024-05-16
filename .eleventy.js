@@ -3,7 +3,6 @@ const inspect = require("util").inspect;
 const { DateTime } = require("luxon");
 const markdownIt = require("markdown-it");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function (eleventyConfig) {
   // Copy files to output directory
@@ -50,9 +49,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("stripPara", (content = "") => {
     return content.replace("<p>", "").replace("</p>", "");
   });
-
-  // RSS feed
-  eleventyConfig.addPlugin(pluginRss);
 
   return {
     dir: {

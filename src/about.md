@@ -5,32 +5,14 @@ permalink: /about/
 
 # About me
 
-I'm Grace Chin and I like designing and making things for the Internet. I love that I am always learning and growing when I am developing and coding. In my free time, I like to do [projects](/tags/projects/), which keep me on my toes and exploring.
-
-Currently, I am on the lookout for a developer/designer position in the UK.
+I'm Grace Chin and I'm a front-end web developer based in Oxfordshire, UK. I like designing and making things for the web.
 
 ## How did I get here?
 
-I first acknowledged my passion for coding during my time in Imperial College
-London, I graduated with a first class honours and earned my MEng degree in
-Design Engineering. During the course, I did a variety of group design projects
-that involved using different skills. I particularly enjoyed the coding aspects
-of projects.
+Whilst studying Design Engineering in Imperial College, I found myself especially attracted to the coding and debugging aspects of projects.
 
-My interest in coding and working in a small company grew as I gained work
-experience. During my 6-month work placement, I worked as a Junior Design
-Engineer for an AI start-up in London. I had fun working with a small team of
-people. After graduating in 2019, I spent two years at a Hong Kong fintech
-start-up, where I was first a Junior Software Developer and later a Software
-Engineer. From working in tech start-ups, [I learnt a lot about development](http://localhost:8080/posts/2023-04-24-working-for-startups/) from the experienced people there.
+My interest in coding grew as I took on tech roles in small companies. I learnt how a small tech team can work together to achieve great things.
 
-Curious on how technology and design can help people, I spent over a year as a
-human-computer interaction design researcher at the School of Design in Hong
-Kong Polytechnic University. While I learnt a lot from being a researcher, I
-missed bringing creative concepts to life through my design and coding skills,
-as well as the UK. Hence, now I am looking for new opportunities in the UK.
+With the desire to help people using design and technology, I spent over a year studying how technology can help sustain healthy habits in Hong Kong. While I learnt and achieved a lot from being a researcher, I missed making things.
 
-## Outside of coding
-
-I live with my husband, Dan. In our spare time, we like to walk and have
-walked the the big four trails of Hong Kong.
+By the end of 2023, I relocated back to the UK with my husband and got my current job making things for the web.
